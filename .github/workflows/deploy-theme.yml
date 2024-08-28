@@ -21,9 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Shopify CLI
-        run: |
-          npm install -g @shopify/cli @shopify/theme
+      - name: Set up Shopify CLI
+        uses: shopify/actions-cli@v1
 
       - name: Deploy to Shopify
         env:

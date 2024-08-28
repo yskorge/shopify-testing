@@ -21,11 +21,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Shopify CLI
+        run: |
+          npm install -g @shopify/cli @shopify/theme
+
       - name: Deploy to Shopify
         env:
           SHOPIFY_STORE: https://671345-8e.myshopify.com # Store URL e.g., your-store.myshopify.com
           SHOPIFY_PASSWORD: password  # Admin API password for theme deployment
         run: |
-          shopify login --store=https://671345-8e.myshopify.com --password=password 
+          shopify login --store=$SHOPIFY_STORE --password=$SHOPIFY_PASSWORD 
           
-          shopify theme push --environment=production
+          shopify theme push --unpublished

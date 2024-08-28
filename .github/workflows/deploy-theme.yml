@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to Shopify
         env:
-          SHOPIFY_STORE: https://671345-8e.myshopify.com
-          SHOPIFY_API_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
+          SHOPIFY_FLAG_STORE: https://671345-8e.myshopify.com
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
         run: |
-          shopify theme push --unpublished --password=$SHOPIFY_API_TOKEN --store=$SHOPIFY_STORE --theme="First CI theme 2"
+          shopify theme push --unpublished --theme="First CI theme 3"

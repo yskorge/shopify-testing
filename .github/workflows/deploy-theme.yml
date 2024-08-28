@@ -27,9 +27,7 @@ jobs:
 
       - name: Deploy to Shopify
         env:
-          SHOPIFY_STORE: https://671345-8e.myshopify.com # Store URL e.g., your-store.myshopify.com
-          SHOPIFY_PASSWORD: password  # Admin API password for theme deployment
+          SHOPIFY_STORE: https://671345-8e.myshopify.com
+          SHOPIFY_API_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
         run: |
-          shopify login --store=$SHOPIFY_STORE --password=$SHOPIFY_PASSWORD 
-          
-          shopify theme push --unpublished
+          shopify theme push --unpublished --password=$SHOPIFY_PASSWORD --theme="First CI theme 1"

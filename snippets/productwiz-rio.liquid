@@ -1,0 +1,129 @@
+{% if shop.metafields.productwiz.rio-legacy-disabled.value == blank %}
+<script>
+  var __productWizRio = {};
+  (function() {
+    // START-1
+    {% if product %}
+      var product = {{product | json}};
+      var productMetafield = {{ product.metafields.productwiz.rio.value | default: product.metafields.productwiz.rio | json }};
+      var shopMetafield = {{ shop.metafields.productwiz.rio.value | default: shop.metafields.productwiz.rio | json }};
+
+      // START-2
+      __productWizRio.enabled = false;
+      if (Array.isArray(product.variants) && product.variants.length > 1 && Array.isArray(product.media) && product.media.length > 0) {
+        if (!shopMetafield || !shopMetafield.disabled) {
+          if (productMetafield && productMetafield.enabled && !productMetafield.empty) {
+            __productWizRio.enabled = true;
+            __productWizRio.product = product;
+            __productWizRio.productRio = productMetafield.mapping;
+          }
+        }
+      }
+      // END-2
+    {% else %}
+      __productWizRio.enabled = false;
+    {% endif %}
+    // END-1
+    if (__productWizRio.enabled) {
+      
+function callback(mutations) {
+  mutations.forEach(function (mutation) {
+    Array.prototype.forEach.call(mutation.addedNodes, function (addedNode) {
+      if (typeof addedNode.className === 'string') {
+        if (!__productWizRio.config) {
+__productWizRio.config = {
+  "breakpoint": "1008px",
+  "mobile": {
+    "navigation": false,
+    "pagination": true,
+    "swipe": true,
+    "dark": true,
+    "magnify": false,
+    "thumbnails": false,
+    "lightBox": false,
+    "lightBoxZoom": 2
+  },
+  "desktop": {
+    "navigation": false,
+    "pagination": false,
+    "swipe": true,
+    "dark": true,
+    "magnify": {
+      "width": "full",
+      "height": "full",
+      "zoom": 3
+    },
+    "thumbnails": {
+      "orientation": "bottom",
+      "multiRow": false,
+      "thumbnailWidth": 80,
+      "navigation": true
+    },
+    "lightBox": false,
+    "lightBoxZoom": 2
+  }
+};
+}
+
+try {
+  var isSmallProduct = addedNode.className.indexOf('Product--small') > -1;
+
+  if (isSmallProduct) {
+    __productWizRio.maxWidth = '400px';
+  }
+
+  var isMediumProduct = addedNode.className.indexOf('Product--medium') > -1;
+
+  if (isMediumProduct) {
+    __productWizRio.maxWidth = '550px';
+  }
+
+  var isLargeProduct = addedNode.className.indexOf('Product--large') > -1;
+
+  if (isLargeProduct) {
+    __productWizRio.maxWidth = '780px';
+  }
+
+  var isContainer = addedNode.className.indexOf('Product__Gallery') > -1;
+
+  if (isContainer) {
+    addedNode.setAttribute('style', 'padding-bottom: 15px;');
+
+    while (addedNode.firstChild) {
+      addedNode.removeChild(addedNode.firstChild);
+    }
+
+    var style = document.createElement('style');
+    style.textContent = "\n        .rio-mobile-desktop-breakpoint {\n        }\n        @media (min-width: 1008px) {\n          .rio-mobile-desktop-breakpoint {\n            max-width: ".concat(__productWizRio.maxWidth || 'none', ";\n          }\n        }\n      ");
+    addedNode.parentNode.appendChild(style);
+    var container = document.createElement('div');
+    container.style.display = 'flex';
+    container.style.justifyContent = 'center';
+    container.style.width = '100%';
+    container.style.height = 'auto';
+    var box = document.createElement('div');
+    box.style.width = '100%';
+    box.style.height = 'auto';
+    box.className = 'rio-media-gallery rio-mobile-desktop-breakpoint';
+    container.appendChild(box);
+    addedNode.appendChild(container);
+  }
+} catch (err) {}
+      }
+    });
+  });
+}
+var observer = new MutationObserver(callback);
+var config = { childList: true, subtree: true };
+window.addEventListener('load', function () {
+  observer.disconnect();
+});
+observer.observe(document, config);
+
+    }
+  })();
+</script>
+<link rel="stylesheet" href="https://pwzcdn.com/rio-store/prod/2.41.0/index.css">
+<link rel="preload" href="https://pwzcdn.com/rio-store/prod/2.41.0/index.js" as="script">
+<script async src="https://pwzcdn.com/rio-store/prod/2.41.0/index.js"></script>
+{% endif %}

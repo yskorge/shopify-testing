@@ -1,0 +1,246 @@
+{%- assign show_section = product.metafields.accentuate.show_section -%}
+{%- assign image_url = product.metafields.accentuate.image -%}
+{%- assign video_url = product.metafields.accentuate.video_url -%}
+{%- assign autoplay_false = product.metafields.accentuate.autoplay_off -%}
+
+{%- if show_section == 'true' and  video_url != blank -%}
+  {% render 'autoplay-video-metafields', video_url: video_url, image_url: image_url, autoplay_false: autoplay_false  %}
+{%- else -%}
+  {%- if section.blocks.size > 0 -%}
+    {%- for block in section.blocks -%}
+      {%- assign product_collection = block.settings.product_collection -%}
+      {%- assign productVendor = product.vendor | handleize  -%}
+      {%- assign vendorFromSection = block.settings.title | default: 'Empty vendor' -%}
+      {%- assign vendorFromSection_handle = vendorFromSection | handleize -%}
+      {%- assign video = block.settings.video -%}
+      {%- assign image = block.settings.image -%}
+      {%- assign autoplay_false = block.settings.autoplay_false -%}
+      {%- assign show_on_collection = false -%}
+      {%- assign show_by_vendor = false -%}
+
+      {%- if vendorFromSection_handle == productVendor -%}
+        {%- assign show_by_vendor = true -%}
+      {%- endif -%}
+
+      {%- if product_collection != blank -%}
+        {% for collection in product.collections %}
+          {%- if collection.handle == product_collection -%}
+            {%- assign show_on_collection = true -%}
+            {%- break -%}
+          {%- endif -%}
+        {% endfor %}
+      {%- endif -%}
+
+      {%- if show_by_vendor or show_on_collection -%}
+        {%- if video != blank -%}
+
+          {%- if video.type == 'youtube' -%}
+            {%- if image ==  blank -%}
+              {%- assign poster = 'http://img.youtube.com/vi/' | append: video.id | append: '/maxresdefault.jpg'-%}
+            {%- endif -%}
+          {%- else -%}
+            {%- if image ==  blank -%}
+              <script type="text/javascript">
+                $.getJSON('https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/' + {{ video.id }}, {
+                      format: "json",
+                      width: "640"
+                    },
+                    function(data) {
+                      console.log(data)
+                      $('#autoplay-video-section-{{ forloop.index }} .PlaceholderBackground').append('<img src="' + data.thumbnail_url + '" class="PlaceholderBackground__Svg" alt="Vimeo video poster"/>');
+                    });
+              </script>
+            {%- endif -%}
+          {%- endif -%}
+
+          <div class="Section" id="autoplay-video-section-{{ forloop.index }}" style="padding: 30px 0">
+            <div class="FlexboxIeFix">
+
+              <div class="ImageHero ImageHero--autoplay-video ImageHero--adaptive">
+                <div class="ImageHero__ImageWrapper">
+                  <div class="ImageHero__Image Image--lazyLoad Image--zoomOut"
+                       data-optimumx="1.4"
+                       data-expand="-150"
+                       {% if poster %}data-bgset="{{ poster }} 750w, {{ poster }} 1000w, {{ poster }} 1500w"{% endif %}
+                       {% if image %}data-bgset="{{ image | img_url: '750x' }} 750w, {{ image | img_url: '1000x' }} 1000w, {{ image | img_url: '1500x' }} 1500w"{% endif %}>
+                  </div>
+
+                  <noscript>
+                    <div class="ImageHero__Image" style="background-image: url({{ poster | img_url: '1500x' }})"></div>
+                  </noscript>
+
+                  {%- unless poster != blank -%}
+                    <div class="PlaceholderBackground" style="opacity: 1">
+                      {%- if poster != blank -%}
+                        {{ 'lifestyle-2' | placeholder_svg_tag: 'PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+                      {%- endif -%}
+                    </div>
+                  {%- endunless -%}
+
+                  <div id="autoplay-video-player-{{ forloop.index }}" class="autoplay-video-player {% unless video.type == 'youtube' %}vimeo-video{% endunless %}"></div>
+                </div>
+
+                <div class="ImageHero__ContentOverlay">
+                  <header class="SectionHeader">
+                    <div class="SectionHeader__IconHolder">
+                      <button type="button" class="Video__PlayButton" aria-label="{{ 'home_page.featured_video.play' | t }}">{% render 'icon' with 'play' %}</button>
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </div>
+
+            {%- if video.type == 'youtube' -%}
+              <script>
+                var tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                var player{{ forloop.index }};
+                function onYouTubeIframeAPIReady() {
+                  player{{ forloop.index }} = new YT.Player('autoplay-video-player-{{ forloop.index }}', {
+                    height: '360',
+                    width: '640',
+                    origin: 'https://potsandpansshop.myshopify.com',
+                    videoId: "{{video.id}}",
+                    playerVars: {
+                      'rel': 0
+                    },
+                    events: {
+                      'onReady': onPlayerReady,
+                    }
+                  });
+                }
+
+                function onPlayerReady(event) {
+                  $('#autoplay-video-section-{{ forloop.index }} .Video__PlayButton').on('click', function (e) {
+                    e.preventDefault();
+                    $('#autoplay-video-section-{{ forloop.index }} .Video__PlayButton').hide();
+                    $('#autoplay-video-section-{{ forloop.index }} #autoplay-video-player-{{ forloop.index }}').css('opacity', 1);
+                    event.target.playVideo();
+                    $('#autoplay-video-section-{{ forloop.index }} .ImageHero__Image').css('opacity', 0);
+                  })
+
+                  {% unless autoplay_false %}
+                  scrollPlayer();
+                  {% endunless %}
+                }
+
+                var videoScrollPlayFirst = true;
+                function scrollPlayer() {
+                  $(window).scroll(function() {
+                    var sectionMiddle = $('#autoplay-video-section-{{ forloop.index }}').offset().top + $('#autoplay-video-section-{{ forloop.index }}').height() / 2;
+                    var windowBottom =$(window).scrollTop() + $(window).height();
+                    var windowWidth = $(window).width();
+
+                    if (windowBottom > sectionMiddle && videoScrollPlayFirst && windowWidth > 640) {
+                      videoScrollPlayFirst = false;
+                      $('#autoplay-video-section-{{ forloop.index }} .Video__PlayButton').hide();
+                      $('#autoplay-video-section-{{ forloop.index }} #autoplay-video-player-{{ forloop.index }}').css('opacity', 1);
+                      player{{ forloop.index }}.mute();
+                      player{{ forloop.index }}.playVideo();
+                      $('#autoplay-video-section-{{ forloop.index }} .ImageHero__Image').css('opacity', 0);
+                    }
+                  })
+                }
+              </script>
+            {%- else -%}
+              <script src="https://player.vimeo.com/api/player.js"></script>
+              <script>
+                var options = {
+                  id: {{ video.id }},
+                  width: 640,
+                  loop: true
+                };
+
+                var player{{ forloop.index }} = new Vimeo.Player('autoplay-video-player-{{ forloop.index }}', options);
+
+                {% unless autoplay_false %}
+                scrollPlayer();
+                {% endunless %}
+
+                $('#autoplay-video-section-{{ forloop.index }} .Video__PlayButton').on('click', function (e) {
+                  e.preventDefault();
+                  $('#autoplay-video-section-{{ forloop.index }} .Video__PlayButton').hide();
+                  $('#autoplay-video-section-{{ forloop.index }} #autoplay-video-player-{{ forloop.index }}').css('opacity', 1);
+                  player{{ forloop.index }}.play();
+                  $('#autoplay-video-section-{{ forloop.index }} .ImageHero__Image').css('opacity', 0);
+                })
+
+                var videoScrollPlayFirst = true;
+                function scrollPlayer() {
+                  $(window).scroll(function() {
+                    var sectionMiddle = $('#autoplay-video-section-{{ forloop.index }}').offset().top + $('#autoplay-video-section-{{ forloop.index }}').height() / 2;
+                    var windowBottom =$(window).scrollTop() + $(window).height();
+                    var windowWidth = $(window).width();
+
+                    if (windowBottom > sectionMiddle && videoScrollPlayFirst && windowWidth > 640) {
+                      videoScrollPlayFirst = false;
+                      $('#autoplay-video-section-{{ forloop.index }} .Video__PlayButton').hide();
+                      $('#autoplay-video-section-{{ forloop.index }} #autoplay-video-player-{{ forloop.index }}').css('opacity', 1);
+                      player{{ forloop.index }}.setVolume(0);
+                      player{{ forloop.index }}.play();
+                      $('#autoplay-video-section-{{ forloop.index }} .ImageHero__Image').css('opacity', 0);
+                    }
+                  })
+                }
+
+              </script>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+
+    {%- endfor -%}
+  {%- endif -%}
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product video",
+  "class": "product-video-section",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "product_video",
+      "name": "Product video",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "product_collection",
+          "label": "Product collection"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product vendor"
+        },
+        {
+          "type": "video_url",
+          "id": "video",
+          "label": "Video",
+          "placeholder": "Vimeo or Youtube",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Video poster"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay_false",
+          "label": "Autoplay off",
+          "default": true
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

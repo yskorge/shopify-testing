@@ -1,0 +1,100 @@
+{%- assign show_section = collection.metafields.collection-carousel.show_section -%}
+{%- assign heading = collection.metafields.collection-carousel.heading -%}
+{%- assign images = collection.metafields.collection-carousel.image -%}
+
+{%- if show_section-%}
+
+  {%- capture flickity_options -%}
+    {
+    "prevNextButtons": true,
+    "pageDots": false,
+    "wrapAround": true,
+    "contain": true,
+    "cellAlign": "center",
+    "watchCSS": true,
+    "dragThreshold": 8,
+    "groupCells": true,
+    "arrowShape": "M 55.5 61 L 28 33.5 L 55.5 6"
+    }
+  {%- endcapture -%}
+
+  {%- capture layout_carousel -%}
+    {
+      "layout": "carousel"
+    }
+  {%- endcapture -%}
+
+
+  <div class="Section Section--spacingNormal"
+           id="section-{{ section.id }}"
+           data-section-id="{{ section.id }}"
+           data-section-type="featured-collections"
+           data-settings='{{ layout_carousel }}'
+           style="order: {{ order }}">
+    {%- if heading != blank -%}
+      <h2 class="master-brand-template__heading">{{ heading }}</h2>
+    {%- endif -%}
+
+    <div class="ProductList ProductList--carousel Carousel section-container" data-flickity-config='{{ flickity_options }}'>
+      {%- for image_arr in images -%}
+        {%- assign image = image_arr[0] -%}
+        {%- assign title = collection.metafields.collection-carousel.title[forloop.index0] -%}
+        {%- assign link = collection.metafields.collection-carousel.link[forloop.index0] -%}
+
+        <div class="Carousel__Cell">
+          <div class="ProductItem {% if use_horizontal %}ProductItem--horizontal{% endif %}">
+            <div class="ProductItem__Wrapper">
+              {%- if settings.product_image_size == 'natural' or use_horizontal -%}
+                {%- assign use_natural_size = true -%}
+              {%- else -%}
+                {%- assign use_natural_size = false -%}
+              {%- endif -%}
+
+              <a href="{{ link }}" class="ProductItem__ImageWrapper">
+
+                {%- assign media_aspect_ratio = image.aspect_ratio -%}
+
+                {%- if use_horizontal -%}
+                  {%- assign max_width = 125 -%}
+                  {%- elsif settings.product_image_size == 'same' -%}
+                  {%- assign max_width = 265 -%}
+                  {%- assign media_aspect_ratio = 1 -%}
+                {%- else -%}
+                  {%- assign max_width = image.width -%}
+                {%- endif -%}
+
+                <div class="AspectRatio AspectRatio--{% if use_natural_size %}withFallback{% else %}{{ settings.product_image_size }}{% endif %}" style="max-width: {{ max_width }}px; {% if use_natural_size %}padding-bottom: {{ 100.0 | divided_by: media_aspect_ratio }}%;{% endif %} --aspect-ratio: {{ media_aspect_ratio }}">
+                  {%- comment -%}
+                    IMPLEMENTATION NOTE: The alternate image (not visible by default) should be the first in the DOM, as the spinner (Image__Loader element) is
+                    displayed based on the immediately previously shown image.
+                  {%- endcomment -%}
+
+                  {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: image -%}{%- endcapture -%}
+                  {%- assign image_url = image.src -%}
+
+                  <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ image.alt | escape }}"">
+                  <span class="Image__Loader"></span>
+
+                  {%- comment -%}
+                  <noscript>
+                    <img class="ProductItem__Image ProductItem__Image--alternate" src="{{ image | img_url: '600x' }}" alt="{{image.alt | escape }}">
+                    <img class="ProductItem__Image" src="{{ image | img_url: '600x' }}" alt="{{ image.alt | escape }}">
+                  </noscript>
+                  {%- endcomment -%}
+                </div>
+              </a>
+
+              {%- if title != blank -%}
+                <div class="ProductItem__Info {% unless use_horizontal %}ProductItem__Info--{{ settings.product_info_alignment }}{% endunless %}">
+                  <h2 class="ProductItem__Title collection-carousel-title">
+                    <a href="{{ link }}">{{ title }}</a>
+                  </h2>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,208 @@
+{%- assign section_heading = section.settings.section_heading -%}
+{%- assign section_heading_color = section.settings.section_heading_color -%}
+{%- assign type_padding_top = section.settings.type_padding_top -%}
+{%- assign type_padding_bottom = section.settings.type_padding_bottom -%}
+{%- assign productVendor = product.vendor | handleize -%}
+
+{%- if section.blocks.size > 0 -%}
+  {%- for block in section.blocks -%}
+    {%- assign vendorFromSection = block.settings.title | default: 'Empty vendor' -%}
+    {%- assign vendorFromSection_handle = vendorFromSection | handleize -%}
+    {%- assign product_collection = block.settings.product_collection -%}
+    {%- assign show_by_collection = false -%}
+    {%- assign show_by_vendor = false -%}
+
+    {%- if product_collection != blank -%}
+      {% for collection in product.collections %}
+        {%- if collection.handle == product_collection -%}
+          {%- assign show_by_collection = true -%}
+        {%- endif -%}
+      {% endfor %}
+    {%- endif -%}
+
+    {% if productVendor == vendorFromSection_handle %}
+      {%- assign show_by_vendor = true -%}
+    {%- endif -%}
+
+    {% if show_by_vendor or show_by_collection %}
+      {%- break -%}
+    {%- endif -%}
+
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if show_by_vendor or show_by_collection -%}
+  {%- if section_heading != blank -%}
+    <h2 class="product-iwt__heading u-h2" style="color: {{ section_heading_color }}">{{ section_heading }}</h2>
+  {%- endif -%}
+
+  <div class="product-vc__wrapper">
+  {%- if section.blocks.size > 0 -%}
+    {%- for block in section.blocks -%}
+      {%- assign image = block.settings.image -%}
+      {%- assign image_link = block.settings.image_link -%}
+      {%- assign text_block_bg = block.settings.text_block_bg -%}
+      {%- assign text_color = block.settings.text_color -%}
+      {%- assign description = block.settings.description -%}
+      {%- assign vendorFromSection = block.settings.title | default: 'Empty vendor' -%}
+      {%- assign vendorFromSection_handle = vendorFromSection | handleize -%}
+      {%- assign product_collection = block.settings.product_collection -%}
+      {%- assign show_by_collection = false -%}
+      {%- assign show_by_vendor = false -%}
+
+      {%- if product_collection != blank -%}
+        {% for collection in product.collections %}
+          {%- if collection.handle == product_collection -%}
+            {%- assign show_by_collection = true -%}
+          {%- endif -%}
+        {% endfor %}
+      {%- endif -%}
+
+      {%- if vendorFromSection_handle == productVendor -%}
+        {%- assign show_by_vendor = true -%}
+      {%- endif -%}
+
+      {% if show_by_vendor or show_by_collection %}
+      <div class="product-vc__card-wrapper" style="color: {{ text_color }}">
+        {%- if image != blank or description != blank -%}
+          {%- if image != blank -%}
+            {%- if image_link != blank -%}
+              <a href="{{ image_link }}" class="product-vc__image-wrapper">
+            {%- else -%}
+              <div class="product-vc__image-wrapper">
+            {%- endif -%}
+            {% render 'image', image: image, %}
+            <noscript>
+              <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
+              <span class="Image__Loader"></span>
+            </noscript>
+
+            {%- if image_link != blank -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+
+          {%- if description != blank -%}
+            <div class="product-vc__content" style="background-color: {{ text_block_bg }}; color: {{ text_color }}">{{ description }}</div>
+          {%- endif -%}
+        {%- endif -%}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  </div>
+
+<style type="text/css">
+  {% if type_padding_top != blank or type_padding_bottom != blank %}
+  .product-vc {
+  {% if type_padding_top != blank %} padding-top: {{ type_padding_top }}px !important;
+  {% endif %}{% if type_padding_bottom != blank %} padding-bottom: {{ type_padding_bottom }}px !important;
+  {% endif %}
+  }
+
+  {% endif %}
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Vendor cards",
+  "class": "Container section-container product-vc",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading"
+    },
+    {
+      "type": "color",
+      "id": "section_heading_color",
+      "label": "Section heading color",
+      "default": "#0d202f"
+    },
+    {
+      "type": "header",
+      "content": "========================"
+    },
+    {
+      "type": "header",
+      "content": "Padding Controls",
+      "info": "padding unit defined in 'px', Don't use 'rem', 'em', 'px', '%' or something else"
+    },
+    {
+      "type": "text",
+      "id": "type_padding_top",
+      "label": "Padding Top"
+    },
+    {
+      "type": "text",
+      "id": "type_padding_bottom",
+      "label": "Padding Bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "vendor_cards",
+      "name": "Vendor cards",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "product_collection",
+          "label": "Product collection"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product vendor"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Image settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Text settings"
+        },
+        {
+          "type": "color",
+          "id": "text_block_bg",
+          "label": "Text block background color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#1c1b1b"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

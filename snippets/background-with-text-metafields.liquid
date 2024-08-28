@@ -1,0 +1,67 @@
+{%- assign show_sections = page.metafields.master-brand.show_section -%}
+
+{%- for show_section in show_sections -%}
+  {%- assign order = page.metafields.master-brand.order[forloop.index0] -%}
+  {%- assign index = forloop.index0 -%}
+  {%- assign mobile_hide = page.metafields.master-brand.mobile_hide[forloop.index0] -%}
+  {%- assign desktop_hide = page.metafields.master-brand.desktop_hide[forloop.index0] -%}
+  {%- assign image = page.metafields.master-brand.image[forloop.index0][0] -%}
+  {%- assign image_mobile = page.metafields.master-brand.image_mobile[forloop.index0][0] -%}
+  {%- assign block_position = page.metafields.master-brand.text_block_position[forloop.index0] -%}
+  {%- assign block_text_align_desk = page.metafields.master-brand.text_align_desktop[forloop.index0] -%}
+  {%- assign block_text_align_mobile = page.metafields.master-brand.text_align_mobile[forloop.index0]-%}
+  {%- assign subtitle = page.metafields.master-brand.subheading[forloop.index0] -%}
+  {%- assign title = page.metafields.master-brand.heading[forloop.index0] -%}
+  {%- assign logo_image = page.metafields.master-brand.image_logo[forloop.index0][0] -%}
+  {%- assign content = page.metafields.master-brand.text[forloop.index0] -%}
+  {%- assign button_label = page.metafields.master-brand.button_label[forloop.index0] -%}
+  {%- assign button_link = page.metafields.master-brand.button_link[forloop.index0] -%}
+  {%- assign show_parallax = page.metafields.master-brand.show_parallax[forloop.index0] -%}
+  {%- assign full_height = page.metafields.master-brand.section_height[forloop.index0] -%}
+  {%- assign large_size = page.metafields.master-brand.large_heading_size[forloop.index0] -%}
+  {%- assign top_margin = page.metafields.master-brand.top_padding[forloop.index0] -%}
+  {%- assign bottom_margin = page.metafields.master-brand.bottom_padding[forloop.index0] -%}
+
+  {%- if block_text_align_desk == 'center' -%}
+    {%- assign block_text_align_desk = 'text-align--desktop--center' -%}
+  {%- elsif block_text_align_desk == 'right' -%}
+    {%- assign block_text_align_desk = 'text-align--desktop--right' -%}
+  {%- else -%}
+    {%- assign block_text_align_desk = 'text-align--desktop--left' -%}
+  {%- endif -%}
+
+  {%- if block_text_align_mobile == 'center' -%}
+    {%- assign block_text_align_mobile = 'text-align--mobile--center' -%}
+  {%- elsif block_text_align_mobile == 'right' -%}
+    {%- assign block_text_align_mobile = 'text-align--mobile--right' -%}
+  {%- else -%}
+    {%- assign block_text_align_mobile = 'text-align--mobile--left' -%}
+  {%- endif -%}
+
+  {%- if show_section != blank -%}
+    {% render 'iwt-hero-block-metafields',
+      order: order, index: index, mobile_hide: mobile_hide, desktop_hide: desktop_hide, image: image, image_mobile: image_mobile,
+      block_position: block_position, block_text_align_desk: block_text_align_desk, block_text_align_mobile: block_text_align_mobile,
+      subtitle: subtitle, title: title, logo_image: logo_image, content: content, button_label: button_label, button_link: button_link,
+      show_parallax: show_parallax, full_height: full_height, large_size: large_size, bottom_margin: bottom_margin, top_margin: top_margin %}
+  {%- endif -%}
+
+  {%- if mobile_hide == 'true' -%}
+    <style>
+      @media screen and (max-width: 640px) {
+        #section-{{ section.id }}-{{ index }} {
+          display: none !important;
+        }
+      }
+    </style>
+  {%- endif -%}
+  {%- if desktop_hide == 'true' -%}
+    <style>
+      @media screen and (min-width: 641px) {
+        #section-{{ section.id }}-{{ index }} {
+          display: none !important;
+        }
+      }
+    </style>
+  {%- endif -%}
+{%- endfor -%}

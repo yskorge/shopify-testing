@@ -1,0 +1,166 @@
+{%- comment -%}
+  {% render 'autoplay-video-metafields', video_url: video_url, image_url: image_url, autoplay_false: autoplay_false  %}
+{%- endcomment -%}
+
+{%- if video_url != blank and video_url contains 'youtu' or video_url contains 'vimeo' -%}
+
+  {%- if video_url contains 'youtu' -%}
+    {% if video_url contains 'v=' %}
+      {% assign video_id = video_url | split: 'v=' %}
+    {% else %}
+      {% assign video_id = video_url | split: 'youtu.be/' %}
+    {% endif %}
+
+    {%- if image_url ==  blank -%}
+      {%- assign image_url = 'http://img.youtube.com/vi/' | append: video_id[1] | append: '/maxresdefault.jpg'-%}
+    {%- endif -%}
+  {%- else -%}
+    {% assign video_id = video_url | split: 'vimeo.com/' | last %}
+    {%- if image_url ==  blank -%}
+      <script type="text/javascript">
+        $.getJSON('https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/' + {{ video_id }}, {
+              format: "json",
+              width: "640"
+            },
+            function(data) {
+              console.log(data)
+              $('.PlaceholderBackground').append('<img src="' + data.thumbnail_url + '" class="PlaceholderBackground__Svg" alt="Vimeo video poster"/>');
+            });
+      </script>
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="Section" id="autoplay-video-section" {% if order != blank %} style="order: {{ order }} {% endif %}" style="padding: 30px 0">
+    <div class="FlexboxIeFix">
+
+      <div class="ImageHero ImageHero--autoplay-video ImageHero--adaptive">
+        <div class="ImageHero__ImageWrapper">
+          <div class="ImageHero__Image Image--lazyLoad Image--zoomOut"
+               data-optimumx="1.4"
+               data-expand="-150"
+               {% if image_url %}data-bgset="{{ image_url }} 750w, {{ image_url }} 1000w, {{ image_url }} 1500w"{% endif %}>
+          </div>
+
+          <noscript>
+            <div class="ImageHero__Image" style="background-image: url({{ image_url }})"></div>
+          </noscript>
+
+          {%- unless image_url != blank -%}
+            <div class="PlaceholderBackground" style="opacity: 1"></div>
+          {%- endunless -%}
+
+          <div id="autoplay-video-player" {% unless video_url contains 'youtu' %}class="vimeo-video"{% endunless %}></div>
+        </div>
+
+        <div class="ImageHero__ContentOverlay">
+          <header class="SectionHeader">
+            <div class="SectionHeader__IconHolder">
+              <button type="button" class="Video__PlayButton" aria-label="{{ 'home_page.featured_video.play' | t }}">{% render 'icon' with 'play' %}</button>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+
+    {%- if video_url contains 'youtu' -%}
+      <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('autoplay-video-player', {
+            height: '360',
+            width: '640',
+            origin: 'https://potsandpansshop.myshopify.com',
+            videoId: "{{video_id[1]}}",
+            playerVars: {
+              'rel': 0
+            },
+            events: {
+              'onReady': onPlayerReady,
+            }
+          });
+        }
+
+        function onPlayerReady(event) {
+          $('.Video__PlayButton').on('click', function (e) {
+            e.preventDefault();
+            $('.Video__PlayButton').hide();
+            $('#autoplay-video-player').css('opacity', 1);
+            event.target.playVideo();
+            $('#autoplay-video-section .ImageHero__Image').css('opacity', 0);
+          })
+
+          {% if autoplay_false != 'true' %}
+          scrollPlayer();
+          {% endif %}
+        }
+
+        var videoScrollPlayFirst = true;
+        function scrollPlayer() {
+          $(window).scroll(function() {
+            var sectionMiddle = $('#autoplay-video-section').offset().top + $('#autoplay-video-section').height() / 2;
+            var windowBottom =$(window).scrollTop() + $(window).height();
+            var windowWidth = $(window).width();
+
+            if (windowBottom > sectionMiddle && videoScrollPlayFirst && windowWidth > 640) {
+              videoScrollPlayFirst = false;
+              $('.Video__PlayButton').hide();
+              $('#autoplay-video-player').css('opacity', 1);
+              player.mute();
+              player.playVideo();
+              $('#autoplay-video-section .ImageHero__Image').css('opacity', 0);
+            }
+          })
+        }
+      </script>
+    {%- else -%}
+      <script src="https://player.vimeo.com/api/player.js"></script>
+      <script>
+        var options = {
+          id: {{ video_id }},
+          width: 640,
+          loop: true
+        };
+
+        var player = new Vimeo.Player('autoplay-video-player', options);
+
+        {% if autoplay_false != 'true' %}
+        scrollPlayer();
+        {% endif %}
+
+        $('.Video__PlayButton').on('click', function (e) {
+          e.preventDefault();
+          $('.Video__PlayButton').hide();
+          $('#autoplay-video-player').css('opacity', 1);
+          player.play();
+          $('#autoplay-video-section .ImageHero__Image').css('opacity', 0);
+        })
+
+        var videoScrollPlayFirst = true;
+        function scrollPlayer() {
+          $(window).scroll(function() {
+            var sectionMiddle = $('#autoplay-video-section').offset().top + $('#autoplay-video-section').height() / 2;
+            var windowBottom =$(window).scrollTop() + $(window).height();
+            var windowWidth = $(window).width();
+
+            if (windowBottom > sectionMiddle && videoScrollPlayFirst && windowWidth > 640) {
+              videoScrollPlayFirst = false;
+              $('.Video__PlayButton').hide();
+              $('#autoplay-video-player').css('opacity', 1);
+              player.setVolume(0);
+              player.play();
+              $('#autoplay-video-section .ImageHero__Image').css('opacity', 0);
+            }
+          })
+        }
+
+      </script>
+    {%- endif -%}
+
+  </div>
+
+{%- endif -%}

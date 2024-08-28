@@ -1,0 +1,30 @@
+{% comment %}
+<label for="paginateBy" hidden>Paginate By</label>
+<select name="paginateBy" id="paginateBySelect">
+{%- assign paginationAmounts = '12,24,36' | split:',' -%}
+  {% for i in paginationAmounts %}
+    {% assign v = i | append:'' %}
+    <option value="{{ v }}"{% if cart.attributes.pagination != blank and cart.attributes.pagination %}{% if cart.attributes.pagination == v %} selected{% endif %}{% else %}{% if i == 12 %} selected{% endif %}{% endif %}>{{ i }} per page</option>
+  {% endfor %}
+</select>
+{% endcomment %}
+
+<div id="dynamic-pagination" class="Popover" aria-hidden="true">
+    <header class="Popover__Header">
+        <button class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% render 'icon' with 'close' %}</button>
+        <span class="Popover__Title Heading u-h4">{{ 'collection.sorting.title' | t }}</span>
+    </header>
+
+    <div class="Popover__Content">
+        <div class="Popover__ValueList" data-scrollable>
+            {%- assign paginationAmounts = '12,24,36' | split:',' -%}
+            {% for i in paginationAmounts %}
+                {% assign v = i | append:'' %}
+                <button data-value="{{ v }}"
+                        data-action="select-value"
+                        class="Popover__Value Heading Link Link--primary u-h6 {% if cart.attributes.pagination != blank and cart.attributes.pagination %}{% if cart.attributes.pagination == v %} is-selected{% endif %}{% else %}{% if i == 12 %} is-selected{% endif %}{% endif %}">{{ i }} per page
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+</div>

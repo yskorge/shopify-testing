@@ -1,0 +1,56 @@
+{%- assign meta_value = product.metafields.accentuate.product_value -%}
+
+<div class="ProductMeta">
+
+  {%- if show_breadcrumbs -%}
+    {% render 'breadcrumbs' %}
+  {%- endif -%}
+
+  {%- if section.settings.show_vendor and product.vendor != blank -%}
+    <div class="ProductMeta__Vendor">
+      {%- assign vendor_handle = product.vendor | handle -%}
+      {%- assign collection_for_vendor = collections[vendor_handle] -%}
+
+      {%- unless collection_for_vendor.empty? -%}
+        <a href="{{ collection_for_vendor.url }}">{{ product.vendor }}</a>
+        {%- else -%}
+        {{- product.vendor -}}
+      {%- endunless -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.show_sku and product.selected_or_first_available_variant.sku != blank -%}
+    <p class="ProductMeta__Sku Heading Text--subdued u-h6">{{ 'product.form.sku' | t }}: <span class="ProductMeta__SkuNumber">{{ product.selected_or_first_available_variant.sku }}</span></p>
+  {%- endif -%}
+
+  <h1 class="ProductMeta__Title Heading">
+    {%- if template.name == 'product' -%}
+      {{- product.title -}}
+    {%- else -%}
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    {%- endif -%}
+  </h1>
+
+  <div class="product-price-with-rating">
+    {%- if product.template_suffix != 'coming-soon' -%}
+      <div class="ProductMeta__PriceList Heading">
+        {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+          <span class="ProductMeta__Price Price  Price--highlight Price--compareAt Text--subdued u-h4">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</span>
+          <span class="ProductMeta__Price Price Text--subdued u-h4">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+        {%- else -%}
+          <span class="ProductMeta__Price Price Text--subdued u-h4">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+        {%- endif -%}
+
+        {%- if meta_value != blank -%}
+          <div class="ProductMeta__MetaValue">
+            {{ meta_value }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {% comment %} <p class="curbside_pickup" style="{% if section.settings.curbside_uppercase %}text-transform:uppercase;{% endif %}color:red;font-weight:bold;text-align:right;font-size:{{section.settings.curbside_font_size}};float:right;{% if product.selected_or_first_available_variant.metafields.accentuate.outlet_sale == blank %}display:none;{% endif %}">Curbside Pickup Available Nov. 12-21*</p> {% endcomment %}
+    {% render 'bv-summary', product: product %}
+  </div>
+
+  <!--div class="ProductMeta__Description"></div-->
+</div>

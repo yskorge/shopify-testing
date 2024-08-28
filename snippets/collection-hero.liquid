@@ -1,0 +1,60 @@
+{%- assign show_section = collection.metafields.collection-hero.show_section -%}
+
+{%- if show_section -%}
+  {%- assign mobile_hide = collection.metafields.collection-hero.mobile_hide -%}
+  {%- assign desktop_hide = collection.metafields.collection-hero.desktop_hide -%}
+  {%- assign image = collection.metafields.collection-hero.image[0] -%}
+  {%- assign image_mobile = collection.metafields.collection-hero.image_mobile[0] -%}
+  {%- assign block_position = collection.metafields.collection-hero.text_block_position -%}
+  {%- assign block_text_align_desk = collection.metafields.collection-hero.text_align_desktop -%}
+  {%- assign block_text_align_mobile = collection.metafields.collection-hero.text_align_mobile-%}
+  {%- assign subtitle = collection.metafields.collection-hero.subheading -%}
+  {%- assign title = collection.metafields.collection-hero.heading -%}
+  {%- assign content = collection.metafields.collection-hero.text -%}
+  {%- assign button_label = collection.metafields.collection-hero.button_label -%}
+  {%- assign button_link = collection.metafields.collection-hero.button_link -%}
+  {%- assign show_parallax = collection.metafields.collection-hero.show_parallax -%}
+  {%- assign full_height = collection.metafields.collection-hero.section_height -%}
+  {%- assign large_size = true -%}
+
+  {%- if block_text_align_desk == 'center' -%}
+    {%- assign block_text_align_desk = 'text-align--desktop--center' -%}
+    {%- elsif block_text_align_desk == 'right' -%}
+    {%- assign block_text_align_desk = 'text-align--desktop--right' -%}
+  {%- else -%}
+    {%- assign block_text_align_desk = 'text-align--desktop--left' -%}
+  {%- endif -%}
+
+  {%- if block_text_align_mobile == 'center' -%}
+    {%- assign block_text_align_mobile = 'text-align--mobile--center' -%}
+    {%- elsif block_text_align_mobile == 'right' -%}
+    {%- assign block_text_align_mobile = 'text-align--mobile--right' -%}
+  {%- else -%}
+    {%- assign block_text_align_mobile = 'text-align--mobile--left' -%}
+  {%- endif -%}
+
+  {% render 'iwt-hero-block-metafields',
+    mobile_hide: mobile_hide, desktop_hide: desktop_hide, image: image, image_mobile: image_mobile,
+    block_position: block_position, block_text_align_desk: block_text_align_desk, block_text_align_mobile: block_text_align_mobile,
+    subtitle: subtitle, title: title, content: content, button_label: button_label, button_link: button_link,
+    show_parallax: show_parallax, full_height: full_height, large_size: large_size %}
+
+  {%- if mobile_hide == 'true' -%}
+    <style>
+      @media screen and (max-width: 640px) {
+        #section-{{ section.id }}-{{ index }} {
+          display: none !important;
+        }
+      }
+    </style>
+  {%- endif -%}
+  {%- if desktop_hide == 'true' -%}
+    <style>
+      @media screen and (min-width: 641px) {
+        #section-{{ section.id }}-{{ index }} {
+          display: none !important;
+        }
+      }
+    </style>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,236 @@
+{% assign enable_gwt = product.metafields.product_qwt.enable_section %}
+{% if enable_gwt %}
+{%- assign heading_color = product.metafields.product_qwt.section_heading_color | default: '#161515' -%}
+{%- assign text_block_bg = product.metafields.product_qwt.text_block_backgroung_color | default: '#FFFFFF' -%}
+{%- assign text_color = product.metafields.product_qwt.text_color | default: '#161515' -%}
+    {% render 'product-gif-text-metafield',
+      enable_section: product.metafields.product_qwt.enable_section,
+      section_heading: product.metafields.product_qwt.section_heading,
+      section_heading_desktop_fs: product.metafields.product_qwt.section_heading_desktop_font_s,
+      section_heading_mobile_fs: product.metafields.product_qwt.section_heading_mobile_font_s,
+      heading_color: heading_color,
+      twi_revers: product.metafields.product_qwt.image_reverse,
+      text_align_center: product.metafields.product_qwt.text_align_center,
+      type_padding_top: product.metafields.product_qwt.section_padding_top,
+      type_padding_bottom: product.metafields.product_qwt.section_padding_bottom,
+      image: product.metafields.product_qwt.image[0],
+      image_mobile: product.metafields.product_qwt.image_mobile[0],
+      image_link: product.metafields.product_qwt.image_link,
+      text_block_bg: text_block_bg,
+      text_color: text_color,
+      heading: product.metafields.product_qwt.heading_iwt,
+      description: product.metafields.product_qwt.description_iwt %}
+{% else %}
+  {%- if section.blocks.size > 0 -%}
+    {%- for block in section.blocks -%}
+      {%- assign section_heading = block.settings.section_heading -%}
+      {%- assign section_heading_color = block.settings.section_heading_color -%}
+      {%- assign twi_layout = block.settings.twi_layout -%}
+      {%- assign type_padding_top = block.settings.type_padding_top -%}
+      {%- assign type_padding_bottom= block.settings.type_padding_bottom -%}
+      {%- assign image = block.settings.image -%}
+      {%- assign image_mobile = block.settings.image_mobile -%}
+      {%- assign image_link = block.settings.image_link -%}
+      {%- assign text_block_bg = block.settings.text_block_bg -%}
+      {%- assign text_color = block.settings.text_color -%}
+      {%- assign heading = block.settings.title -%}
+      {%- assign description = block.settings.description -%}
+      {%- assign productVendor = product.vendor | handleize -%}
+      {%- assign vendorFromSection = block.settings.heading | handleize -%}
+
+      {% if productVendor == vendorFromSection  %}
+      <div class="Container section-container {{ section.id }}-{{ forloop.index }}" style="color: {{ text_color }}">
+        {%- if section_heading != blank -%}
+          <h2 class="product-iwt__heading Heading u-h2" style="color: {{ section_heading_color }}">{{ section_heading }}</h2>
+        {%- endif -%}
+        {%- if image != blank or heading != blank or description != blank -%}
+        <div class="product-iwt product-iwt-{{ twi_layout }}">
+          {%- if heading != blank or description != blank -%}
+            <div class="product-iwt__content-wrapper" style="background-color: {{ text_block_bg }};">
+              <div class="product-iwt__content-text-block">
+                {%- if heading != blank -%}
+                  <h3 class="product-iwt__content-heading Heading u-h3">{{ heading }}</h3>
+                {%- endif -%}
+                {%- if description != blank -%}
+                  <div class="product-iwt__content-text rte">{{ description }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+
+
+          {%- if image != blank -%}
+            {%- if image_link != blank -%}
+              <a href="{{ image_link }}" class="product-iwt__image-wrapper {% if image_mobile != blank %}product-iwt__image-wrapper--desktop{% endif %}">
+            {%- else -%}
+              <div class="product-iwt__image-wrapper {% if image_mobile != blank %}product-iwt__image-wrapper--desktop{% endif %}">
+            {%- endif -%}
+
+            {% render 'image', image: image, alt: heading %}
+
+            {%- if image_link != blank -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if image_mobile != blank -%}
+            {%- if image_link != blank -%}
+              <a href="{{ image_link }}" class="product-iwt__image-wrapper product-iwt__image-wrapper--mobile">
+            {%- else -%}
+              <div class="product-iwt__image-wrapper product-iwt__image-wrapper--mobile">
+            {%- endif -%}
+
+            {% render 'image', image: image_mobile, alt: heading %}
+
+            {%- if image_link != blank -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+          </div>
+        {%- endif -%}
+        </div>
+
+        <style type="text/css">
+          {% if type_padding_top != blank or type_padding_bottom != blank %}
+          .{{ section.id }}-{{ forloop.index }} {
+          {% if type_padding_top != blank %}
+              padding-top: {{ type_padding_top }}px;
+          {% endif %}
+          {% if type_padding_bottom != blank %}
+              padding-bottom: {{ type_padding_bottom }}px;
+          {% endif %}
+          }
+          {% endif %}
+        </style>
+      {% endif %}
+
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Gif / Image With Text",
+  "class": "product-image-with-text",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "text_image_block",
+      "name": "Text with gif/image block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_heading",
+          "label": "Section heading"
+        },
+        {
+          "type": "color",
+          "id": "section_heading_color",
+          "label": "Section heading color",
+          "default": "#0d202f"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Product vendor"
+        },
+        {
+          "type": "select",
+          "id": "twi_layout",
+          "label": "Text with gif/image",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left text with right gif/image"
+            },
+            {
+              "value": "right",
+              "label": "Right text with Left gif/image"
+            }
+          ],
+          "default": "left",
+          "info": "Layout text with gif/image"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Padding Controls",
+          "info": "padding unit defined in 'px', Don't use 'rem', 'em', 'px', '%' or something else"
+        },
+        {
+          "type": "text",
+          "id": "type_padding_top",
+          "label": "Padding Top"
+        },
+        {
+          "type": "text",
+          "id": "type_padding_bottom",
+          "label": "Padding Bottom"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Gif / Image settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Gif / Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Gif / Image mobile"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Gif / Image link"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Text settings"
+        },
+        {
+          "type": "color",
+          "id": "text_block_bg",
+          "label": "Text block background color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#0d202f"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

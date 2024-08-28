@@ -1,0 +1,457 @@
+{% render 'shogun-products', content: product %}
+{{product.metafields.shogun.above}}
+{% section 'product-template' %}
+{% section 'product-image-text' %}
+{% section 'product-gif-text' %}
+{% section 'product-video' %}
+{% section 'product-vendor-cards' %}
+{% section 'product-detail-based-on-vendor' %}
+{% section 'product-vendor-blocks' %}
+{% section 'product-recommendations' %}
+{% section 'recently-viewed-products' %}
+{% section 'product-video-gallery' %}
+{% section 'product-reviews' %}
+
+<!-- ab1200 -->
+<div style="text-align: center; padding: 0 20px;">
+  {% assign sku_list_potsandpans = "10785,10754,10745,10742,10770,10380,10771,10781,10758,10751,10773,10784,10295,10128,10757,10767,10759,10783,10762,10382,10763,10746,10779,10753,10747,10129,10772,10755,10750,10768,10743,10748,10766,10761,10780,10769,10756,10752,10764,10765,10775,17652,10693,10381,10744,10776,10130" | split: "," %}
+  
+  {% assign current_sku = product.variants.first.sku %}
+  
+  {% if sku_list_potsandpans contains current_sku %}
+    <p>Cookware, bakeware, and kitchenware products sold on Potsandpans.com are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+    <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Aluminum. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://www.potsandpans.com/pages/product-disclosures">https://www.potsandpans.com/pages/product-disclosures</a>.</p>
+  {% endif %}
+</div>
+
+<div style="text-align: center; padding: 0 20px;">
+{% assign sku_list_potsandpans_2 = "80263,80138,80262,80290,80188,80187,80085,80266,80298,80139,80264,70208,80295,80294,80293,80291,80292,32075,84482,84498,84479,84483,84478,84811,84804,84812,84861,84800,84803,84801,84802,84808,84813-TE02,84805,84807,84809,84810,80204,80207,80203,80129,80126,80123,80121,80122,84862,80193,80120,84863,80128,80192,80206,84806,09385,71023,71019,71014,71010,71012,71008,30004,09328" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_potsandpans_2 contains current_sku %}
+  <p>Cookware, bakeware, and kitchenware products sold on Potsandpans.com are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://www.potsandpans.com/pages/product-disclosures">https://www.potsandpans.com/pages/product-disclosures</a>.</p>
+{% endif %}
+</div>
+
+<div style="text-align: center; padding: 0 20px;">
+{% assign sku_list_potsandpans_3 = "47706,47792,09304" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_potsandpans_3 contains current_sku %}
+  <p>Cookware, bakeware, and kitchenware products sold on Potsandpans.com are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Aluminum, Copper. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://www.potsandpans.com/pages/product-disclosures">https://www.potsandpans.com/pages/product-disclosures</a>.</p>
+{% endif %}
+</div>
+
+<div style="text-align: center; padding: 0 20px;">
+{% assign sku_list_potsandpans_4 = "47892,47686" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_potsandpans_4 contains current_sku %}
+  <p>Cookware, bakeware, and kitchenware products sold on Potsandpans.com are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Aluminum. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://www.potsandpans.com/pages/product-disclosures">https://www.potsandpans.com/pages/product-disclosures</a>.</p>
+{% endif %}
+</div>
+
+
+<!-- anolon -->
+<div style="text-align: center; padding: 0 20px;">
+{% assign sku_list_anolon = "47747,48609,48709,48608,48710,48606,48605,48607,47459" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_anolon contains current_sku %}
+  <p>Anolon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Aluminum. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://anolon.com/pages/product-disclosures">https://anolon.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_anolon_3 = "81112,81134,81111,81116,81133,81122,81115,81113,81121,85116,85137,85132,85128,85126,85129,85127,85112,85131,85115,85113,85125,85135,85122,85111,85121,85130,85120,85118,85119,85133,83890,83863,83655,83862,83660,82854,83498,81890,81958,81887,82286,83629,82031,83865,82825,81888,82029,82074,81922-CE02,81900,82030,83869,83866,82243,82693,84121,84062,83868,84140,83867,82247,83324,83631,83870,84646,84649,81208-TE02,84692,84693,84727,84648,84701,84703,82026,84696,81206-CE02,84650,84699,84642,84724,81202-TE02,84644,84643,84691,84698,84700,84702,84647,84694,84697,84645,84722,84695,84716,84718,84664,84713,84663,84669,84665,84668,84662,84715,84714,84631,84638,84683,84676,81207-TE02,84632,84634,82025,84682,84672,81205-CE02,84687,84636,81201,84685,84679,84726,84681,84633,84728,84637,84678,84677,84635,84686,84639,84688,84680,84654,84708,84652,84658,84710,84707,84653,84711,84709,81203-TE02,84660,84656,84657,84655,84659,84705,84706,84749,84609,84612,84611,84613,84615,84537,84436,03881,84434,84437,31512,31532,84592,84447,84533,84606,84491,84542,84593,84583,84591,84502,84454,81175,81383,81169,81386,81168,81173,81167,81389,81172,85107,85108,85109,85103,85106,85105,81059,84671,84610,84640,83464,84449,84661,84651,81117,89076,89075,09397,05564,05454,09396,05565,05563,09037,09395,09393,09392,05455,09394,81108-TE02,83879,83875,83874,83876,83880,83881,83877,83878,05448,83853,83855,83856,83872,83852,83854,77701,77702,03058,83843,87542,87541,87540,87543,81096,87538,87539,87537,30834,14386,14337,14334,14330,14326,14327,14384,14387,14340,14389-TE02,14328,14343,14338,14336,09475,14331,14342,14348,14385,14399-TE02,09476,14335,14388,14333,14341,14329,14344,14332,82742,82945,82523" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_anolon_3 contains current_sku %}
+  <p>Anolon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://anolon.com/pages/product-disclosures">https://anolon.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_anolon_4 = "52837,48503,54708,54710,59939,54714,54717,54707,54709,54706,54715,54704,47731,54716,48708,47730,54705,59967,46566,48501,57034,57033,48502,59940,57328,52838,59941,46863,46864,57028" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_anolon_4 contains current_sku %}
+  <p>Anolon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) PTFE (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://anolon.com/pages/product-disclosures">https://anolon.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_anolon_5 = "84721,84717,84719,83718,84690,84675" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_anolon_5 contains current_sku %}
+  <p>Anolon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Chromium Compounds. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://anolon.com/pages/product-disclosures">https://anolon.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_anolon_6 = "84605" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_anolon_6 contains current_sku %}
+  <p>Anolon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), PTFE (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://anolon.com/pages/product-disclosures">https://anolon.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_anolon_7 = "57991,54711" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_anolon_7 contains current_sku %}
+  <p>Anolon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) PTFE (PFAS), Aluminum, Copper. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://anolon.com/pages/product-disclosures">https://anolon.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_anolon_8 = "47462" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_anolon_8 contains current_sku %}
+  <p>Anolon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Aluminum, Copper, Manganese. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://anolon.com/pages/product-disclosures">https://anolon.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+<!-- rachael ray -->
+
+{% assign sku_list_99 = "48520,09462,46312,48172,48519,47646,48173,47696,47644,47647,47992,47359,47645" | split: "," %}
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_99 contains current_sku or sku_list_99 contains product.selected_variant.sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  
+  <p>This product contains (Este producto contiene) Melamine, Formaldehyde. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+
+
+
+{% assign sku_list_verbiage_211 = "53184,47813,48451,47181,56603,46236,47643,47553" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_211 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+ 
+  <p>This product contains (Este producto contiene) Melamine, Formaldehyde, o-Phthalic anhydride. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+{% assign sku_list_verbiage_311 = "87657,14782-TE02,14744,14784,14932,14935,14758,14757,14925,14745,14928,14769,14751,14765,14746,14931,14755,14791,14783-TE02,14792,14776,14762,14750,14924,14756,14785,14779-TE02,14790,14743,14780-TE02,14926,14789,14749,14752,14772,14933,14778-TE02,14760,14781-TE02,81182,09704,81181,81177,81178,81183,81179,81176,81180,81184,81185,81131,81157,81128,81123,81156,81160,81161,81154,81124,81126,81152,81151,80180,81132,81153,81129,81125,81127,81130,81155,87632,87633,87631,87635,87659,87658,87630,87643,87642,87641,87644,03578,80089,80090,80091-TE02,80088,70033" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_311 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+
+
+{% assign sku_list_verbiage_411 = "87388,87671,87597,87000,87586,87386,87394,87395,87645,87610,87375,87393,87596,87497,87387,87390,87670,82709" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_411 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Methyl isobutyl ketone, o-xylene, n-Butanol. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+
+{% assign sku_list_verbiage_511 = "01695,01699,14773,14786,14763,14936,14930,14937,14934,14753,14754,14764,14770,14788,14771,14787,14741,14766,14927,14747,14742,14748,14929,09705,14761,14759,14768,12021,12151,12148,12014,12012,12211,12150,12160,12007,12156,12024,12022,12003,12023,12018,12017,12153,12146,12165,11999,12157,12000,12149,16890,16926,16930,16885,16894,16883,16893,16928,16892,16884,16886,16887,03981,11538,17647,15063,18805,14626,17598,15060,17683,17640,17463,19018,18807,18806,15061,11649,17578,19013,19010,17579,14484,19070-TE02,16084,19011,15810,17629,17626,17646,14486,14267,11541,18803,19020,19002,18949,19069-TE02,17506,19019,15062,18801,17648,19009,17642,17649,17641,19125,15066,17659,12946,14558,11647,14483,19012,19021,18802,12090,12086,11948,12087,11945,12089,12088,11953,11946,11958,11947,11952,11964,11959,11962" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_511 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Methyl isobutyl ketone, o-xylene, n-Butanol, Aluminum. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+
+{% assign sku_list_verbiage_611 = "09360,17216-TE02,09353,17214-TE02,09355,17218-TE02,09361,09359,09357" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_611 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Aluminum, Melamine, Formaldehyde. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+
+{% assign sku_list_verbiage_711 = "57814,47964,48295" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_711 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  
+  <p>This product contains (Este producto contiene) Aluminum, Copper. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+{% assign sku_list_verbiage_811 = "56523" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_811 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  
+  <p>This product contains (Este producto contiene) Aluminum. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+{% assign sku_list_rachael_ray_311 = "09360,17216-TE02,09353,17214-TE02,09355,17218-TE02,09361,09359,09357,01695,01699,14773,14786,14763,14936,14930,14937,14934,14753,14754,14764,14770,14788,14771,14787,14741,14766,14927,14742,14748,14929,09705,14761,14759,14768,12021,12151,12148,12014,12012,12211,12150,12160,12007,12156,12024,12022,12003,12023,12018,12017,12153,12146,12165,11999,12157,12000,12149,11998,12167,12159,12013,12155,12020,12009,12154,12002,12213,12162,12004,12163,12161,12166,12005,12152,12164,12214,12016,12144,11997,12015,12145,12006,12212,12147,12158,12011,16801,16807,16342,17215-TE02,16805,16809,17217-TE02,16799,16800,16347,16333,17213-TE02,16288,16344,16346,16348,16806,16783,16328,16339,16802,11944,11950" | split: "," %}
+
+{% assign product_skus = product.variants | map: 'sku' %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_rachael_ray_311 contains current_sku %}
+  <p>Rachael Ray cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Aluminum. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://rachaelray.com/pages/product-disclosures">https://rachaelray.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+
+
+<!-- farberware -->
+
+{% assign sku_list_verbiage_1_new = "17494,17490,17498,10671,10623,10625,10629,12101,01804,12123,10624,13465,13464,13461,13458,13460,13466,13459,13463,13462,13457,10656,10653,10657,10658,10365,10655,10652,10654,10651,13358,13353,13357,13351,80183,09603,10589,10634,10635,10630,10587,10637,02560,02552,02559,02532,02553,02561,01730,02505,01839,04027,04026,22319,22297,22296,22316,22318,22298,22315,22309,22301,22329,22303,22295,22331,22300,22293,22310,22299,02534,22304,22305,22330,22302,22306,22320,22308,22317,22291,22307,22325,22326,21805,20361,21945,21909,21402,21807,21890,21895,21907,21946,22314,21806,21981,21896,22114,21666,21894,21891,22225,22066,22434-TE20,22218,22073,22431-TE20,22074,22064,22082,22063,22081,22062,22436-TE20,22220,22219,22071,22433-TE20,22070,22435-TE20,22075,22069,22065,22072,22432-TE20,22076,13350,13335,13337,13334,13297,22204,22202,22203,21925,21809,21582,21926,21699,21745,09600,09601,09602,12240,12243,12715,12242,12718,12716,12720,12244,12241,12239,12717,12719,22227,22228,21950,21865,22271,21863,22080,16715,16355,16357,16716,16354,16356,16364,22247,21944,22254,22285,21628,22354,22255,22278,22292,22287,21978,22290,16718,22284,22357,22289,22282,20351,22253,22286,22281,22283,21969,22355,12025,22402,22400,22397,22398,22399,22401,22396,22395,22393,22394,13551,13580,13581,13549,13579,13550,13548,13578,13584,13583,13582,13553,13552,22450,22448,22446,22452,22449,22447,22451,21808" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_1_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Aluminum. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_verbiage_2_new = "70017,70018,70139,50049,21949,75655,80142,80140,80141" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_2_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_verbiage_3_new = "70446,70445,48296,46689" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_3_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Aluminum, Copper, Manganese. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_verbiage_4_new = "48499,46406,52108" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_4_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Aluminum, Copper. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_verbiage_5_new = "13361,13360,13359" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_5_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Methyl isobutyl ketone, o-xylene, n-Butanol. For more information on PFAS or chemicals in this product, visit (Para obtener más información sobre PFAS o productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_verbiage_6_new = "70012,70237,76717" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_6_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Methyl isobutyl ketone, o-xylene, n-Butanol. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_verbiage_7_new = "50798,46845" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_7_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Aluminum, Copper, Nickel and Nickel Compounds, Manganese and Manganese Compounds, Chromium Compounds, Phosphorus. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+{% assign sku_list_verbiage_8_new = "57026,46650" | split: "," %}
+
+{% assign current_sku = product.variants.first.sku %}
+
+{% if sku_list_verbiage_8_new contains current_sku %}
+  <p>Farberware cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+  <p>This product contains (Este producto contiene) Nickel and Nickel Compounds, Copper, Manganese and Manganese Compounds, Chromium Compounds, Phosphorus. For more information on chemicals in this product, visit (Para obtener más información sobre productos químicos en este producto, visite) <a href="https://farberwarecookware.com/pages/product-disclosures">https://farberwarecookware.com/pages/product-disclosures</a>.</p>
+{% endif %}
+
+<!-- circulon -->
+
+{% assign skuList199 = "46013,9388,47475,47485,47476,47478,46009,47483,46010,46011,47480,47484,47482,47882,46857,46014,47885,47479,09388,46012,47738,48390,46008,47186,47477,48391,46015,47107,47886,47884,05332,51135,51134,57091,57893,51131,51133,51137,47986,57632,46846,46847,57968,51132" %}
+{% assign skuList299 = "81834,81833,81835,81841,81837,81838,81844,81836,81839,81840,81831,81829,81832,81830,84565,84761,84569,84564,84574,84600,84576,81403,84568,84762,81402,84567,81401,83482,83641,83499,83735,82434,10857,89067,89068,89070,89069,89072,83738,83825,83787,83746,83743,83761,78016,78003,78018,78017,78005,89332,89333,89330-TE19,89330,89317,89400,89334,89401,83948,83905,83908,83903,83911,83907,83906,83912,83909,30014,30012,30017,30052,30015,30016,30013,30054,30053,70582,70583,70065,70584,70066,9460,09460,70054,70055,70051,70053,70239,70057,70052,70056,87380,87381,83483,87378,82999,87382,87376,87502,84559,82770,83534,84630,83525,82767,83526,82768,82769,84562,82765,84561,84560,84571,82766,82895,83484,81410,87533,87528,87536,87530,87532,87534,89071,11628,11630" %}
+{% assign skuList399 = "47522,47521,47523" %}
+{% assign skuList499 = "84607,87535" %}
+{% assign skuList599 = "56539,16706,48255,46199,51139,48617" %}
+
+{% assign productSKU = product.variants.first.sku %}
+
+{% if skuList199 contains productSKU %}
+    
+
+    <div class="your-custom-section">
+        <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+    </div>   <div class="your-custom-section">
+        <p>This product contains (Este producto contiene) PTFE (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) <a href="https://circulon.com/pages/product-disclosures" target="_blank">https://circulon.com/pages/product-disclosures</a>.</p>
+    </div>
+{% elsif skuList299 contains productSKU %}
+    
+
+    <div class="your-custom-section">
+       <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+    </div>   <div class="your-custom-section">
+        <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) <a href="https://circulon.com/pages/product-disclosures" target="_blank">https://circulon.com/pages/product-disclosures</a>.</p>
+    </div>
+{% elsif skuList399 contains productSKU %}
+    
+
+    <div class="your-custom-section">
+        <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+    </div>   <div class="your-custom-section">
+        <p>This product contains (Este producto contiene) Aluminum. For more information on chemicals in this product, visit (Para obtener mas informacion sobre productos quimicos en este producto, visite) <a href="https://circulon.com/pages/product-disclosures" target="_blank">https://circulon.com/pages/product-disclosures</a>.</p>
+    </div>
+{% elsif skuList499 contains productSKU %}
+    
+
+    <div class="your-custom-section">
+        <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+    </div>   <div class="your-custom-section">
+        <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), PTFE (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) <a href="https://circulon.com/pages/product-disclosures" target="_blank">https://circulon.com/pages/product-disclosures</a>.</p>
+    </div>
+{% elsif skuList599 contains productSKU %}
+    {% case productSKU %}
+        {% when '56539' %}
+            <div class="your-custom-section">
+                <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+            </div>
+            <div class="your-custom-section">
+                <p>This product contains (Este producto contiene) Aluminum, Copper, Nickel and Nickel Compounds, Manganese and Manganese Compounds, Chromium Compounds, Phosphorus, PTFE (PFAS). For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) <a href="https://circulon.com/pages/product-disclosures" target="_blank">https://circulon.com/pages/product-disclosures</a>.</p>
+            </div>
+        {% when '16706' %}
+                        <div class="your-custom-section">
+                <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+            </div>
+			<div class="your-custom-section">
+                <p>This product contains (Este producto contiene) Fluoropolymer, PTFE, FEP, PFA (PFAS), Aluminum. For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) <a href="https://circulon.com/pages/product-disclosures" target="_blank">https://circulon.com/pages/product-disclosures</a>.</p>
+            </div>
+        {% when '48255' %}
+                        <div class="your-custom-section">
+                <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+            </div>
+			<p>This product contains (Este producto contiene) PTFE (PFAS), Aluminum, Copper, Manganese. For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) https://circulon.com/pages/product-disclosures.</p>
+        {% when '46199' %}
+                        <div class="your-custom-section">
+                <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+            </div>
+			<div class="your-custom-section">
+               <p>This product contains (Este producto contiene) PTFE (PFAS), Aluminum, Copper, Nickel and Nickel Compounds, Manganese and Manganese Compounds, Chromium Compounds, Phosphorus. For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) https://circulon.com/pages/product-disclosures.</p>
+            </div>
+        {% when '51139' %}
+                        <div class="your-custom-section">
+                <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+            </div>
+			<div class="your-custom-section">
+                <p>This product contains (Este producto contiene) PTFE (PFAS), Aluminum, Copper. For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) https://circulon.com/pages/product-disclosures.</p>
+            </div>
+        {% when '48617' %}
+                        <div class="your-custom-section">
+                <p>Circulon cookware, bakeware, and kitchenware products are engineered for performance, versatility, convenience, and safety. Our nonstick coating is manufactured to comply with FDA and EU regulations for food contact safety standards.</p>
+            </div>
+			<div class="your-custom-section">
+                <p>This product contains (Este producto contiene) PTFE (PFAS), Nickel and Nickel Compounds, Copper, Manganese and Manganese Compounds, Chromium Compounds, Phosphorus. For more information on PFAS or chemicals in this product, visit (Para obtener mas informacion sobre PFAS o productos quimicos en este producto, visite) https://circulon.com/pages/product-disclosures.</p>
+            </div>
+    {% endcase %}
+{% endif %}
+</div>
+<!-- ab1200 ends-->
+
+
+
+
+
+
+
+
+
+<script>
+  window.ShopifyXR=window.ShopifyXR||function(){(ShopifyXR.q=ShopifyXR.q||[]).push(arguments)};
+  ShopifyXR('addModels', {{ product.media | where: 'media_type', 'model' | json }});
+</script>
+
+{% comment %} Klaviyo-Shopify Integration {% endcomment %}
+<script text="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+
+<script type="text/javascript">
+      var _learnq = _learnq || [];
+      document.querySelector('.ProductForm__AddToCart').addEventListener('click',function (){
+            _learnq.push(['track', 'Added to Cart', item]);
+      });
+</script>
+
+{{product.metafields.shogun.below}}
+

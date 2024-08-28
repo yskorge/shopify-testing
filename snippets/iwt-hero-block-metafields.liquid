@@ -1,0 +1,69 @@
+<div class="BackgroundHero
+  {% if top_margin != blank %} section-mt {% endif %}
+  {% if bottom_margin != blank %} section-mb {% endif %}
+  {% if full_height == 'Full screen height' %} BackgroundHero--full-height {% endif %}
+    BackgroundHero__Block--{{- block_position -}}"
+    id="section-{{ section.id }}-{{ index }}"
+    style="order: {{ order }};">
+
+    {%- if image != blank -%}
+      <div class="BackgroundHero__ImageWrapper">
+        <div class="BackgroundHero__Image {% if image_mobile != blank %}BackgroundHero__Image--desktop{% endif %} Image--lazyLoad Image--zoomOut {% if show_parallax != blank %}BackgroundHero__Image--parallax{% endif %}"
+             data-optimumx="1.4"
+             data-expand="-150"
+             data-bgset="{{ image.src }} 1500w">
+        </div>
+
+        {%- if image_mobile != blank -%}
+          <div class="BackgroundHero__Image BackgroundHero__Image--mobile Image--lazyLoad Image--zoomOut"
+               data-optimumx="1.4"
+               data-expand="-150"
+               data-bgset="{{ image_mobile.src }} 750w">
+          </div>
+        {%- endif -%}
+
+        <noscript>
+          <div class="BackgroundHero__ImageWrapper" style="background-image: url({{ image.src }})"></div>
+        </noscript>
+      </div>
+    {%- endif -%}
+
+    {%- if title != blank or content != blank or button_label != blank -%}
+      <div class="BackgroundHero__Block {{ block_text_align_desk }} {{ block_text_align_mobile }}">
+
+        {%- if subtitle != blank -%}
+          <span class="BackgroundHero__BlockSubHeading">{{ subtitle | escape }}</span>
+        {%- endif -%}
+
+        {%- if title != blank -%}
+          <h3 class="BackgroundHero__BlockHeading {% if large_size != blank %} large-size {% else %} normal-size {% endif %}">{{ title | escape }}</h3>
+        {%- endif -%}
+
+        {%- if logo_image != blank -%}
+          {% assign logo_image_url = logo_image.src %}
+
+          <img class="BackgroundHero__BlockHeadingLogo Image--lazyLoad"
+               data-src="{{ logo_image_url }}"
+               data-optimumx="1.2"
+               data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+               data-sizes="auto"
+               alt="{{ logo_image.alt}}"
+               />
+
+          <noscript>
+            <img class="BackgroundHero__BlockHeadingLogo" src="{{ logo_image.src }}" alt="{{ logo_image.alt }}">
+          </noscript>
+        {%- endif -%}
+
+        {%- if content != blank -%}
+          <div class="BackgroundHero__BlockContent Rte">
+            {{ content }}
+          </div>
+        {%- endif -%}
+
+        {%- if button_label != blank and button_link != blank -%}
+          <a href="{{ button_link }}" class="BackgroundHero__BlockLink Button Button--primary">{{ button_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>

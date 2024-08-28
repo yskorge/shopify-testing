@@ -1,0 +1,380 @@
+{%- assign share_url = shop.url | append: article.url -%}
+{%- assign twitter_text = article.title -%}
+{%- assign pinterest_description = article.description | strip_html | truncatewords: 15 | url_param_escape -%}
+{%- assign pinterest_image = article.image | img_url: '750x' | prepend: 'https:' -%}
+{%- assign show_breadcrumbs = section.settings.show_breadcrumbs -%}
+
+
+{%- assign article_left_column = article.metafields.accentuate.ingredients -%}
+{%- assign article_right_column = article.metafields.accentuate.directions | remove: 'id="isPasted"' | remove: 'aria-level="1"' -%}
+{%- assign article_author_name = article.metafields.accentuate.article_author_name -%}
+{%- assign article_author_url = article.metafields.accentuate.article_author_page -%}
+{%- assign aditional_notes = article.metafields.accentuate.additional_notes -%}
+
+{%- assign description = article.metafields.accentuate.description -%}
+
+{%- assign skill_level = article.metafields.accentuate.skill_level -%}
+{%- assign cook_time = article.metafields.accentuate.cook_time -%}
+{%- assign ready_time = article.metafields.accentuate.ready_time -%}
+{%- assign prep_time = article.metafields.accentuate.prep_time -%}
+{%- assign course = article.metafields.accentuate.course -%}
+{%- assign cuisine = article.metafields.accentuate.cuisine -%}
+{%- assign yield = article.metafields.accentuate.yield -%}
+
+<article class="Article Article-recipe section-container" data-section-id="{{ section.id }}" data-section-type="article">
+
+  {% render 'breadcrumbs' %}
+
+  {%- if section.settings.show_toolbar -%}
+    <aside class="ArticleToolbar hidden-phone">
+      <div class="ArticleToolbar__Left">
+        <span class="Heading Text--subdued u-h8 hidden-tablet">{{ 'blog.article.now_reading' | t }}</span>
+        <span class="ArticleToolbar__ArticleTitle Heading u-h7">{{ article.title }}</span>
+      </div>
+
+      <div class="ArticleToolbar__Right">
+        {%- if section.settings.show_toolbar_share_buttons -%}
+          <div class="ArticleToolbar__ShareList">
+            <span class="ArticleToolbar__ShareLabel Heading Text--subdued u-h8">{{ 'blog.article.share' | t }}</span>
+
+            <div class="HorizontalList">
+              <a class="HorizontalList__Item Text--subdued Link" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'facebook' -%}</a>
+              <a class="HorizontalList__Item Text--subdued Link" href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener">{%- render 'icon' with 'twitter' -%}</a>
+              <a class="HorizontalList__Item Text--subdued Link" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener">{%- render 'icon' with 'pinterest' -%}</a>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_toolbar_prev_next_buttons and blog.next_article or blog.previous_article -%}
+          <div class="ArticleToolbar__Nav">
+            {%- if blog.next_article -%}
+              <a href="{{ blog.next_article }}" class="ArticleToolbar__NavItem ArticleToolbar__NavItem--next Heading Text--subdued Link u-h8">{% render 'icon' with 'select-arrow-left' %} {{ 'blog.article.previous' | t }}</a>
+            {%- endif -%}
+
+            {%- if blog.previous_article and blog.next_article -%}
+              <span class="ArticleToolbar__NavItemSeparator"></span>
+            {%- endif -%}
+
+            {%- if blog.previous_article -%}
+              <a href="{{ blog.previous_article }}" class="ArticleToolbar__NavItem ArticleToolbar__NavItem--prev Heading Text--subdued Link u-h8">{{ 'blog.article.next' | t }} {% render 'icon' with 'select-arrow-right' %}</a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </aside>
+  {% endif %}
+
+  <header class="Article-recipe__header">
+    <h1 class="Article-recipe__Title">{{ article.title }}</h1>
+
+    {%- if section.settings.show_date -%}
+      <span class="Article-recipe__MetaItem">{{ article.published_at | date: format: 'month_day_year' }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.show_author -%}
+      {%- if article_author_url != blank and article_author_name != blank -%}
+        <a href="/pages/{{ article_author_url }}" class="Article-recipe__Author">By {{ article_author_name }}</a>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if article.image and section.settings.show_article_image -%}
+      <div class="Article-recipe__ImageWrapper" style="background-image: url({{ article.image | img_url: '1x1' }})">
+        <div class="Article-recipe__Image Image--lazyLoad Image--zoomOut"
+             data-optimumx="1.4"
+             data-bgset="{{ article.image | img_url: '400x' }} 400w, {{ article.image | img_url: '600x' }} 600w, {{ article.image | img_url: '800x' }} 800w, {{ article.image | img_url: '1200x' }} 1200w, {{ article.image | img_url: '1400x' }} 1400w, {{ article.image | img_url: '1600x' }} 1600w">
+        </div>
+
+        <noscript>
+          <div class="Article-recipe__Image" style="background-image: url({{ article.image | img_url: '1000x' }})"></div>
+        </noscript>
+
+      </div>
+    {%- endif -%}
+  </header>
+
+  <div class="Article-recipe__Wrapper">
+    {%- if description != blank -%}
+      <div class="Article-recipe__Body Rte">
+        {{ description }}
+      </div>
+    {%- endif -%}
+
+    <ul class="Article-recipe__Body Rte">
+      {%- if yield != blank -%}
+        <li>
+          <b>Yield:</b>
+          <span>{{ yield }}</span>
+        </li>
+      {%- endif -%}
+
+      {%- if prep_time != blank -%}
+        <li>
+          <b>Prep:</b>
+          <span>{{ prep_time }}</span>
+        </li>
+      {%- endif -%}
+
+      {%- if ready_time != blank -%}
+        <li>
+          <b>Ready In:</b>
+          <span>{{ ready_time }}</span>
+        </li>
+      {%- endif -%}
+
+      {%- if cook_time != blank -%}
+        <li>
+          <b>Cook:</b>
+          <span>{{ cook_time }}</span>
+        </li>
+      {%- endif -%}
+
+      {%- if cuisine != blank -%}
+        <li>
+          <b>Cuisine:</b>
+          <span>{{ cuisine }}</span>
+        </li>
+      {%- endif -%}
+
+      {%- if course != blank -%}
+        <li>
+          <b>Course:</b>
+          <span>{{ course }}</span>
+        </li>
+      {%- endif -%}
+
+      {%- if skill_level != blank -%}
+        <li>
+          <b>Skill Level:</b>
+          <span>{{ skill_level }}</span>
+        </li>
+      {%- endif -%}
+    </ul>
+
+    {%- if aditional_notes != blank -%}
+      <div class="Article-recipe__Body Rte">
+        {{ aditional_notes }}
+      </div>
+    {%- endif -%}
+
+
+    {%- if section.settings.show_button_print and section.settings.button_print_label != blank -%}
+      <div class="Article-recipe__button-wrapper">
+        <a href="javascript:window.print();" class="Button Button--secondary">
+          {{ section.settings.button_print_label }}
+        </a>
+      </div>
+    {%- endif -%}
+
+    {% render 'image-product-carousel-article' %}
+
+    {%- if article_left_column != blank or article_right_column != blank -%}
+      <div class="Article-recipe__column">
+        {%- if article_left_column != blank -%}
+          <div class="article-column">
+            {%- unless article_left_column contains "<h3>INGREDIENTS</h3>"-%}
+            	<h3>INGREDIENTS</h3>
+            {%- endunless -%}
+            {{ article_left_column }}
+          </div>
+        {%- endif -%}
+
+        {%- if article_right_column != blank -%}
+          <div class="article-column">
+            {%- unless article_right_column contains "<h3>DIRECTIONS</h3>"-%}
+            	<h3>DIRECTIONS</h3>
+            {%- endunless -%}
+            {{ article_right_column }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+
+    {%- if blog.comments_enabled? -%}
+      {%- if article.comments_count > 0 -%}
+        <div class="Article__Comments">
+          <span class="Anchor" id="comments"></span>
+
+          <h2 class="Heading u-h1">{{ 'blog.article.comments_count' | t: count: article.comments_count }}</h2>
+
+          <div class="Article__CommentList">
+            {%- paginate article.comments by 25 -%}
+              {%- for comment in article.comments -%}
+                <div class="ArticleComment">
+                  <div class="ArticleComment__Body Rte">
+                    {{ comment.content }}
+                  </div>
+
+                  <div class="ArticleComment__Meta Heading Text--subdued u-h8">
+                    <span class="ArticleComment__Author">{{ comment.author }}</span>
+                    <span class="ArticleComment__Date">{{ comment.created_at | date: format: 'month_day_year' }}</span>
+                  </div>
+                </div>
+              {%- endfor -%}
+
+              {% render 'pagination', paginate: paginate, hash: '#comments' %}
+            {%- endpaginate -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      <div class="Article__CommentFormWrapper">
+        {% if article.comments_count == 0 %}
+          <span class="Anchor" id="comments"></span>
+        {%- endif -%}
+
+        <span class="Anchor" id="comment_form"></span>
+
+        <h2 class="Heading u-h1">{{ 'blog.comments.form_title' | t }}</h2>
+
+        {%- form 'new_comment', article, class: 'Article__CommentForm Form', id: '' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="Form__Alert Alert Alert--success">
+              {%- if blog.moderated? -%}
+                {{- 'blog.comments.success_moderated' | t -}}
+              {%- else -%}
+                {{- 'blog.comments.success' | t -}}
+              {%- endif -%}
+            </p>
+          {%- endif -%}
+
+          {%- if form.errors -%}
+            <div class="Form__Alert Alert Alert--error">
+              <ul class="Alert__ErrorList">
+                {%- for field in form.errors -%}
+                  {%- if field == 'form' -%}
+                    <li class="Alert__ErrorItem">{{ form.errors.messages[field] }}</li>
+                  {%- else -%}
+                    <li class="Alert__ErrorItem"><strong>{{ form.errors.translated_fields[field] }}</strong> {{ form.errors.messages[field] }}</li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+
+          <div class="Form__Group">
+            <div class="Form__Item">
+              <input type="text" class="Form__Input" name="comment[author]" placeholder="{{ 'blog.comments.name_placeholder' | t }}" aria-label="{{ 'blog.comments.name_placeholder' | t }}" value="{{ form.author | escape | default: customer.name }}" required="required">
+              <label class="Form__FloatingLabel">{{ 'blog.comments.name_placeholder' | t }}</label>
+            </div>
+
+            <div class="Form__Item">
+              <input type="email" class="Form__Input" name="comment[email]" placeholder="{{ 'blog.comments.email_placeholder' | t }}" aria-label="{{ 'blog.comments.email_placeholder' | t }}" value="{{ form.email | escape | default: customer.email }}" required="required">
+              <label class="Form__FloatingLabel">{{ 'blog.comments.email_placeholder' | t }}</label>
+            </div>
+          </div>
+
+          <div class="Form__Item">
+            <textarea name="comment[body]" rows="6" class="Form__Textarea" placeholder="{{ 'blog.comments.comment_placeholder' | t }}" aria-label="{{ 'blog.comments.comment_placeholder' | t }}" required="required">
+              {{- form.body -}}
+            </textarea>
+
+            <label class="Form__FloatingLabel">{{ 'blog.comments.comment_placeholder' | t }}</label>
+          </div>
+
+          {%- if blog.moderated? -%}
+            <p class="Form__Hint">{{ 'blog.comments.approval_notice' | t }}</p>
+          {%- endif -%}
+
+          <button type="submit" class="Form__Submit Button Button--primary">{{ 'blog.comments.submit' | t }}</button>
+        {%- endform -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.show_prev_next_article and blog.next_article or blog.previous_article -%}
+    <aside class="ArticleNav">
+      <div class="Container Container--narrow">
+        <div class="Grid Grid--m Grid--center">
+          {%- if blog.next_article -%}
+            <div class="Grid__Cell 1/2--tablet-and-up">
+              {%- render 'article-item', article: blog.next_article -%}
+            </div>
+          {%- elsif blog.articles_count > 3 -%}
+            <div class="Grid__Cell 1/2--tablet-and-up">
+              {%- render 'article-item', article: blog.articles.last -%}
+            </div>
+          {%- endif -%}
+
+          {%- if blog.previous_article -%}
+            <div class="Grid__Cell 1/2--tablet-and-up">
+              {%- render 'article-item', article: blog.previous_article -%}
+            </div>
+          {%- elsif blog.articles_count > 3 -%}
+            <div class="Grid__Cell 1/2--tablet-and-up">
+              {%- render 'article-item', article: blog.articles.first -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </aside>
+  {%- endif -%}
+</article>
+
+{% schema %}
+{
+  "name": "Blog post page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_toolbar",
+      "label": "Show toolbar",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_toolbar_share_buttons",
+      "label": "Show toolbar share buttons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_toolbar_prev_next_buttons",
+      "label": "Show toolbar prev/next buttons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_article_image",
+      "label": "Show article image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show article date",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_print",
+      "label": "Show button print",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_print_label",
+      "label": "Button print label",
+      "default": "Print"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_prev_next_article",
+      "label": "Show prev/next articles",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

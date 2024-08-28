@@ -1,0 +1,171 @@
+{%- assign heading = section.settings.heading -%}
+{%- assign show_product_info = section.settings.show_product_info -%}
+{%- assign show_vendor = section.settings.show_vendor -%}
+{%- assign show_color_swatch = section.settings.show_color_swatch -%}
+{%- assign show_labels = section.settings.show_labels -%}
+
+{%- assign mobile_hide = section.settings.mobile_hide -%}
+{%- assign desktop_hide = section.settings.desktop_hide -%}
+{%- assign top_padding_number = section.settings.top_padding_number -%}
+{%- assign bottom_padding_number = section.settings.bottom_padding_number -%}
+
+{%- if top_padding_number != blank -%}
+  <style>
+    #section-{{ section.id }} {
+      padding-top: {{ top_padding_number | append: 'px' }};
+    }
+  </style>
+{%- endif -%}
+
+{%- if bottom_padding_number != blank -%}
+  <style>
+    #section-{{ section.id }} {
+      padding-bottom: {{ bottom_padding_number | append: 'px' }};
+    }
+  </style>
+{%- endif -%}
+
+{%- if mobile_hide -%}
+  <style>
+    @media screen and (max-width: 640px) {
+      #section-{{ section.id }} {
+        display: none !important;
+      }
+    }
+  </style>
+{%- endif -%}
+{%- if desktop_hide -%}
+  <style>
+    @media screen and (min-width: 641px) {
+      #section-{{ section.id }} {
+        display: none !important;
+      }
+    }
+  </style>
+{%- endif -%}
+
+{%- capture flickity_options -%}
+  {
+  "prevNextButtons": true,
+  "pageDots": false,
+  "wrapAround": true,
+  "contain": true,
+  "cellAlign": "center",
+  "watchCSS": true,
+  "dragThreshold": 8,
+  "groupCells": true,
+  "arrowShape": "M 55.5 61 L 28 33.5 L 55.5 6"
+  }
+{%- endcapture -%}
+
+  {%- capture layout_carousel -%}
+    {
+    "layout": "carousel"
+    }
+  {%- endcapture -%}
+
+
+<section class="Section Section--spacingNormal"
+         id="section-{{ section.id }}"
+         data-section-id="{{ section.id }}"
+         data-section-type="featured-collections"
+         data-settings='{{ layout_carousel }}'
+         style="order: {{ order }}">
+  {%- if heading != blank -%}
+    <h2 class="master-brand-template__heading">{{ heading }}</h2>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="ProductList ProductList--carousel Carousel section-container " role="presentation" data-flickity-config='{{ flickity_options }}'>
+      {%- for block in section.blocks -%}
+        {%- assign product = all_products[block.settings.product] -%}
+
+        {%- if product != blank -%}
+          <div class="Carousel__Cell">
+            {%- render 'product-item', product: product, show_product_info: show_product_info, show_vendor: show_vendor, show_color_swatch: show_color_swatch, show_labels: show_labels -%}
+          </div>
+        {%- endif -%}
+
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</section>
+
+{% schema %}
+{
+  "name": "Featured products",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "mobile_hide",
+      "label": "Hide on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_hide",
+      "label": "Hide on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_info",
+      "label": "Show product info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_labels",
+      "label": "Show labels",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_color_swatch",
+      "label": "Show color swatch",
+      "info": "Some colors appear white? [Learn more](http://support.maestrooo.com/article/80-product-uploading-custom-color-for-color-swatch).",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Padding controls",
+      "info": "Padding unit defined in 'px'. Don't use 'rem', 'em', 'px', '%' or something else."
+    },
+    {
+      "type": "text",
+      "id": "top_padding_number",
+      "label": "Top padding"
+    },
+    {
+      "type": "text",
+      "id": "bottom_padding_number",
+      "label": "Bottom padding"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Featured products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,291 @@
+{%- assign tab_names = product.metafields.accentuate.tab_name -%}
+
+{%- if section.settings.show_tabs or show_tabs -%}
+  <div class="Product__Tabs">
+
+    {%- for tab_name in tab_names -%}
+      {%- assign tab_content_order = product.metafields.accentuate.tab_order[forloop.index0] -%}
+      {%- assign tab_content = product.metafields.accentuate.tab_content[forloop.index0] -%}
+
+      {%- if tab_name != blank and tab_content != blank -%}
+        <div class="Collapsible" {% if tab_content_order != blank %} style="order: {{ tab_content_order }}" {% endif %}>
+          <button class="Collapsible__Button" data-action="toggle-collapsible" aria-expanded="false">
+            {{- tab_name -}}
+
+            <span class="Collapsible__Button--chevron">
+              {% render 'icon' with 'chevron-down' %}
+            </span>
+          </button>
+
+          <div class="Collapsible__Inner">
+            <div class="Collapsible__Content">
+              {{- tab_content -}}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+    {%- endfor -%}
+
+    {%- assign hide_description_tab = product.metafields.accentuate.hide_tab_description -%}
+    {%- assign description_tab_order = product.metafields.accentuate.tab_order_description -%}
+    {%- assign hide_description = product.metafields.accentuate.hide_description -%}
+
+    {%- if hide_description_tab == blank -%}
+      <div class="Collapsible" id="description_tab" {% if description_tab_order != blank %} style="order: {{ description_tab_order }}" {% endif %}>
+        <button class="Collapsible__Button" data-action="toggle-collapsible" aria-expanded="false">
+          Description
+
+          <span class="Collapsible__Button--chevron">
+              {% render 'icon' with 'chevron-down' %}
+            </span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            {%- if hide_description == blank -%}
+              {{ product.description | replace: 'data-section-type', 'data-section-type-placeholder' }}
+            {%- endif -%}
+
+            {%- if section.settings.show_sku_tab and product.selected_or_first_available_variant.sku != blank -%}
+              <p class="ProductForm__Sku">
+                <strong>{{ 'product.form.sku' | t }} : </strong>
+                <span class="ProductMeta__SkuNumber">{{ product.selected_or_first_available_variant.sku }}</span></p>
+            {%- endif -%}
+
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- assign hide_materials_tab = product.metafields.accentuate.hide_tab_materials -%}
+    {%- assign materials_tab_order = product.metafields.accentuate.tab_order_materials -%}
+
+    {%- if hide_materials_tab == blank -%}
+      {% capture materials_tab_content %}
+        {% if product.metafields.sf_product_detail_se.base_material !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.base_material %}
+          {% if my_value !=blank %}
+            <p><strong>Base Material: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.blade_construction !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.blade_construction %}
+          {% if my_value !=blank %}
+            <p><strong>Blade Construction: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.blade_material !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.blade_material %}
+          {% if my_value !=blank %}
+            <p><strong>Blade Material: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.materail !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.materail %}
+          {% if my_value !=blank %}
+            <p><strong>Body Material: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.bolster_type !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.bolster_type %}
+          {% if my_value !=blank %}
+            <p><strong>Bolster Type: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+
+        {% if product.metafields.sf_product_detail_se.exterior_finish !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.exterior_finish %}
+          {% if my_value !=blank %}
+            <p><strong>Exterior Finish: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.handles !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.handles %}
+          {% if my_value !=blank %}
+            <p><strong>Handles: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.interior_surface !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.interior_surface %}
+          {% if my_value !=blank %}
+            <p><strong>Interior Surface: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.lid_material !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.lid_material %}
+          {% if my_value !=blank %}
+            <p><strong>Lid Material: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.rolled_edges !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.rolled_edges %}
+          {% if my_value !=blank %}
+            <p><strong>Rolled Edges: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.silicone_grips !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.silicone_grips %}
+          {% if my_value !=blank %}
+            <p><strong>Silicone Grips: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.spout_type !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.spout_type %}
+          {% if my_value !=blank %}
+            <p><strong>Spout Type: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.tang_length !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.tang_length %}
+          {% if my_value !=blank %}
+            <p><strong>Tang Length: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.whistling !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.whistling %}
+          {% if my_value !=blank %}
+            <p><strong>Whistling: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_informati.materials__wire_reinforced !=blank %}
+          {% assign my_value = product.metafields.sf_product_informati.materials__wire_reinforced %}
+          {% if my_value !=blank %}
+            <p><strong>Wire Reinforced: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+      {% endcapture %}
+    {%- endif -%}
+
+    {%- if hide_materials_tab == blank and materials_tab_content != blank -%}
+
+      <div class="Collapsible 1" {% if materials_tab_order != blank %} style="order: {{ materials_tab_order }}" {% endif %}>
+        <button class="Collapsible__Button" data-action="toggle-collapsible" aria-expanded="false">
+          Materials
+
+          <span class="Collapsible__Button--chevron">
+              {% render 'icon' with 'chevron-down' %}
+            </span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+
+            {{ materials_tab_content }}
+
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- assign hide_use_and_care_tab = product.metafields.accentuate.hide_tab_use_and_care -%}
+    {%- assign use_and_care_tab_order = product.metafields.accentuate.tab_order_use_and_care -%}
+
+    {%- if hide_use_and_care_tab == blank -%}
+      {% capture use_and_care_tab_content  %}
+        {% if product.metafields.sf_product_detail_se.dishwasher_safe !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.dishwasher_safe %}
+          {% if my_value !=blank %}
+            <p><strong>Dishwasher Safe: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.freezer_safe !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.freezer_safe %}
+          {% if my_value !=blank %}
+            <p><strong>Freezer Safe: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.heat_safe_temperature !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.heat_safe_temperature %}
+          {% if my_value !=blank %}
+            <p><strong>Heat-safe Temperature: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+
+        {% if product.metafields.sf_product_detail_se.induction_suitable !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.induction_suitable %}
+          {% if my_value !=blank %}
+            <p><strong>Induction Suitable: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.microwave_safe !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.microwave_safe %}
+          {% if my_value !=blank %}
+            <p><strong>Microwave Safe: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.sf_product_detail_se.oven_safe_temperature !=blank %}
+          {% assign my_value = product.metafields.sf_product_detail_se.oven_safe_temperature %}
+          {% if my_value !=blank %}
+            <p><strong>Oven-safe Temperature: </strong><span>{{ my_value }}</span></p>
+          {% endif %}
+        {% endif %}
+      {% endcapture %}
+    {%- endif -%}
+
+    {%- if hide_use_and_care_tab == blank and use_and_care_tab_content != blank -%}
+      <div class="Collapsible 2" {% if use_and_care_tab_order != blank %} style="order: {{ use_and_care_tab_order }}" {% endif %}>
+        <button class="Collapsible__Button" data-action="toggle-collapsible" aria-expanded="false">
+          Use and care
+
+          <span class="Collapsible__Button--chevron">
+              {% render 'icon' with 'chevron-down' %}
+            </span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+
+            {{ use_and_care_tab_content }}
+
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- assign show_warranty_tab = product.metafields.accentuate.show_warranty_care -%}
+    {%- assign hide_warranty_tab = product.metafields.accentuate.hide_warranty_care -%}
+    {%- assign warranty_tab_order = product.metafields.accentuate.tab_warranty_care -%}
+    {% assign my_value = product.metafields.sf_product_detail_se.warranty %}
+
+    {%- if hide_warranty_tab == blank and my_value != blank -%}
+      <div class="Collapsible 3" {% if warranty_tab_order != blank %} style="order: {{ warranty_tab_order }}" {% endif %}>
+        <button class="Collapsible__Button" data-action="toggle-collapsible" aria-expanded="false">
+          Warranty
+
+          <span class="Collapsible__Button--chevron">
+              {% render 'icon' with 'chevron-down' %}
+            </span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+
+            {% if my_value != blank %}
+              <p> {{ my_value }} </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

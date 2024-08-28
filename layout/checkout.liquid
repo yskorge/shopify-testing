@@ -1,0 +1,290 @@
+{% include 'shogun-content-handler' %}
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T5ZP7T9');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- begin Convert Experiences code-->
+    <script type="text/javascript" src="//cdn-4.convertexperiments.com/js/10005941-10007262.js"></script>
+    <!-- end Convert Experiences code -->
+    
+    <style>
+      #address-modal{ 
+        display:none;
+        position: fixed;
+        z-index: 10;
+        padding-top: 100px;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      
+      #modal-content{
+        background-color: rgb(254, 254, 254);
+        border-radius: 20px;
+        margin: auto;
+        padding: 20px 20px 20px;
+        border: 1px solid rgb(136, 136, 136);
+        width: 50%;
+        text-align: center;
+      }
+      
+      span.suggested{
+        color: #a9a7a7;
+        font-weight: 800;
+      }
+      
+      .Button.Button--secondary.Suggested{
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        float: right;
+        border-radius: 20px;
+        background-color: #1c1b1b;
+        color: white;
+      }
+      
+      .Button.Button--secondary.Suggested:hover{
+        background-color: black;
+      }
+      
+      .Button.Button--secondary.Cancel{
+        background-color: #1c1b1b;
+        color: white;
+        padding: 10px 24px;
+        cursor: pointer;
+        float: left;
+      }
+      
+      div#address-modal{
+        font-family : acumin-pro-condensed, sans-serif;
+      }
+      
+      #address-modal-title, #suggested-address-title, #original-address-title{
+        font-weight: bold;
+      }
+       
+      section {
+        display: flex;
+        flex-flow: row wrap;
+      }
+        
+      section>div {
+        flex: 1;
+        padding: 0.5rem;
+      }
+      
+      label.radio-label {
+        height: 100%;
+        display: block;
+        background: white;
+        border: 2px solid #a9a7a7;
+        border-radius: 20px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        box-shadow: 0px 3px 10px -2px hsla(207, 5%, 65%, 0.5);
+        position: relative;
+      }
+      
+      input[type="radio"]:checked+label {
+        background: #a9a7a7;
+        color: hsla(207, 0%, 100%, 1);
+        box-shadow: 0px 0px 20px #a9a7a7;
+      }
+      
+      input[type="radio"]:checked+label span.suggested{
+        color: #1c1b1b;
+      }
+      
+      input[type="radio"]:checked+label ::after {
+        color: hsla(207, 5%, 25%, 1);
+        border: 2px solid hsla(207, 75%, 15%, 1);
+        content: "\2714";
+        font-size: 24px;
+        position: absolute;
+        top: -25px;
+        right: 0%;
+        transform: translateX(-50%);
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0px 2px 5px -2px hsla(0, 0%, 0%, 0.25);
+      }
+      
+      @media only screen and (max-width: 700px) {
+        #address-modal-title, #suggested-address-title, #original-address-title{
+          font-size: 20px;
+        }
+        
+        #address-modal{
+    	  padding-top: 50px;
+        }
+        
+        #modal-content{
+          max-height: 500px;
+          overflow: scroll;
+        }
+        
+        section {
+          flex-direction: column;
+        }
+        
+        input[type="radio"]:checked+label ::after {
+          color: hsla(207, 5%, 25%, 1);
+          border: 2px solid hsla(207, 75%, 15%, 1);
+          content: "\2714";
+          font-size: 16px;
+          position: absolute;
+          top: -15px;
+          right: 0%;
+          transform: translateX(-50%);
+          height: 25px;
+          width: 25px;
+          line-height: 25px;
+          text-align: center;
+          border-radius: 50%;
+          background: white;
+          box-shadow: 0px 2px 5px -2px hsla(0, 0%, 0%, 0.25);
+        }
+      }
+    </style>
+    
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+	{{ 'address-validation.js' | asset_url | script_tag }}
+    
+  
+  <!-- Impact -->
+  <script type="text/javascript"> 
+    (function(a,b,c,d,e,f,g){e['ire_o']=c;e[c]=e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};f=d.createElement(b);g=d.getElementsByTagName(b)[0];f.async=1;f.src=a;g.parentNode.insertBefore(f,g);})('//d.impactradius-event.com/A2405898-e845-4ea5-a61e-120844a751471.js','script','ire',document,window);
+  </script>
+
+  {% render 'shogun-head' %}
+</head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+    {% include 'dataLayer-allPages' %}
+  
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5ZP7T9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Luke - UPS Address Validation -->
+    <div id="address-modal">
+      <div id="modal-content">
+        <h1 id="address-modal-title">Please Select Shipping Address</h1>
+        <p>To ensure prompt and accurate delivery, we suggest a modified shipping address</p>
+        <br>        
+        <section>
+          <div>
+            <div id="suggested-address">
+                <input type="radio" id="suggested-address-radio" name="select" checked />
+                <label class="radio-label" for="suggested-address-radio">
+                  <h2 id="suggested-address-title">Suggested Address</h2>
+                  <span id="suggested-address1" class="original"></span><!--
+    		   --><span id="suggested-address1-fix" class="suggested"></span>
+                  <br>
+                  <span id="suggested-address2" class="original"></span><!--
+    		   --><span id="suggested-address2-fix" class="suggested"></span>
+                  <br>
+                  <span id="suggested-city" class="original"></span><!--
+    		   --><span id="suggested-city-fix"class="suggested"></span>, 
+                  <span id="suggested-state"class="original"></span><!--
+    		   --><span id="suggested-state-fix"class="suggested"></span>
+                  <span id="suggested-zip"class="original"></span><!--
+    		   --><span id="suggested-zip-fix"class="suggested"></span>
+                </label>
+            </div>
+            <!--<hr style="width: 75%;" />-->
+            <div id="original-address">
+                <input type="radio" id="original-address-radio" name="select">
+                <label class="radio-label" for="original-address-radio">
+                  <h2 id="original-address-title">Original Address</h2>
+                  <span id="original-address1"></span>
+                  <br>
+                  <span id="original-address2"></span>
+                  <br>
+                  <span id="original-line"></span>
+                </label>
+            </div>
+            <button id="suggested-button" class="Button Button--secondary Suggested">
+                Continue
+            </button>
+            <!--<button id="cancel-button" class="Button Button--secondary Cancel">
+                Cancel
+            </button>-->
+            <!--<button id="original-button" class="Button Button--secondary Original">
+                Continue with Original Address
+            </button>-->
+          </div>
+        </section>
+	  </div>
+    </div>
+
+    <script>
+        !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://c.amazon-adsystem.com/aat/amzn.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
+        amzn("setRegion", "NA");
+        amzn("addTag", "618f23d3-0643-444a-ae9b-d8e9205a85e8");
+        amzn("trackEvent", "PageView");
+  </script>
+  <noscript>
+    <img src="https://s.amazon-adsystem.com/iu3?pid=618f23d3-0643-444a-ae9b-d8e9205a85e8&event=PageView" width="1" height="1" border="0">
+  </noscript>
+  </body>
+</html>

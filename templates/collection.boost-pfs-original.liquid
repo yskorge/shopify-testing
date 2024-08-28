@@ -1,0 +1,18 @@
+{% render 'shogun-products', content: collection %}
+{{collection.metafields.shogun.above}}
+{% render 'collection-hero' %}
+
+{% render 'image-product-carousel' %}
+
+{% section 'collection-template-boost-pfs-original' %}
+
+{% comment %}
+{% section 'recently-viewed-products' %}
+{% section 'collection-footer' %}
+{% endcomment %}
+
+{{collection.metafields.shogun.below}}
+
+
+{{collection.metafields.accentuate.empty_collection_message}}
+<!-- Rohin -->

@@ -1,0 +1,151 @@
+{%- assign title = section.settings.title -%}
+{%- assign text = section.settings.text -%}
+
+<section class="Section page-shop-by-brand section-container" id="section-{{ section.id }}" data-section-id="{{ section.id }}">
+
+  <h1 class="page-shop-by-brand__heading">
+    {{ title }}
+  </h1>
+
+  {%- if text != blank -%}
+    <p class="page-shop-by-brand__text">
+      {{ text }}
+    </p>
+  {%- endif -%}
+
+  <div class="page-shop-by-brand__items">
+    {%- for block in section.blocks -%}
+      {%- assign image = block.settings.image -%}
+      {%- assign image_mobile = block.settings.image_mobile -%}
+      {%- assign url = block.settings.url -%}
+      {%- assign image_max_width = block.settings.image_max_width -%}
+      {%- assign mobile_image_max_width = block.settings.mobile_image_max_width -%}
+
+      <style>
+        .page-shop-by-brand__item--{{ block.id }} .page-shop-by-brand__image-wrapper {
+          max-width: {{ image_max_width }}px;
+        }
+        @media screen and (max-width: 640px) {
+          .page-shop-by-brand__item--{{ block.id }} .page-shop-by-brand__image-wrapper {
+            max-width: {{ mobile_image_max_width }}px;
+          }
+        }
+      </style>
+
+      {% if url != blank %}
+        <a href="{{ url }}"
+       {% else %}
+        <div
+      {% endif %}class="page-shop-by-brand__item page-shop-by-brand__item--{{ block.id }}">
+
+        <div class="page-shop-by-brand__image-wrapper {% if image_mobile != blank %} desktop {% endif%} AspectRatio AspectRatio--withFallback"
+             style="padding-bottom: {{ 100.0 | divided_by: image.aspect_ratio }}%;
+               --aspect-ratio: {{ image.aspect_ratio }};">
+          {% assign image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+          <img class="page-shop-by-brand__image Image--lazyLoad"
+               data-src="{{ image_url }}"
+               data-optimumx="1.2"
+               data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+               data-sizes="auto"
+               alt="{{ image.alt | escape }}">
+
+          {%- comment -%}
+          <noscript>
+            <img class="page-shop-by-brand__image" src="{{ image | img_url: '1000x' }}" alt="{{ image.alt | escape }}">
+          </noscript>
+          {%- endcomment -%}
+
+        </div>
+
+        {%- if image_mobile != blank -%}
+          <div class="page-shop-by-brand__image-wrapper mobile AspectRatio AspectRatio--withFallback"
+               style="padding-bottom: {{ 100.0 | divided_by: image_mobile.aspect_ratio }}%;
+                 --aspect-ratio: {{ image_mobile.aspect_ratio }};">
+            {% assign image_url = image_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+            <img class="page-shop-by-brand__image Image--lazyLoad"
+                 data-src="{{ image_url }}"
+                 data-optimumx="1.2"
+                 data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                 data-sizes="auto"
+                 alt="{{ image_mobile.alt | escape }}">
+
+            {%- comment -%}
+            <noscript>
+              <img class="page-shop-by-brand__image" src="{{ image_mobile | img_url: '1000x' }}" alt="{{ image.alt | escape }}">
+            </noscript>
+            {%- endcomment -%}
+          </div>
+        {%- endif -%}
+
+      {% if url != blank %}
+        </a>
+      {% else %}
+        </div>
+      {% endif %}
+    {%- endfor -%}
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Images",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        },
+        {
+          "type": "range",
+          "id": "image_max_width",
+          "min": 50,
+          "max": 400,
+          "step": 5,
+          "unit": "px",
+          "label": "Image width",
+          "default": 240
+        },
+        {
+          "type": "range",
+          "id": "mobile_image_max_width",
+          "min": 20,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "label": "Mobile image width",
+          "default": 150
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Button link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

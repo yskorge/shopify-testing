@@ -1,0 +1,326 @@
+{% assign enable_iwt = product.metafields.accentuate.enable_section %}
+{% if enable_iwt %}
+{%- assign heading_color = product.metafields.accentuate.section_heading_color | default: '#161515' -%}
+{%- assign text_block_bg = product.metafields.accentuate.text_block_backgroung_color | default: '#FFFFFF' -%}
+{%- assign text_color = product.metafields.accentuate.text_color | default: '#161515' -%}
+    {% render 'product-image-text-metafield',
+      enable_section: product.metafields.accentuate.enable_section,
+      section_heading: product.metafields.accentuate.section_heading,
+      section_heading_desktop_fs: product.metafields.accentuate.section_heading_desktop_font_s,
+      section_heading_mobile_fs: product.metafields.accentuate.section_heading_mobile_font_s,
+      heading_color: heading_color,
+      twi_revers: product.metafields.accentuate.image_reverse,
+      text_align_center: product.metafields.accentuate.text_align_center,
+      type_padding_top: product.metafields.accentuate.section_padding_top,
+      type_padding_bottom: product.metafields.accentuate.section_padding_bottom,
+      image: product.metafields.accentuate.image_iwt[0],
+      image_mobile: product.metafields.accentuate.image_mobile_iwt[0],
+      image_link: product.metafields.accentuate.image_link,
+      text_block_bg: text_block_bg,
+      text_color: text_color,
+      heading: product.metafields.accentuate.heading_iwt,
+      description: product.metafields.accentuate.description_iwt %}
+{% else %}
+  {%- if section.blocks.size > 0 -%}
+    {%- for block in section.blocks -%}
+      {%- assign section_heading = block.settings.section_heading -%}
+      {%- assign section_heading_color = block.settings.section_heading_color -%}
+      {%- assign section_heading_desktop_fs = block.settings.section_heading_desktop_fs -%}
+      {%- assign section_heading_mobile_fs = block.settings.section_heading_mobile_fs -%}
+      {%- assign twi_layout = block.settings.twi_layout -%}
+      {%- assign text_align_center = block.settings.text_align_center -%}
+      {%- assign type_padding_top = block.settings.type_padding_top -%}
+      {%- assign type_padding_bottom= block.settings.type_padding_bottom -%}
+      {%- assign image = block.settings.image -%}
+      {%- assign image_mobile = block.settings.image_mobile -%}
+      {%- assign image_link = block.settings.image_link -%}
+      {%- assign text_block_bg = block.settings.text_block_bg -%}
+      {%- assign text_color = block.settings.text_color -%}
+      {%- assign heading = block.settings.heading -%}
+      {%- assign description = block.settings.description -%}
+      {%- assign productVendor = product.vendor | handleize  -%}
+      {%- assign vendorFromSection = block.settings.title | default: 'Empty vendor' -%}
+      {%- assign vendorFromSection_handle = vendorFromSection | handleize -%}
+      {%- assign product_collection = block.settings.product_collection -%}
+      {%- assign show_on_collection = false -%}
+      {%- assign show_by_vendor = false -%}
+
+      {%- if vendorFromSection_handle == productVendor -%}
+        {%- assign show_by_vendor = true -%}
+      {%- endif -%}
+
+      {%- if product_collection != blank -%}
+        {% for collection in product.collections %}
+          {%- if collection.handle == product_collection -%}
+            {%- assign show_on_collection = true -%}
+          {%- endif -%}
+        {% endfor %}
+      {%- endif -%}
+
+      {% if show_by_vendor or show_on_collection  %}
+      <div class="Container section-container {{ section.id }}-{{ forloop.index }}" style="color: {{ text_color }}">
+        {%- if section_heading != blank -%}
+          <h2 class="product-iwt__heading Heading u-h2" style="color: {{ section_heading_color }}">{{ section_heading }}</h2>
+        {%- endif -%}
+        {%- if image != blank or heading != blank or description != blank -%}
+        <div class="product-iwt product-iwt-{{ twi_layout }}">
+          {%- if heading != blank or description != blank -%}
+            <div class="product-iwt__content-wrapper" style="background-color: {{ text_block_bg }};">
+              <div class="product-iwt__content-text-block" {% if text_align_center %}style="text-align: center"{% endif %}>
+                {%- if heading != blank -%}
+                  <h3 class="product-iwt__content-heading Heading u-h3">{{ heading }}</h3>
+                {%- endif -%}
+                {%- if description != blank -%}
+                  <div class="product-iwt__content-text">{{ description }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+
+
+          {%- if image != blank -%}
+            {%- if image_link != blank -%}
+              <a href="{{ image_link }}" class="product-iwt__image-wrapper {% if image_mobile != blank %}product-iwt__image-wrapper--desktop{% endif %}">
+            {%- else -%}
+              <div class="product-iwt__image-wrapper {% if image_mobile != blank %}product-iwt__image-wrapper--desktop{% endif %}">
+            {%- endif -%}
+
+            {%- capture supported_sizes -%}
+            {%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: image -%}
+            {%- endcapture -%}
+            {%- assign image_url = image | img_url: 'x800' | replace: '_1x1.' -%}
+
+            <img class="Image--lazyLoad Image--fadeIn"
+                 data-src="{{ image_url }}"
+                 data-expand="-200"
+                 data-widths="[{{ supported_sizes }}]"
+                 data-sizes="auto"
+                 alt="{{ image.alt | escape }}">
+                 <span class="Image__Loader"></span>
+            <noscript>
+              <img src="{{ image | img_url: '1024x' }}" alt="{{ image.alt | escape }}">
+              <span class="Image__Loader"></span>
+            </noscript>
+
+            {%- if image_link != blank -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if image_mobile != blank -%}
+            {%- if image_link != blank -%}
+              <a href="{{ image_link }}" class="product-iwt__image-wrapper product-iwt__image-wrapper--mobile">
+            {%- else -%}
+              <div class="product-iwt__image-wrapper product-iwt__image-wrapper--mobile">
+            {%- endif -%}
+
+            {%- capture supported_sizes -%}
+            {%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: image_mobile -%}
+            {%- endcapture -%}
+            {%- assign image_url = image_mobile | img_url: 'x800' | replace: '_1x1.' -%}
+
+            <img class="Image--lazyLoad Image--fadeIn"
+                 data-src="{{ image_url }}"
+                 data-expand="-200"
+                 data-widths="[{{ supported_sizes }}]"
+                 data-sizes="auto"
+                 alt="{{ image_mobile.alt | escape }}">
+                 <span class="Image__Loader"></span>
+
+            <noscript>
+              <img src="{{ image_mobile | img_url: '1024x' }}" alt="{{ image_mobile.alt | escape }}">
+              <span class="Image__Loader"></span>
+            </noscript>
+
+            {%- if image_link != blank -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+          </div>
+        {%- endif -%}
+        </div>
+
+
+        <style>
+          {% if type_padding_top != blank or type_padding_bottom != blank %}
+          .{{ section.id }}-{{ forloop.index }} {
+          {% if type_padding_top != blank %}
+              padding-top: {{ type_padding_top }}px !important;
+          {% endif %}
+          {% if type_padding_bottom != blank %}
+              padding-bottom: {{ type_padding_bottom }}px !important;
+          {% endif %}
+          }
+          {% endif %}
+
+          {% if section_heading_desktop_fs != blank or section_heading_mobile_fs != blank %}
+            {% if section_heading_desktop_fs != blank %}
+              @media screen and (min-width: 641px) {
+                .{{ section.id }}-{{ forloop.index }} .product-iwt__heading {
+                  font-size: {{ section_heading_desktop_fs }}px;
+                }
+              }
+            {% endif %}
+            {% if section_heading_mobile_fs != blank %}
+              @media screen and (max-width: 640px) {
+                .{{ section.id }}-{{ forloop.index }} .product-iwt__heading {
+                  font-size: {{ section_heading_mobile_fs }}px;
+                }
+              }
+            {% endif %}
+          {% endif %}
+        </style>
+      {% endif %}
+
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Image With Text",
+  "class": "product-image-with-text",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "text_image_block",
+      "name": "Text with image block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_heading",
+          "label": "Section heading"
+        },
+        {
+          "type": "color",
+          "id": "section_heading_color",
+          "label": "Section heading color",
+          "default": "#161515"
+        },
+        {
+          "type": "text",
+          "id": "section_heading_desktop_fs",
+          "label": "Section heading desktop font size",
+          "info": "Unit defined in 'px', Don't use 'rem', 'em', 'px', '%' or something else"
+        },
+        {
+          "type": "text",
+          "id": "section_heading_mobile_fs",
+          "label": "Section heading mobile font size",
+          "info": "Unit defined in 'px', Don't use 'rem', 'em', 'px', '%' or something else"
+        },
+        {
+          "type": "collection",
+          "id": "product_collection",
+          "label": "Product collection"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product vendor"
+        },
+        {
+          "type": "select",
+          "id": "twi_layout",
+          "label": "Text with image",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left text with right image"
+            },
+            {
+              "value": "right",
+              "label": "Right text with Left image"
+            }
+          ],
+          "default": "left",
+          "info": "Layout text with image "
+        },
+        {
+          "type": "checkbox",
+          "id": "text_align_center",
+          "label": "Text align center"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Padding Controls",
+          "info": "padding unit defined in 'px', Don't use 'rem', 'em', 'px', '%' or something else"
+        },
+        {
+          "type": "text",
+          "id": "type_padding_top",
+          "label": "Padding Top"
+        },
+        {
+          "type": "text",
+          "id": "type_padding_bottom",
+          "label": "Padding Bottom"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Image settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link"
+        },
+        {
+          "type": "header",
+          "content": "========================"
+        },
+        {
+          "type": "header",
+          "content": "Text settings"
+        },
+        {
+          "type": "color",
+          "id": "text_block_bg",
+          "label": "Text block background color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#161515"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

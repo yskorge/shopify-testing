@@ -1,0 +1,90 @@
+{%- assign show_sections = page.metafields.master-brand-4.show_section -%}
+
+{%- for show_section in show_sections -%}
+  {%- if show_section != blank -%}
+
+  {%- assign order = page.metafields.master-brand-4.order[forloop.index0] -%}
+  {%- assign heading = page.metafields.master-brand-4.section_heading[forloop.index0] -%}
+  {%- assign collection = collections[page.metafields.master-brand-4.collection[forloop.index0]] -%}
+  {%- assign products = page.metafields.master-brand-4.product[forloop.index0] | split: '|' -%}
+  {%- assign for_products = collection.products | default: products -%}
+
+  {%- assign show_product_info = true -%}
+  {%- if page.metafields.master-brand-4.hide_product_information[forloop.index0] == 'true' -%}
+    {%- assign show_product_info = false -%}
+  {%- endif -%}
+
+  {%- assign show_vendor = true -%}
+  {%- if page.metafields.master-brand-4.hide_vendor[forloop.index0] == 'true' -%}
+    {%- assign show_vendor = false -%}
+  {%- endif -%}
+
+  {%- assign show_color_swatch = true -%}
+  {%- if page.metafields.master-brand-4.hide_color_swatch[forloop.index0] == 'true' -%}
+    {%- assign show_color_swatch = false -%}
+  {%- endif -%}
+
+  {%- assign show_labels = true -%}
+  {%- if page.metafields.master-brand-4.hide_labels[forloop.index0] == 'true' -%}
+    {%- assign show_labels = false -%}
+  {%- endif -%}
+
+    {%- capture flickity_options -%}
+      {
+      "prevNextButtons": true,
+      "pageDots": false,
+      "wrapAround": true,
+      "contain": true,
+      "cellAlign": "left",
+      "watchCSS": true,
+      "dragThreshold": 8,
+      "groupCells": true,
+      "arrowShape": "M 55.5 61 L 28 33.5 L 55.5 6"
+      }
+    {%- endcapture -%}
+
+    {%- capture layout_carousel -%}
+      {
+      "layout": "carousel"
+      }
+    {%- endcapture -%}
+
+    <section class="Section Section--spacingNormal section-container"
+             id="section-image-product-carousel-mb--{{ forloop.index }}"
+             data-section-id="image-product-carousel-mb--{{ forloop.index }}"
+             data-section-type="featured-collections"
+             data-settings='{{ layout_carousel }}'
+             style="order: {{ order }}">
+      {%- if heading != blank -%}
+        <h2 class="master-brand-template__heading">{{ heading }}</h2>
+      {%- endif -%}
+      <div class="ProductRecommendations">
+        <div class="ProductListWrapper">
+          <div class="ProductList ProductList--carousel Carousel" role="presentation" data-flickity-config='{{ flickity_options }}'>
+
+            {%- for product in for_products -%}
+
+              {%- if collection != blank -%}
+                {%- assign this_product = product -%}
+              {% else %}
+                {%- assign this_product = all_products[product] -%}
+              {%- endif -%}
+
+              <div class="Carousel__Cell">
+                {%- render 'product-item', product: this_product, show_product_info: show_product_info, show_vendor: show_vendor, show_color_swatch: show_color_swatch, show_labels: show_labels -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      @media screen and (min-width: 1008px) {
+        #section-image-product-carousel-mb--{{ forloop.index }} .ProductList--carousel .Carousel__Cell {
+          width: calc(100% / 3);
+        }
+      }
+    </style>
+  {%- endif -%}
+{%- endfor -%}

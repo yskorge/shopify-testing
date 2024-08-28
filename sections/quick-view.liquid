@@ -1,0 +1,277 @@
+{%- capture section_settings -%}
+  {
+  "enableHistoryState": true,
+  "templateSuffix": {{ product.template_suffix | json }},
+  "showInventoryQuantity": false,
+  "showSku": false,
+  "stackProductImages": false,
+  "showThumbnails": true,
+  "enableVideoLooping": false,
+  "inventoryQuantityThreshold": false,
+  "showPriceInButton": true,
+  "enableImageZoom": false,
+  "showPaymentButton": false,
+  "useAjaxCart": true
+  }
+{%- endcapture -%}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign product_handleize = product.tags | handleize -%}
+<div class="Product ProductQuickView Product--large" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
+  <div class="Product__Wrapper">
+    {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      PRODUCT GALLERY
+      --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+    
+    {%- assign initial_media_id = product.featured_media.id -%}
+    {%- assign initial_media_index = 0 -%}
+    {%- assign media_count = 0 -%}
+    {%- assign product_media = current_variant.metafields.custom.variant_images.value | default: product.media -%}
+    
+    {%- capture slideshow_media -%}
+      {%- for media in product_media -%}
+        {%- if media.alt == 'featured' or media.alt == 'featured mobile' -%}
+          {%- continue -%}
+        {%- endif -%}
+        
+        {%- if product.selected_variant and media.id == product.selected_variant.featured_media.id -%}
+          {%- assign initial_media_index = media_count -%}
+          {%- assign initial_media_id = media.id -%}
+        {%- endif -%}
+        
+        {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200,1400,1600', image: media -%}{%- endcapture -%}
+        
+        {%- case media.media_type -%}
+        {%- when 'image' -%}
+          <div id="Media{{ media.id }}" tabindex="0" role="presentation" class="Product__SlideItem Product__SlideItem--image Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="image" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}" data-image-media-position="{% increment image_position %}">
+            <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%; --aspect-ratio: {{ media.aspect_ratio }};">
+              {% assign image_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+              
+              <img class="Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" data-expand="-100" alt="{{ media.alt | escape }}" data-max-width="{{ media.width }}" data-max-height="{{ media.height }}" data-original-src="{{ media | img_url: 'master' }}">
+              <span class="Image__Loader"></span>
+              {%- comment -%}
+              <noscript>
+                <img src="{{ media | img_url: '800x' }}" alt="{{ media.alt | escape }}">
+              </noscript>
+              {%- endcomment -%}
+            </div>
+          </div>
+        
+        {%- when 'external_video' -%}
+          <div id="Media{{ media.id }}" tabindex="-1" class="Product__SlideItem Product__SlideItem--video Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="external_video" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}" data-video-host="{{ media.host | escape }}" data-video-id="{{ media.external_id | escape }}">
+            <div class="Image--lazyLoad Image--fadeIn" data-expand="-100">
+              <div class="VideoWrapper">
+                {{- media | external_video_tag: image_size: '1024x' -}}
+              </div>
+            </div>
+          </div>
+        
+        {%- when 'video' -%}
+          <div id="Media{{ media.id }}" tabindex="-1" class="Product__SlideItem Product__SlideItem--video Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="video" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}">
+            <div class="Image--lazyLoad Image--fadeIn" data-expand="-100">
+              <div class="VideoWrapper VideoWrapper--native" style="padding-bottom: {{ 100.0 | divided_by: media.aspect_ratio }}%">
+                {{- media | video_tag: image_size: '1024x', controls: true -}}
+              </div>
+            </div>
+          </div>
+        
+        {%- when 'model' -%}
+          <div id="Media{{ media.id }}" tabindex="-1" class="Product__SlideItem Product__SlideItem--model Carousel__Cell {% if initial_media_id == media.id %}is-selected{% endif %}" data-media-type="model" data-media-id="{{ media.id }}" data-media-position="{{ media.position }}">
+            <div class="Image--lazyLoad Image--fadeIn" data-expand="-100">
+              <div class="ModelWrapper">
+                {{- media | model_viewer_tag: image_size: '1024x', reveal: 'interaction', toggleable: true -}}
+              </div>
+            </div>
+          </div>
+        {%- endcase -%}
+        
+        {%- assign media_count = media_count | plus: 1 -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    
+    {%- capture product_labels -%}
+    {%- assign has_labels = false -%}
+    {%- assign tags_handleize = product.tags | handleize -%}
+      {%- if tags_handleize contains 'oprahs-favorite' -%}
+        {%- assign tag_logo = settings.oprahs_favorite_badge -%}
+        {%- assign has_labels = true -%}
+        {%- elsif tags_handleize contains 'new-product' -%}
+        {%- assign tag_logo = settings.new_product_badge -%}
+        {%- assign has_labels = true -%}
+        {%- elsif tags_handleize contains 'coming-soon' -%}
+        {%- assign tag_logo = settings.coming_soon_badge -%}
+        {%- assign has_labels = true -%}
+        {%- elsif tags_handleize contains 'limited-time-offer' -%}
+        {%- assign tag_logo = settings.limited_time_badge -%}
+        {%- assign has_labels = true -%}
+      {%- endif -%}
+      
+      {%- if has_labels -%}
+        {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: tag_logo -%}{%- endcapture -%}
+        {%- assign image_url = tag_logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="Badge logo"
+             class="ProductItem__Label-image Image--lazyLoad Image--fadeIn">
+      {%- endif -%}
+    
+    {% assign productTags = product.tags | join: ', ' %}
+      {%- if has_labels == false -%}
+        {%- if product.available -%}
+          {%- if product.compare_at_price > product.price -%}
+            {%- if product_handleize contains 'markdown' -%}
+              <span class="ProductItem__Label ProductItem__Label--onSale Heading Text--subdued">{{ 'product.labels.clearance' | t }}</span>
+            {%- else -%}
+              <span class="ProductItem__Label ProductItem__Label--onSale Heading Text--subdued">{{ 'product.labels.on_sale' | t }}</span>
+            {%- endif -%}
+            {%- elsif productTags contains '__label:New' -%}
+            <span class="ProductItem__Label ProductItem__Label--onSale Heading Text--subdued">New</span>
+          {%- endif -%}
+        {%- else -%}
+          <span class="ProductItem__Label ProductItem__Label--soldOut Heading Text--subdued SoldOut-badge">{{ 'product.labels.sold_out' | t }}</span>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endcapture -%}
+    
+    {%- if product_labels != blank -%}
+      <div style="left:50px;" class="ProductItem__LabelList">
+        {{ product_labels }}
+      </div>
+    {%- endif -%}
+  
+    {%- if product_media != blank -%}
+    <div class="Product__Gallery Product__Gallery--withThumbnails">
+      <span id="ProductGallery" class="Anchor"></span>
+        
+        {%- if action_list_items != blank -%}
+          <div class="Product__ActionList hidden-lap-and-up {% if product.media[initial_media_index].media_type != 'image' %}is-hidden{% endif %}">
+            {{ action_list_items }}
+          </div>
+        {%- endif -%}
+        
+        {%- capture slideshow_nav -%}
+  
+          {%- capture flickity_thumbnails_options -%}
+            {
+              "asNavFor": ".QuickViewModal .Product__Slideshow",
+              "contain": true,
+              "pageDots": false,
+              "groupCells": true,
+              "cellAlign": "left"
+            }
+          {%- endcapture -%}
+          
+          {%- if media_count > 1 -%}
+            <div class="Product__SlideshowNav Product__SlideshowNav--thumbnails">
+              <div class="Product__SlideshowNavScroller" role="presentation" data-flickity-config='{{flickity_thumbnails_options}}'>
+                {%- for media in product_media -%}
+                  {%- if media.alt == 'featured' or media.alt == 'featured mobile' -%}
+                    {%- continue -%}
+                  {%- endif -%}
+                  
+                  {%- capture nav_item_badge -%}
+                    {%- case media.media_type -%}
+                    {%- when 'model' -%}
+                      <span class="Product__SlideshowNavBadge">{% render 'icon', icon: 'media-model-badge' %}</span>
+                    
+                    {%- when 'video' or 'external_video' -%}
+                      <span class="Product__SlideshowNavBadge">{% render 'icon', icon: 'media-video-badge' %}</span>
+                    {%- endcase -%}
+                  {%- endcapture -%}
+                  
+                  <span data-media-id="{{ media.id }}"
+                        class="Product__SlideshowNavImage AspectRatio {% if forloop.first %}is-selected{% endif %}"
+                        style="--aspect-ratio: {{ media.preview_image.aspect_ratio }}">
+                      <img src="{{ media | img_url: '160x' }}" alt="{{ media.alt | escape }}">
+                      {{- nav_item_badge -}}
+                    </span>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endcapture -%}
+        
+        {%- capture flickity_options -%}
+          {
+            "prevNextButtons": false,
+            "pageDots": {%- if media_count > 1 -%}true{% else %}false{% endif %},
+            "adaptiveHeight": true,
+            "watchCSS": true,
+            "dragThreshold": 8,
+            "initialIndex": {{ initial_media_index }},
+            "arrowShape": "M 55.5 61 L 28 33.5 L 55.5 6"
+          }
+        {%- endcapture -%}
+        
+        <div class="Product__Slideshow Carousel"
+             data-flickity-config='{{ flickity_options }}'>
+          {{ slideshow_media }}
+        </div>
+        
+        {{- slideshow_nav -}}
+      </div>
+    
+    {%- endif -%}
+    
+    {%- capture product_aside -%}
+      {%- comment -%}
+        --------------------------------------------------------------------------------------------------------------------
+        PRODUCT TABS
+        --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+      
+      {%- comment -%}
+        --------------------------------------------------------------------------------------------------------------------
+        PRODUCT WEAR IT WITH
+        
+        We allow merchants to add a tag that looks like __with:product-handle to feature an additional product
+        --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+      
+      {%- for tag in product.tags -%}
+        {%- if tag contains '__with' -%}
+          {%- assign product_handle = tag | split: '__with:' | last -%}
+          {%- assign associated_product = all_products[product_handle] -%}
+          
+          {%- if associated_product != empty -%}
+            <div class="Section Section--spacingNormal">
+              <header class="SectionHeader SectionHeader--center">
+                <h3 class="SectionHeader__Heading Heading u-h4">{{ 'product.buy_it_with.title' | t }}</h3>
+              </header>
+              
+              {% render 'product-item', product: associated_product, use_horizontal: true, show_labels: false, show_product_info: true, show_vendor: false, show_price_on_hover: false %}
+            </div>
+            
+            {%- break -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    
+    <div class="Product__InfoWrapper">
+      <div class="Product__Info {% if media_count == 0 %}Product__Info--noGallery{% endif %}">
+        <div class="Container">
+          {%- assign show_breadcrumbs = true -%}
+          {%- render 'product-meta', product: product, show_description: true, show_breadcrumbs: show_breadcrumbs -%}
+          
+          {%- if product.template_suffix != 'coming-soon' -%}
+            {%- render 'quick-view-product-form', product: product, show_swatch: true, show_quantity_selector: true, hide_price_in_button: true , show_option_block: true -%}
+          {%- endif -%}
+        </div>
+        
+        {%- render 'product-tabs' show_tabs: false -%}
+  
+        <div class="ProductMeta__ViewMoreWrapper">
+          <a href="{{ current_variant.url }}" class="Button Button--primary ProductMeta__ViewMore">{{- 'product.form.view_product' | t -}}</a>
+        </div>
+      </div>
+    </div>
+    
+    {%- if product_aside != blank -%}
+      <div class="Product__Aside">
+        <span id="ProductAside" class="Anchor"></span>
+        {{- product_aside -}}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

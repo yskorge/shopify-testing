@@ -1,0 +1,4029 @@
+{
+  "current": {
+    "heading_color": "#161515",
+    "text_color": "#161515",
+    "text_light_color": "#1d423c",
+    "link_color": "#1d423c",
+    "link_hover_color": "#7a99a3",
+    "background": "#ffffff",
+    "light_background": "#ffffff",
+    "product_price_color": "#1d423c",
+    "product_on_sale_color": "#7a99a3",
+    "border_color": "#c4c4c4",
+    "button_background": "#7a99a3",
+    "button_background_hover": "#1d423c",
+    "button_text_color": "#ffffff",
+    "button_text_hover_color": "#ffffff",
+    "header_background": "#ffffff",
+    "header_submenu_background": "#f8f8f5",
+    "header_subsubmenu_background": "#ffffff",
+    "header_heading_color": "#1c1b1b",
+    "header_light_color": "#6a6a6a",
+    "footer_background": "#f8f8f5",
+    "footer_heading_color": "#161515",
+    "footer_text_color": "#161515",
+    "navigation_background": "#ffffff",
+    "navigation_text_color": "#000000",
+    "newsletter_popup_background": "#1c1b1b",
+    "newsletter_popup_text_color": "#ffffff",
+    "secondary_elements_background": "#f8f8f5",
+    "secondary_elements_text_color": "#1d423c",
+    "article_background_color": "#7a99a3",
+    "article_text_color": "#ffffff",
+    "heading_font": "freight",
+    "heading_size": "design",
+    "text_font": "circe",
+    "base_text_font_size": 14,
+    "badge_color": "#1c1b1b",
+    "oprahs_favorite_badge": "shopify:\/\/shop_images\/oprah.png",
+    "new_product_badge": "shopify:\/\/shop_images\/badge-new.png",
+    "coming_soon_badge": "shopify:\/\/shop_images\/unnamed.png",
+    "limited_time_badge": "",
+    "show_page_transition": true,
+    "show_button_transition": true,
+    "show_element_staggering": true,
+    "search_mode": "product,article,page",
+    "product_show_price_on_hover": false,
+    "product_show_secondary_image": true,
+    "enable_quick_view": true,
+    "product_info_alignment": "center",
+    "product_image_size": "same",
+    "product_list_horizontal_spacing": "medium",
+    "product_list_vertical_spacing": "medium",
+    "share_image": "",
+    "social_facebook": "https:\/\/www.facebook.com\/PotsandPans\/",
+    "social_twitter": "https:\/\/twitter.com\/potsandpans?lang=en",
+    "social_pinterest": "https:\/\/www.pinterest.com\/potsandpanscom\/",
+    "social_instagram": "https:\/\/www.instagram.com\/potsandpans_com\/",
+    "social_vimeo": "",
+    "social_tumblr": "",
+    "social_youtube": "https:\/\/www.youtube.com\/channel\/UC-QLB6scla1XXW-s2eIXGwg",
+    "social_linkedin": "",
+    "social_snapchat": "",
+    "social_fancy": "",
+    "favicon": "shopify:\/\/shop_images\/Pots_and_Pans_Icon_Green-01-01.png",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Pots_and_Pans_Logo_Black-01.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#efefef",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#1c1b1b",
+    "checkout_button_color": "#1c1b1b",
+    "checkout_error_color": "#e32c2b",
+    "sold-out_color": "#1d423c",
+    "uppercase_heading": false,
+    "show_image_zooming": "true",
+    "sections": {
+      "sidebar-menu": {
+        "type": "sidebar-menu",
+        "settings": {
+          "primary_menu": "sidebar-main-menu",
+          "secondary_menu": "",
+          "show_social_media": true
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "blocks": {
+          "046d00f3-4e51-4c29-8502-dfcc6b878a26": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "start_content_date": "",
+              "end_content_date": "",
+              "end_date": "",
+              "content": "SAVE UP TO 40% ON CAST IRON FOR DAD",
+              "link_text_pop_up": "",
+              "pop_up_icon": "<svg role=\"img\" viewbox=\"0 0 8 8\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><title>star<\/title>\n<path d=\"M8 7v1H0V7h8zM4.737 0l-.154 2.143 1.971-.823L7 2.726l-2.04.497L6.4 4.886l-1.2.857L4 3.806 2.8 5.743l-1.2-.857 1.423-1.663L1 2.726l.446-1.406 1.988.823L3.263 0h1.474z\" fill=\"#FFF\" fill-rule=\"nonzero\"><\/path><\/svg>",
+              "link_pop_up": "shopify:\/\/collections\/save-big-on-cast-iron-for-father-s-day",
+              "link_text": "SHOP NOW",
+              "link_new_window": "shopify:\/\/collections\/cookware"
+            }
+          },
+          "22eec199-1ea8-47e3-b5b7-19e2d3369af4": {
+            "type": "slide",
+            "disabled": true,
+            "settings": {
+              "start_content_date": "",
+              "end_content_date": "",
+              "end_date": "",
+              "content": "Save up to $50 on select roasters!",
+              "link_text_pop_up": "SHOP NOW",
+              "pop_up_icon": "",
+              "link_pop_up": "shopify:\/\/collections\/roasters",
+              "link_text": "",
+              "link_new_window": ""
+            }
+          },
+          "aad9d87a-d42d-4c32-bf67-3555d1ec97ff": {
+            "type": "slide",
+            "settings": {
+              "start_content_date": "",
+              "end_content_date": "",
+              "end_date": "",
+              "content": "FREE SHIPPING ON ORDERS OVER $75!",
+              "link_text_pop_up": "",
+              "pop_up_icon": "<svg role=\"img\" viewbox=\"0 0 8 8\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><title>star<\/title>\n<path d=\"M8 7v1H0V7h8zM4.737 0l-.154 2.143 1.971-.823L7 2.726l-2.04.497L6.4 4.886l-1.2.857L4 3.806 2.8 5.743l-1.2-.857 1.423-1.663L1 2.726l.446-1.406 1.988.823L3.263 0h1.474z\" fill=\"#FFF\" fill-rule=\"nonzero\"><\/path><\/svg>",
+              "link_pop_up": "shopify:\/\/pages\/shipping-delivery",
+              "link_text": "LEARN MORE",
+              "link_new_window": "shopify:\/\/pages\/shipping-delivery"
+            }
+          },
+          "29eab9f5-9e39-48f0-957d-631a7725637b": {
+            "type": "slide",
+            "settings": {
+              "start_content_date": "",
+              "end_content_date": "",
+              "end_date": "",
+              "content": "NOW AN OFFICIAL PARTNER WITH KITCHENAID",
+              "link_text_pop_up": "",
+              "pop_up_icon": "",
+              "link_pop_up": "",
+              "link_text": "SHOP NOW",
+              "link_new_window": "shopify:\/\/pages\/kitchenaid"
+            }
+          }
+        },
+        "block_order": [
+          "046d00f3-4e51-4c29-8502-dfcc6b878a26",
+          "22eec199-1ea8-47e3-b5b7-19e2d3369af4",
+          "aad9d87a-d42d-4c32-bf67-3555d1ec97ff",
+          "29eab9f5-9e39-48f0-957d-631a7725637b"
+        ],
+        "settings": {
+          "enable_bar": true,
+          "enable_sticky_bar": true,
+          "home_page_only": false,
+          "background": "#1d423c",
+          "text_color": "#f8f8f5",
+          "slideshow_speed": 4,
+          "enable_autoplay": false,
+          "vertical_mode": false
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1590166571318": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "categories",
+              "item_mega_menu": "main-category-menu"
+            }
+          },
+          "1590166594796": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "cookware",
+              "item_sub_mega_menu": "main-category-cookware-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Cookware_ANC_740x460_9e5605fc-d978-4016-9f72-769798e5ad93.jpg",
+              "push_1_heading": "Cooking Your Way",
+              "push_1_subheading": "Featuring Anolon Nouvelle Copper Cookware",
+              "push_1_url": "shopify:\/\/collections\/anolon-nouvelle-copper",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Cookware_RR_Stacking_12166.jpg",
+              "push_2_heading": "Cook in Full Color",
+              "push_2_subheading": "Featuring the Rachael Ray® Create Delicious Stacking Set",
+              "push_2_url": "https:\/\/www.potsandpans.com\/products\/rachael-ray-create-delicious-stackable-nonstick-cookware-set?pr_prod_strat=collection_fallback&pr_rec_pid=4700369780813&pr_ref_pid=4700372926541&pr_seq=uniform",
+              "push_button_label": "Shop all cookware",
+              "push_button_url": "#"
+            }
+          },
+          "1592396820434": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "bakeware & ovenware",
+              "item_sub_mega_menu": "main-category-bakeware-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Bakeware_RR_Baker_740x460_f4b8263e-43e9-49fe-850a-42a7cf4f8536.jpg",
+              "push_1_heading": "Bubble & Brown",
+              "push_1_subheading": "Featuring the Rachael Ray® 9x13\" Ceramic Baker",
+              "push_1_url": "https:\/\/www.potsandpans.com\/collections\/bakeware\/products\/rachael-ray-ceramic-rectangular-baker",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Bakeware_RR_Muffin_740x460_eada891e-102b-44d2-aaef-336c597aa0f2.jpg",
+              "push_2_heading": "Sweet & Savory Baking",
+              "push_2_subheading": "Featuring the Rachael Ray® Yum-o! Muffin Pan",
+              "push_2_url": "https:\/\/www.potsandpans.com\/collections\/bakeware\/products\/rachael-ray-yum-o-latte-oven-lovin-nonstick-muffin-and-cupcake-pan",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593281622698": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "dinnerware",
+              "item_sub_mega_menu": "main-category-tabletop-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/Mega_Menu-_89A4218_2668290a-4dfc-4b45-ad0d-d840276753ad.jpg",
+              "push_1_heading": "Dinner is Served",
+              "push_1_subheading": "Featuring the Rachael Ray® Cucina Dinnerware",
+              "push_1_url": "https:\/\/www.potsandpans.com\/collections\/dinnerware-sets\/products\/rachael-ray-cucina-dinnerware-set",
+              "push_2_image": "shopify:\/\/shop_images\/Mega_Menu-47528_RR_RH1_Hot_Chip_Dip_Set_Front_Panel_Wrap_Red_SWOP3_5a40bbd1-5ebe-4349-baa9-049f7f0559e4.jpg",
+              "push_2_heading": "Host in Style",
+              "push_2_subheading": "Featuring the Rachael Ray® Dip & Snack Set",
+              "push_2_url": "https:\/\/www.potsandpans.com\/collections\/serveware\/products\/rachael-cityscapes-dip-and-snack-set",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593281657882": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "food storage",
+              "item_sub_mega_menu": "main-category-food-storage-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/Mega_Menu-ColorMates-Color_Matching_System_crop_2dd6d542-8642-41de-81f1-a0ce89253ceb.jpg",
+              "push_1_heading": "Quick Matching Lids",
+              "push_1_subheading": "Featuring LocknLock™  Color Mates",
+              "push_1_url": "https:\/\/www.potsandpans.com\/products\/easy-essentials-color-mates-18-piece-assorted-food-storage-container-set",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Food_Storage_Pantry_740x460_f5100350-6958-436f-a716-29a312a3d522.jpg",
+              "push_2_heading": "Pantry Organization Masters",
+              "push_2_subheading": "Featuring LocknLock™ Easy Essentials",
+              "push_2_url": "shopify:\/\/collections\/locknlock-easy-essentials",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593281695339": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "beverage",
+              "item_sub_mega_menu": "main-category-beverage-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_heading": "",
+              "push_1_subheading": "",
+              "push_1_url": "",
+              "push_2_heading": "",
+              "push_2_subheading": "",
+              "push_2_url": "",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593281726120": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "tools & accessories",
+              "item_sub_mega_menu": "main-category-tools-accessories-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Tools_RR_Cutlery_740x460_e0a2f68e-1451-40f0-a3c0-d779cc736a37.jpg",
+              "push_1_heading": "Knife Essentials",
+              "push_1_subheading": "Featuring the Rachael Ray® 3-Piece Knife Set",
+              "push_1_url": "shopify:\/\/products\/rachael-ray-japanese-stainless-steel-assorted-knife-set",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Tools_Anolon_740x460_874c75f6-8571-433d-95f3-7aea291d44a2.jpg",
+              "push_2_heading": "Prep in Style",
+              "push_2_subheading": "Featuring Anolon® Tools",
+              "push_2_url": "https:\/\/www.potsandpans.com\/collections\/tools-accessories?_=pf&pf_v_brand=Anolon",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1592882395740": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "brands",
+              "item_mega_menu": "main-brand-menu"
+            }
+          },
+          "1593040175425": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "breville",
+              "item_sub_mega_menu": "main-brand-brev-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_BRE_SS_Saute_740x460_5552fcf2-2873-466e-a521-23da71be5208.jpg",
+              "push_1_heading": "Precision & performance",
+              "push_1_subheading": "Featuring Breville® Thermal Pro Clad Cookware",
+              "push_1_url": "shopify:\/\/collections\/breville-stainless-steel",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_BRE_SS_HA_Skillets_740x460_a97e578f-79d7-468c-8c45-41f25483ea93.jpg",
+              "push_2_heading": "Exceptional food release & easy cleaning",
+              "push_2_subheading": "Featuring Breville® Thermal Pro Hard-Anodized",
+              "push_2_url": "shopify:\/\/collections\/breville-hard-anodized",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1592887915189": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "college kitchen collection",
+              "item_sub_mega_menu": "main-brand-ckc-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_COL_Texas_Stock_740x460_9585cd06-957d-4c69-938e-1ce087fdaf5b.jpg",
+              "push_1_heading": "Get Game Day Ready",
+              "push_1_subheading": "Featuring the 12 Qt. Gameday Stockpot",
+              "push_1_url": "https:\/\/www.potsandpans.com\/collections\/college-kitchen-collection\/products\/college-kitchen-collection-enamel-on-steel-gameday-stockpot-with-lid",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_COL_Alabama_Platter_740x460_bfb857a5-d0a3-469f-a103-a1b0559ab987.jpg",
+              "push_2_heading": "Serve Up A Win",
+              "push_2_subheading": "Featuring the Serve 'n Score Platter",
+              "push_2_url": "https:\/\/www.potsandpans.com\/collections\/college-kitchen-collection\/products\/college-kitchen-collection-serve-and-score-party-platter",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593037934561": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "bonjour",
+              "item_sub_mega_menu": "main-brand-bjr-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_BJR_47954_740x460_f33f9b15-7858-4059-b029-e97ef1291bef.jpg",
+              "push_1_heading": "Tea time",
+              "push_1_subheading": "Featuring the BonJour®Hand Blown Glass Teapot",
+              "push_1_url": "https:\/\/potsandpansshop.myshopify.com\/collections\/bonjour?_=pf&pf_pt_product_type=Teapots&pf_pt_product_type=Loose%20Tea%20Makers",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_BJR_47955_Pourover_740x460_095f06de-86e9-4cda-aa39-4dbe1214728c.jpg",
+              "push_2_heading": "Craft Coffee at Home",
+              "push_2_subheading": "Featuring the BonJour® Ceramic Pour Over Set",
+              "push_2_url": "shopify:\/\/products\/bonjour-ceramic-pour-over-coffee-set",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593365435873": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "ayesha curry",
+              "item_sub_mega_menu": "main-brand-ayesha-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_AYC_Dutch_Oven_Chili_740x460_9e8b5cda-7f2e-4c69-bcfc-410a7798695b.jpg",
+              "push_1_heading": "Gather Around the Table",
+              "push_1_subheading": "Featuring Ayesha™ Home Collection Cookware",
+              "push_1_url": "shopify:\/\/collections\/ayesha-curry",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_AYC_Bakeware_Prok_Chops_740x460_046de782-1b1f-424d-bd11-d36c23263024.jpg",
+              "push_2_heading": "Double Cut Spice-Rubbed Pork Chops",
+              "push_2_subheading": "Featuring Ayesha™ Bakeware",
+              "push_2_url": "shopify:\/\/blogs\/recipes\/weekend-double-cut-spice-rubbed-pork-chops-with-harissa-peach-chutney",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593365467555": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "rachael ray",
+              "item_sub_mega_menu": "main-brand-rachael-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_RR_Ceramics_740x460_04292174-352d-478b-b4d0-87deb33e16d2.jpg",
+              "push_1_heading": "Serve in Full Color",
+              "push_1_subheading": "Featuring Rachael Ray Ceramic Serve & Bakeware",
+              "push_1_url": "https:\/\/www.potsandpans.com\/collections\/rachael-ray?_=pf&pf_t_material=Material-Ceramic&pf_t_material=Material-Stoneware&pf_t_material=Material-Ceramics&pf_pt_product_type=Au%20Gratins&pf_pt_product_type=Bakers",
+              "push_2_image": "shopify:\/\/shop_images\/Mega_Menu-14741_RR_RHN_11pc_set_Gray_In_Use_Glam_MIL.jpg",
+              "push_2_heading": "Cook in Full Color",
+              "push_2_subheading": "Featuring Rachael Ray Cook + Create in Sea Salt",
+              "push_2_url": "shopify:\/\/products\/cook-create-aluminum-nonstick-cookware-set",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593366619303": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "locknlock",
+              "item_sub_mega_menu": "main-brand-lock-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_LNL_Tritan_740x460_615df21b-8a71-45c0-90f4-9010ebb8d950.jpg",
+              "push_1_heading": "Serve & Store",
+              "push_1_subheading": "Featuring LocknLock® Purely Better Tritan Plastic",
+              "push_1_url": "https:\/\/www.potsandpans.com\/collections\/locknlock?_=pf&pf_t_material=Material-Tritan",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_LNL_Glass_Bakers_740x460_5c7129f8-8231-4822-865d-15f7741fc71b.jpg",
+              "push_2_heading": "Bake & Take",
+              "push_2_subheading": "Featuring LocknLock® Performance Glass",
+              "push_2_url": "shopify:\/\/collections\/locknlock-glass-food-storage",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593391754683": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "anolon",
+              "item_sub_mega_menu": "main-brand-anolon-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_ANO_Accolade_740x460_02146b8d-b780-4883-9911-aee65e22ec6e.jpg",
+              "push_1_heading": "PREMIUM HARD-ANODIZED COOKWARE",
+              "push_1_subheading": "Featuring the Anolon® Accolade Collection",
+              "push_1_url": "shopify:\/\/collections\/anolon-accolade",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_ANO_Bakeware_740x460_0cd5b196-5fb4-464d-8163-4e45bcae384e.jpg",
+              "push_2_heading": "BEST BAKING ESSENTIALS",
+              "push_2_subheading": "Featuring Anolon® Bakeware",
+              "push_2_url": "https:\/\/potsandpansshop.myshopify.com\/collections\/anolon?_=pf&pf_t_category=Category-Bakeware",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1593393680417": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "circulon",
+              "item_sub_mega_menu": "main-brand-circulon-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Circ_SS_Skillet_740x460_f3651aad-8376-4fd7-a49f-632e4423b2ac.jpg",
+              "push_1_heading": "Stainless steel meets nonstick",
+              "push_1_subheading": "Featuring the Circulon® Innovatum™ Collection",
+              "push_1_url": "shopify:\/\/collections\/circulon-innovatum",
+              "push_2_image": "shopify:\/\/shop_images\/PNP_Mega_Menu_Circ_merlot_Skillet_740x460_5625ff9c-f5e5-43e6-acb3-7a6aa721f748.jpg",
+              "push_2_heading": "Style & hard-anodized durability",
+              "push_2_subheading": "Featuring the Circulon® Symmetry™ Merlot Collection",
+              "push_2_url": "shopify:\/\/collections\/circulon-symmetry",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1595289140299": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "farberware",
+              "item_sub_mega_menu": "main-brand-farberware-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_heading": "TIMELESS & TRADITIONAL STAINLESS STEEL",
+              "push_1_subheading": "Featuring Farberware® Classic Series Cookware",
+              "push_1_url": "https:\/\/www.potsandpans.com\/collections\/farberware?_=pf&pf_t_material=Material-Stainless%20Steel&pf_t_category=Category-Cookware",
+              "push_2_heading": "STACKED & INTACT CONVENIENCE",
+              "push_2_subheading": "Featuring Farberware® Neat Nest",
+              "push_2_url": "https:\/\/www.potsandpans.com\/collections\/farberware-neat-nest",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1597418747468": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "prestige",
+              "item_sub_mega_menu": "main-brand-prestige-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": "",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1598027706339": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "Ruffoni",
+              "item_sub_mega_menu": "main-brand-ruffoni-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": "",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1598030790242": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "Silverstone",
+              "item_sub_mega_menu": "main-brand-silverstone-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": "",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1598030966564": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "Paula Deen",
+              "item_sub_mega_menu": "main-brand-pauladeen-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_heading": "Example heading",
+              "push_1_subheading": "Example sub-heading",
+              "push_1_url": "",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": "",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "1598031854390": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "KitchenAid",
+              "item_sub_mega_menu": "main-brand-kitchenaid-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_image": "shopify:\/\/shop_images\/Horizontal-48748_KA_KK2_2Qt_EOS_Tea_Kettle_Blue_Velvet_color_finish_SWOP.jpg",
+              "push_1_heading": "BRING CREATIVITY TO A BOIL",
+              "push_1_subheading": "Featuring the Enamel-On-Steel Teakettle Collection",
+              "push_1_url": "https:\/\/www.potsandpans.com\/pages\/kitchenaid-eos-teakettles",
+              "push_2_image": "shopify:\/\/shop_images\/Full_res_JPG-48737_KA_KKG_12in_open_frying_pan_wHH_scratch_resistant_1.jpg",
+              "push_2_heading": "3-IN-1 COOKING PERFORMANCE",
+              "push_2_subheading": "Featuring the NITRO Carbon Steel Collection",
+              "push_2_url": "https:\/\/www.potsandpans.com\/collections\/nitro-carbon-steel-cookware",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          },
+          "sub_mega_menu_gXaWE7": {
+            "type": "sub_mega_menu",
+            "settings": {
+              "navigation_sub_mega_menu": "Disney",
+              "item_sub_mega_menu": "main-brand-disney-submenu",
+              "sub_menu_color": "#7a99a3",
+              "push_1_heading": "Disney Cookwear",
+              "push_1_subheading": "",
+              "push_1_url": "shopify:\/\/collections\/disney-cookware-1",
+              "push_2_heading": "Example heading",
+              "push_2_subheading": "Example sub-heading",
+              "push_2_url": "",
+              "push_button_label": "",
+              "push_button_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1590166571318",
+          "1590166594796",
+          "1592396820434",
+          "1593281622698",
+          "1593281657882",
+          "1593281695339",
+          "1593281726120",
+          "1592882395740",
+          "1593040175425",
+          "1592887915189",
+          "1593037934561",
+          "1593365435873",
+          "1593365467555",
+          "1593366619303",
+          "1593391754683",
+          "1593393680417",
+          "1595289140299",
+          "1597418747468",
+          "1598027706339",
+          "1598030790242",
+          "1598030966564",
+          "1598031854390",
+          "sub_mega_menu_gXaWE7"
+        ],
+        "settings": {
+          "use_sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/Pots_and_Pans_Logo_Black-01.png",
+          "logo_max_width": 350,
+          "mobile_logo_max_width": 155,
+          "navigation_menu": "main-menu-1",
+          "show_icons": true,
+          "enable_transparent_header": false,
+          "enable_transparent_header_collection": false,
+          "show_transparent_header_border": false,
+          "transparent_text_color": "#ffffff"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1590739660595": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/main_logo.png",
+              "logo_max_width": 220,
+              "mobile_logo_max_width": 155
+            }
+          },
+          "1590565628888": {
+            "type": "links",
+            "settings": {
+              "navigation_label": "Shop",
+              "navigation_url": "",
+              "menu": "footer-shop"
+            }
+          },
+          "1590565641012": {
+            "type": "links",
+            "settings": {
+              "navigation_label": "Company",
+              "navigation_url": "",
+              "menu": "footer-company"
+            }
+          },
+          "1590565651539": {
+            "type": "links",
+            "settings": {
+              "navigation_label": "Support",
+              "navigation_url": "",
+              "menu": "footer-support"
+            }
+          },
+          "1590739814324": {
+            "type": "newsletter_social",
+            "settings": {
+              "title": "Our Cooking Community",
+              "content": "<p>Sign up for our newsletter and receive 10% off your first order. <\/p>",
+              "show_social_media": true
+            }
+          }
+        },
+        "block_order": [
+          "1590739660595",
+          "1590565628888",
+          "1590565641012",
+          "1590565651539",
+          "1590739814324"
+        ],
+        "settings": {
+          "show_payment_methods": false,
+          "footer_copyright": "<p>© 2021 PotsandPans.com - All Rights Reserved<\/p>"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "show_collection_info": true,
+          "show_collection_image": true,
+          "apply_overlay": true,
+          "show_color_swatch": true,
+          "show_vendor": true,
+          "collection_image_size": "normal",
+          "show_sort_by": true,
+          "show_layout_switch": false,
+          "toolbar_position": "top",
+          "filter_position": "sidebar",
+          "filter_mode": "group",
+          "show_filter_color_swatch": true,
+          "filter_menu": "",
+          "grid_items_per_page": 24,
+          "grid_mobile_items_per_row": "2",
+          "grid_desktop_items_per_row": 3
+        }
+      },
+      "recently-viewed-products": {
+        "type": "recently-viewed-products",
+        "settings": {
+          "show_section": true,
+          "title": "Recently viewed",
+          "show_product_info": true,
+          "show_vendor": false,
+          "show_color_swatch": false
+        }
+      },
+      "collection-footer": {
+        "type": "collection-footer",
+        "settings": {
+          "show_section": false,
+          "image": "",
+          "text_color": "#ffffff",
+          "apply_overlay": true,
+          "title": "Our story",
+          "content": "<p>Add your own custom content to explain your processes...<\/p>"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "product_message": "Your order will ship within 24 business hours!  Estimated delivery 3 to 5 business days!",
+          "show_breadcrumbs": true,
+          "show_share_buttons": true,
+          "show_vendor": true,
+          "show_sku": false,
+          "show_tabs": true,
+          "show_sku_tab": true,
+          "description_below_add_to_cart": false,
+          "enable_fixed_atc": true,
+          "selector_mode": "block",
+          "show_color_swatch": true,
+          "show_color_carousel": false,
+          "show_quantity_selector": true,
+          "show_inventory_quantity": false,
+          "inventory_quantity_threshold": 5,
+          "show_payment_button": true,
+          "image_size": "large",
+          "stack_images": false,
+          "show_thumbnails": true,
+          "enable_image_zoom": true,
+          "enable_video_looping": false,
+          "show_arrows": true,
+          "featured_image_size": "large",
+          "curbside_uppercase": false,
+          "curbside_font_size": "18px"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_product_info": true,
+          "show_vendor": false,
+          "show_color_swatch": false
+        }
+      },
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "show_popup": false,
+          "show_only_on_index": false,
+          "show_only_for_visitors": true,
+          "show_only_once": true,
+          "title": "$10 Shipping on Orders $39+",
+          "content": "",
+          "show_newsletter": false,
+          "apparition_delay": 5
+        }
+      },
+      "1590405825164": {
+        "type": "background-with-text",
+        "disabled": true,
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": false,
+          "top_padding_number": "",
+          "bottom_padding_number": "",
+          "full_height": false,
+          "image": "shopify:\/\/shop_images\/1800_x_800.png",
+          "image_mobile": "shopify:\/\/shop_images\/750_x_750.png",
+          "block_position": "top-right",
+          "block_text_align_desk": "text-align--desktop--right",
+          "block_text_align_mobile": "text-align--mobile--right",
+          "subtitle": "Your Cooking Headquarters",
+          "title": "The Biggest Value, The Best Brands",
+          "large_size": true,
+          "content": "<p>We've curated a collection of innovative cookware, bakeware and more, all from trusted brands at the right price. <\/p>",
+          "button_label": "SHOP BRANDS",
+          "button_link": "shopify:\/\/pages\/shop-by-brand",
+          "button_label_2": "",
+          "button_link_2": "",
+          "show_parallax": false
+        }
+      },
+      "1590418700083": {
+        "type": "slideshow-with-block",
+        "blocks": {
+          "1590418713498": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PNP_6900_Shop_by_Category_Cookware_450_x_600.jpg",
+              "title": "Cookware",
+              "url": "shopify:\/\/collections\/cookware"
+            }
+          },
+          "1590418747224": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PNP_6900_Shop_by_Category_Bakeware_C_450_x_600_e746602f-8ece-4b7d-996d-0a495ef55ac1.jpg",
+              "title": "Bakeware",
+              "url": "shopify:\/\/collections\/bakeware"
+            }
+          },
+          "1590418751658": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PNP_6900_Shop_by_Category_Tools_450_x_600.jpg",
+              "title": "Tools",
+              "url": "shopify:\/\/collections\/tools-accessories"
+            }
+          },
+          "1590422101816": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PNP_6900_Shop_by_Category_Cutlery_450_x_600.jpg",
+              "title": "Cutlery",
+              "url": "shopify:\/\/collections\/cutlery"
+            }
+          },
+          "1590422118478": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PNP_6900_Shop_by_Category_Beverageware_450_x_600.jpg",
+              "title": "Beverageware",
+              "url": "shopify:\/\/collections\/beverageware"
+            }
+          },
+          "1592932955943": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PNP_6900_Shop_by_Category_Food_Storage_450_x_600.jpg",
+              "title": "Food Storage",
+              "url": "shopify:\/\/collections\/food-storage"
+            }
+          }
+        },
+        "block_order": [
+          "1590418713498",
+          "1590418747224",
+          "1590418751658",
+          "1590422101816",
+          "1590422118478",
+          "1592932955943"
+        ],
+        "settings": {
+          "heading": "Shop by Category",
+          "top_padding_number": "",
+          "bottom_padding_number": ""
+        }
+      },
+      "1590422142751": {
+        "type": "slideshow-image-with-text",
+        "blocks": {
+          "90abf909-573a-4162-885f-50fd919c7eb7": {
+            "type": "block",
+            "settings": {
+              "logo_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" version=\"1.1\" id=\"W10271070-B__Aqualift_Technology_Logo_R_Mark_PRINT_ONLY_11.12.12_CWS\" x=\"0px\" y=\"0px\" viewbox=\"0 0 1260 126.3\" style=\"enable-background:new 0 0 1260 126.3;\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xml:space=\"preserve\">\n<style type=\"text\/css\">\n\t.st0{fill:#C41239;}\n<\/style>\n<title>ka_refined_#C41230<\/title>\n<g>\n\t<path class=\"st0\" d=\"M312,105.7c-8.4,0-15.3-6.8-15.3-15.3V68.1h24.9v-21h-24.9V18.3h-49.4v28.8h-14.9v21h14.9v30.1l0,0v1   c0,15,16.6,27.1,37.1,27.1c17.7,0,30.4-4.7,37.1-8v-16C318.9,104.5,315.5,105.7,312,105.7z\"><\/path>\n\t<rect x=\"167.8\" y=\"47.1\" class=\"st0\" width=\"48.8\" height=\"74.7\"><\/rect>\n\t<path class=\"st0\" d=\"M192.2,36.2c13.4,0,24.3-8,24.3-18S205.6,0.3,192.2,0.3s-24.3,8-24.3,17.9S178.8,36.2,192.2,36.2\"><\/path>\n\t<path class=\"st0\" d=\"M641,90.7h68.7c0,0,1.9-18-7-29.4C693.1,49.1,673.8,42,652.6,42s-60.9,5.2-60.9,42.7s36.9,41.7,60.8,41.7   c45.5,0,55.9-10.6,55.9-10.6v-15.3c-14.4,4.8-29.5,7.2-44.7,7.2C638.5,107.7,641,93.5,641,90.7z M641,73.2v-2.5c0-6.6,5.4-12,12-12   s12,5.4,12,12v2.6v0.2h-24V73.2z\"><\/path>\n\t<path class=\"st0\" d=\"M534.6,44.8c-11.2,0-21.7,5.2-28.1,9.8V7.2h-48.8v114.6h48.7V85.5l0,0c0-6.6,5.4-12,12-12s12,5.4,12,12   c0,0,0,0,0,0.1v36.2H575V78.4C575,70.5,565.8,44.8,534.6,44.8z\"><\/path>\n\t<path class=\"st0\" d=\"M805,44.8c-11.2,0-21.7,5.2-28.1,9.8v-7.5h-48.8v74.7h48.7V85.5l0,0c0-6.6,5.4-12,12-12s12,5.4,12,12   c0,0,0,0,0,0.1v36.2h44.7V78.4C845.5,70.5,836.2,44.8,805,44.8z\"><\/path>\n\t<rect x=\"1023.9\" y=\"47.1\" class=\"st0\" width=\"48.8\" height=\"74.7\"><\/rect>\n\t<path class=\"st0\" d=\"M1048.3,36.2c13.4,0,24.3-8,24.3-18s-10.9-17.9-24.3-17.9s-24.3,8-24.3,17.9S1034.9,36.2,1048.3,36.2\"><\/path>\n\t<path class=\"st0\" d=\"M951.8,121.8h58.4L957.7,0h-58.4l6.2,14.3l-46.3,107.5h29.2l9.2-21.5h44.9L951.8,121.8z M909.2,73.5l10.9-25.3   L931,73.5H909.2z\"><\/path>\n\t<path class=\"st0\" d=\"M128.7,63.2c-3.4-8.2-10.5-14.2-19.2-16.1l33-47.1H98.7L69.2,42.3c-2.3,3-5.8,4.8-9.6,4.8   c-1.3,0-2.2,0.1-2.6,0V0H0v121.8h57V79.3c2.4-1.2,5-1.8,7.7-1.8c7.3,0,13.8,4.4,16.6,11.1l14.3,33.2H154L128.7,63.2z\"><\/path>\n\t<path class=\"st0\" d=\"M411.9,99.8c-16.1,0-29.2-5-29.2-15.7s13.1-15.6,29.2-15.6c9.6,0,18.1,1.8,23.4,5.5V52.4   c-10.8-7-25.6-10.4-42.1-10.4C360.5,42,334,55.5,334,84.2s26.6,42.2,59.3,42.2c16.4,0,31.3-3.4,42.1-10.4V94.3   C430,98,421.5,99.8,411.9,99.8z\"><\/path>\n\t<path class=\"st0\" d=\"M1164.7,7v42.1c-7.7-4.1-16.2-7.3-27.3-7.3c-28.2,0-48.7,12.9-48.7,40.1s20.5,40.1,48.7,40.1   c11.1,0,19.6-3.2,27.3-7.3v6.9h48.8V7H1164.7z M1151.4,96.2c-8.6,0-14-6.4-14-14.3s5.4-14.3,14-14.3c5,0.1,9.8,2.1,13.3,5.6v17.5   C1161.2,94.2,1156.4,96.2,1151.4,96.2L1151.4,96.2z\"><\/path>\n\t<path class=\"st0\" d=\"M1250.9,12.8c0-3.8-2.8-5.9-7.2-5.9h-6.7v19.6h4.3V19h1.4l5.2,7.7l4.5-0.8l-5.3-7.7   C1249.5,17.4,1251,15.2,1250.9,12.8z M1243.2,15.9h-2v-5.6h2c2.1,0,3.2,1,3.2,2.7C1246.5,15,1245.3,15.9,1243.2,15.9L1243.2,15.9z\"><\/path>\n\t<path class=\"st0\" d=\"M1243.5,0.3c-9.6,0-16.5,6.9-16.5,16.9s6.8,16.8,16.5,16.8c9.6,0,16.5-6.8,16.5-16.8S1253.2,0.3,1243.5,0.3z    M1243.5,31.2c-7.4,0-13.2-5-13.2-14s5.9-14,13.2-14s13.3,5,13.3,14S1251,31.2,1243.5,31.2L1243.5,31.2z\"><\/path>\n<\/g>\n<\/svg>",
+              "logo_image": "shopify:\/\/shop_images\/ka_refined__C41230.png",
+              "image": "shopify:\/\/shop_images\/48440_AC_AYH_6qt_Dutch_Oven_Game_Day_Chili_Enhanced_Glam.tif_crop_1_1_1_1.jpg",
+              "title": "",
+              "heading_logo": "shopify:\/\/shop_images\/Ayesha_Curry_Logo_48434688-ec33-4661-b58c-76d11c28354c.png",
+              "text": "<p>Cook low and slow in an Ayesha’s 6-quart Dutch Oven featured on the Today Show as a “Consumer Reports Best Buy of the Year” and Oprah's “Favorite Things”.<\/p>",
+              "button_label": "SHOP COLLECTION",
+              "button_url": "shopify:\/\/collections\/ayesha-curry-cast-iron",
+              "video_url": "https:\/\/youtu.be\/pnPbiAOI_uQ",
+              "image_placeholder": "shopify:\/\/shop_images\/Untitled_design_43_b10ee3eb-432c-4266-b9ab-3e1770215547.png"
+            }
+          },
+          "1590422187293": {
+            "type": "block",
+            "settings": {
+              "logo_svg": "",
+              "logo_image": "shopify:\/\/shop_images\/Ayesha_Curry_Logo_400x_5374a9a4-bfd8-4a85-8851-eb6a9300f2f9.png",
+              "image": "shopify:\/\/shop_images\/Untitled_design_8.png",
+              "title": "Ayesha Curry",
+              "text": "<p>Look to the Ayesha Curry Kitchenware Collection for an assortment of cookware, ceramics, bakeware, cutlery and tools that reflect Ayesha’s multicultural background and authentic voice and embody her passion for good food and meals that bring family and friends together. <\/p>",
+              "button_label": "Shop now",
+              "button_url": "shopify:\/\/pages\/ayesha-curry-copy",
+              "video_url": "https:\/\/youtu.be\/t0jMviBJ-XI",
+              "image_placeholder": "shopify:\/\/shop_images\/1594_AYC_7081_apple_turnover_glam_2a-NR20-SH65_TIF.png"
+            }
+          },
+          "1590422254112": {
+            "type": "block",
+            "disabled": true,
+            "settings": {
+              "logo_svg": "",
+              "logo_image": "shopify:\/\/shop_images\/breville_352e223d-2140-48a2-aff6-530e5ab5717c.png",
+              "image": "shopify:\/\/shop_images\/PNP_Top_Brands_Breville_700_x_700.jpg",
+              "title": "Breville",
+              "text": "<p>Triple-layer aluminum and stainless steel. Tri-ply clad construction combined with a full cap base for even heating and all-range suitability. Breville pots and pans deliver superior cooking performance with consistent thermal stability for perfect results you can taste. <\/p>",
+              "button_label": "Shop now",
+              "button_url": "shopify:\/\/pages\/breville",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=0StW-EZhtuk&ab_channel=PotsandPans",
+              "image_placeholder": "shopify:\/\/shop_images\/PotsandPans.com_Shopify_Banner_MOBILE_-_750x750px_3e77e916-0bb6-4103-adc3-e2f6300cd65c.png"
+            }
+          },
+          "1592252864143": {
+            "type": "block",
+            "settings": {
+              "logo_svg": "",
+              "logo_image": "shopify:\/\/shop_images\/Untitled_design_-_2021-08-19T171323.723.png",
+              "image": "shopify:\/\/shop_images\/PNP_Top_Brands_Rachael_Raye_700_x_700.jpg",
+              "title": "Rachael Ray",
+              "text": "<p>Rachael Ray continues to wow audiences with her special brand of authenticity, relatability, and fun. Bring on the color and convenience with Rachael Ray cookware, ceramics, bakeware, and clever gadgets designed for stylish simplicity and practicality in the kitchen. <\/p>",
+              "button_label": "SHOP NOW",
+              "button_url": "shopify:\/\/pages\/rachael-ray",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=LioJGazTPcE&ab_channel=PotsandPans",
+              "image_placeholder": "shopify:\/\/shop_images\/PotsandPans.com_Shopify_Banner_MOBILE_-_750x750px_d00b451d-d2bd-4f79-bf5f-fc872a4fb088.png"
+            }
+          },
+          "1592253368027": {
+            "type": "block",
+            "settings": {
+              "logo_svg": "",
+              "logo_image": "shopify:\/\/shop_images\/LocknLock_Logo_Black_400x_50e1bec2-e25e-484a-a272-e53b31bc769f.png",
+              "image": "shopify:\/\/shop_images\/PNP_Top_Brands_Lock_and_Lock_700_x_700.jpg",
+              "title": "LocknLock",
+              "text": "<p>Get organized with no-mess, stay-fresh containers. From essential food storage to pantry organization to meals on-the-go, LocknLock offers a range of essential container shapes and sizes in plastic and glass for airtight, leakproof, portable food storage. <\/p>",
+              "button_label": "SHOP NOW",
+              "button_url": "shopify:\/\/pages\/locknlock",
+              "video_url": "",
+              "image_placeholder": "shopify:\/\/shop_images\/PNP_Mega_Menu_Food_Storage_Twist_740x460_1716a0d1-5df4-4c08-a0a8-17a22b7a3d46.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "90abf909-573a-4162-885f-50fd919c7eb7",
+          "1590422187293",
+          "1590422254112",
+          "1592252864143",
+          "1592253368027"
+        ],
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": false,
+          "subheading": "View all brands",
+          "subheading_url": "https:\/\/potsandpansshop.myshopify.com\/pages\/shop-by-brand",
+          "heading": "Featured Brands",
+          "top_padding_number": "50",
+          "bottom_padding_number": "0",
+          "enable_bg_video": false,
+          "section_size": "large"
+        }
+      },
+      "1590502846078": {
+        "type": "image-blocks",
+        "blocks": {
+          "1590502877104": {
+            "type": "content",
+            "settings": {
+              "block_bg_color": "#f8f8f5",
+              "block_heading": "Discover our Brands",
+              "block_text": "For over 20 years, PotsandPans.com has been keeping home cooks in the know with the latest cooking innovations and inspirations from the most trusted kitchenware brands.",
+              "block_btn_label": "Shop Now",
+              "block_btn_url": "shopify:\/\/pages\/shop-by-brand"
+            }
+          },
+          "1590502851392": {
+            "type": "image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Screen_Shot_2020-04-23_at_3.06_1_3x_1f932068-eea4-4bb6-96d7-ce2c4166bc9a.jpg",
+              "block_heading": "Ayesha Curry",
+              "block_url": "shopify:\/\/collections\/ayesha-curry",
+              "hover_heading": "",
+              "hover_description": ""
+            }
+          },
+          "1590502902257": {
+            "type": "image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Untitled_design_-_2022-06-01T194734.771.png",
+              "block_heading": "KitchenAid",
+              "block_url": "shopify:\/\/collections\/kitchenaid",
+              "hover_heading": "",
+              "hover_description": ""
+            }
+          },
+          "1590502915928": {
+            "type": "image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Untitled_design_-_2022-06-01T195517.496.png",
+              "block_heading": "LocknLock",
+              "block_url": "shopify:\/\/collections\/locknlock",
+              "hover_heading": "",
+              "hover_description": ""
+            }
+          },
+          "50132177-a77f-4ad2-baeb-dc670e4fea5d": {
+            "type": "content",
+            "settings": {
+              "block_bg_color": "rgba(0,0,0,0)",
+              "block_heading": "",
+              "block_text": "",
+              "block_btn_label": "",
+              "block_btn_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1590502877104",
+          "1590502851392",
+          "1590502902257",
+          "1590502915928",
+          "50132177-a77f-4ad2-baeb-dc670e4fea5d"
+        ],
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": true,
+          "top_padding_number": "",
+          "bottom_padding_number": ""
+        }
+      },
+      "1590505680229": {
+        "type": "background-with-text",
+        "disabled": true,
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": false,
+          "top_padding_number": "",
+          "bottom_padding_number": "",
+          "full_height": false,
+          "image": "shopify:\/\/shop_images\/Summer_Essentials.jpg",
+          "block_position": "center-right",
+          "block_text_align_desk": "text-align--desktop--left",
+          "block_text_align_mobile": "text-align--mobile--left",
+          "subtitle": "Is your kitchen summer ready?",
+          "title": "Summer Cooking Essentials",
+          "large_size": false,
+          "content": "<p>From indoor grill pans to beat the heat, to cutting boards that work just as well for serving as they do for prepping, here are the summer cooking essentials every home cook should have in their kitchen.<\/p>",
+          "button_label": "Shop now",
+          "button_link": "shopify:\/\/collections\/summer-cooking-essentials",
+          "button_label_2": "",
+          "button_link_2": "",
+          "show_parallax": false
+        }
+      },
+      "1590509196931": {
+        "type": "text-and-block-image",
+        "blocks": {
+          "1590509204351": {
+            "type": "image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/48748_KA_KK2_2Qt_Tea_Kettle_Blue_Velvet_InUse_crop_2.jpg",
+              "block_heading": "Enamel On Steel Whistling Teakettle",
+              "block_url": "shopify:\/\/products\/enamel-on-steel-whistling-teakettle"
+            }
+          },
+          "1590509291589": {
+            "type": "image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Untitled_design_39.png",
+              "block_heading": "Hard Anodized Ceramic Cookware",
+              "block_url": "https:\/\/www.potsandpans.com\/pages\/kitchenaid-ha-ceramic"
+            }
+          }
+        },
+        "block_order": [
+          "1590509204351",
+          "1590509291589"
+        ],
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": false,
+          "subheading": "WHAT'S NEW",
+          "heading": "Our Latest Releases",
+          "text": "Check back here for the newest offerings in quality cookware, bakeware, food storage, and more.",
+          "button_label": "",
+          "button_url": "",
+          "text_align_mobile": "text-align--mobile--right",
+          "top_padding_number": "",
+          "bottom_padding_number": ""
+        }
+      },
+      "page-shop-by-brand": {
+        "type": "page-shop-by-brand",
+        "blocks": {
+          "0b53aaf2-768d-4555-a861-4e0a0e04b86f": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/KitchenAid-Brand-Logo-01.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/KitchenAid-Brand-Logo-01.jpg",
+              "image_max_width": 300,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/kitchenaid"
+            }
+          },
+          "block_y6icPt": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-05-31T132952.746.png",
+              "image_max_width": 240,
+              "mobile_image_max_width": 150,
+              "url": ""
+            }
+          },
+          "1593550415292": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Copy_of_anolon_logo_aubergine.png",
+              "image_max_width": 240,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/anolon"
+            }
+          },
+          "1590582514345": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled_design_-_2021-08-19T170903.994.png",
+              "image_max_width": 310,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/rachael-ray"
+            }
+          },
+          "1593550536514": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled_design_17_0db48f0d-aeb8-4f0e-8ae7-ea8bb396c1aa.png",
+              "image_max_width": 195,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/circulon"
+            }
+          },
+          "1590583789916": {
+            "type": "block",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/College_Kitchen_Collection_Logo.png",
+              "image_max_width": 280,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/college-kitchen-collection"
+            }
+          },
+          "1593550930246": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Farberware_Logo_OLD.png",
+              "image_max_width": 290,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/collections\/farberware"
+            }
+          },
+          "1590582284626": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BonJour_Logo_copy.png",
+              "image_max_width": 280,
+              "mobile_image_max_width": 160,
+              "url": "shopify:\/\/pages\/bonjour"
+            }
+          },
+          "1590582534993": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/LocknLock_Logo_Black.png",
+              "image_max_width": 295,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/locknlock"
+            }
+          },
+          "1590583770018": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ayesha_Curry_Logo.png",
+              "image_max_width": 270,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/ayesha-curry"
+            }
+          },
+          "1590582501012": {
+            "type": "block",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Breville_Logo_Purple_01.png",
+              "image_max_width": 250,
+              "mobile_image_max_width": 150,
+              "url": "shopify:\/\/pages\/breville"
+            }
+          },
+          "1596721410428": {
+            "type": "block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ruffoni_Logo_PNP-01.png",
+              "image_max_width": 240,
+              "mobile_image_max_width": 150,
+              "url": "https:\/\/www.potsandpans.com\/pages\/ruffoni"
+            }
+          }
+        },
+        "block_order": [
+          "0b53aaf2-768d-4555-a861-4e0a0e04b86f",
+          "block_y6icPt",
+          "1593550415292",
+          "1590582514345",
+          "1593550536514",
+          "1590583789916",
+          "1593550930246",
+          "1590582284626",
+          "1590582534993",
+          "1590583770018",
+          "1590582501012",
+          "1596721410428"
+        ],
+        "settings": {
+          "title": "Explore Our Brands",
+          "text": ""
+        }
+      },
+      "product-video": {
+        "type": "product-video",
+        "blocks": {
+          "product_video_imrfhA": {
+            "type": "product_video",
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "video": "https:\/\/player.vimeo.com\/video\/905793870",
+              "autoplay_false": false
+            }
+          }
+        },
+        "block_order": [
+          "product_video_imrfhA"
+        ],
+        "custom_css": [
+          ".ImageHero {margin-left: 10% !important; margin-right: 10% !important;}",
+          ".PlaceholderBackground {display: none !important;}"
+        ],
+        "settings": {
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "show_article_image": true,
+          "show_date": true,
+          "show_category": true,
+          "show_author": true,
+          "show_share_buttons": true
+        }
+      },
+      "shop-now": {
+        "type": "shop-now",
+        "settings": {
+          "show_section": false,
+          "title": "Shop now",
+          "collection": "",
+          "grid_items_count": 6,
+          "show_product_info": true,
+          "show_vendor": false,
+          "show_color_swatch": false
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "show_rss": false,
+          "show_tags": true,
+          "blog_tags_menu": "recipe-page-filters",
+          "show_featured_article": false,
+          "show_category": true
+        }
+      },
+      "article-recipe-template": {
+        "type": "article-recipe-template",
+        "settings": {
+          "show_breadcrumbs": true,
+          "show_toolbar": false,
+          "show_toolbar_share_buttons": true,
+          "show_toolbar_prev_next_buttons": true,
+          "show_article_image": true,
+          "show_date": false,
+          "show_author": true,
+          "show_button_print": true,
+          "button_print_label": "Print",
+          "show_prev_next_article": false
+        }
+      },
+      "collection-template-no-filter": {
+        "type": "collection-template-no-filter",
+        "settings": {
+          "show_color_swatch": false,
+          "show_vendor": false,
+          "show_sort_by": true,
+          "show_layout_switch": false,
+          "toolbar_position": "top",
+          "show_filter_color_swatch": true,
+          "grid_mobile_items_per_row": "2"
+        }
+      },
+      "collection-template-filter": {
+        "type": "collection-template-filter",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/POTS___PANS_1.5x.png",
+          "logo_max_width": 255,
+          "show_filter_title": true,
+          "collection_filter_label": "Filters",
+          "show_color_swatch": true,
+          "show_vendor": true,
+          "show_sort_by": true,
+          "show_layout_switch": true,
+          "toolbar_position": "top",
+          "filter_position": "sidebar",
+          "filter_mode": "group",
+          "show_filter_color_swatch": true,
+          "filter_menu_heading": "Category",
+          "filter_menu": "",
+          "filter_menu_2_heading": "Brands",
+          "filter_menu_2": "",
+          "grid_mobile_items_per_row": "2"
+        }
+      },
+      "page-shop-by-brand-text-content": {
+        "type": "page-shop-by-brand-text-content",
+        "settings": {
+          "show_section": true,
+          "title": "About Us",
+          "text": "It’s all in the name. For over 20 years, PotsandPans.com has been keeping home cooks in the know with the latest cooking innovations and inspirations from the most trusted kitchenware brands.  \n<br><br>\nFrom super-slick nonstick and ultra-durable hard-anodized aluminum, to gleaming stainless steel and the best in kitchen utensils, bakeware, food storage, and more, we’ve curated a wide variety of top-quality products to help every cook create delicious meals to share with family and friends. \n<br><br>\nWhether you’re looking for value-driven cookware sets, gifts for a special occasion, or a high-performance item for your signature recipe, we welcome you to the home of great cookware, bakeware, and kitchenware. Equip your kitchen with the best from PotsandPans.com."
+        }
+      },
+      "password-template": {
+        "type": "password-template",
+        "settings": {
+          "logo": "",
+          "logo_max_width": 140,
+          "mobile_logo_max_width": 90,
+          "background_image": "",
+          "text_color": "#ffffff",
+          "heading": "Opening Soon",
+          "show_newsletter_signup": true,
+          "newsletter_text": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
+          "show_social_sharing": true,
+          "social_message": "Spread the word"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "collections_to_show": "all",
+          "image_size": "normal",
+          "add_spacing": true,
+          "expand_collection": false,
+          "apply_overlay": true,
+          "text_color": "#ffffff",
+          "button_color": "#363636"
+        }
+      },
+      "1591795581671": {
+        "type": "background-with-text",
+        "disabled": true,
+        "settings": {
+          "mobile_hide": true,
+          "desktop_hide": true,
+          "top_padding_number": "",
+          "bottom_padding_number": "",
+          "full_height": false,
+          "image": "shopify:\/\/shop_images\/RR_RRP_Sky_Blue_Lifestyle_alt_PNG_1_2x_317cfb2b-f171-46c9-80d4-60490cb613b5.jpg",
+          "image_mobile": "shopify:\/\/shop_images\/RR_RRP_Sky_Blue_Lifestyle_alt_PNG_1_2x_317cfb2b-f171-46c9-80d4-60490cb613b5.jpg",
+          "block_position": "center-center",
+          "block_text_align_desk": "text-align--desktop--left",
+          "block_text_align_mobile": "text-align--mobile--left",
+          "subtitle": "Featured brand catchphrase",
+          "title": "Rachael Ray",
+          "large_size": false,
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl amet, lacus blandit neque, consequat pellentesque risus. At risus nec scelerisque eget morbi massa adipiscing facilisi.<\/p>",
+          "button_label": "Shop now",
+          "button_link": "#",
+          "button_label_2": "",
+          "button_link_2": "",
+          "show_parallax": false
+        }
+      },
+      "1591835989867": {
+        "type": "blog-posts",
+        "blocks": {
+          "1591835989867-0": {
+            "type": "blog",
+            "settings": {
+              "blog": "recipes"
+            }
+          }
+        },
+        "block_order": [
+          "1591835989867-0"
+        ],
+        "settings": {
+          "subheading": "",
+          "title": "Recipes For Right Now...",
+          "show_category": false,
+          "button_link": "shopify:\/\/blogs\/recipes",
+          "button_text": "View all recipes",
+          "top_padding_number": "",
+          "bottom_padding_number": ""
+        }
+      },
+      "product-reviews": {
+        "type": "product-reviews",
+        "settings": {
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "show_shipping_estimator": true,
+          "shipping_estimator_default_country": "United States"
+        }
+      },
+      "1596122267496": {
+        "type": "testimonials",
+        "blocks": {
+          "1596122267496-2": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "<p><a href=\"\/pages\/rachael-ray-cooking-camp\" title=\"Rachael Ray Cooking Camp\">Looking for summer fun? Proudly sponsored by PotsandPans.com, grab your little chefs and your favorite pots, pans, and kitchenware for Rachael Ray’s Yum-O! Cooking Camp. Click to learn more.<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1596122267496-2"
+        ],
+        "disabled": true,
+        "settings": {
+          "autoplay": false,
+          "cycle_speed": 3,
+          "background": "#1d423c",
+          "text_color": "#ffffff"
+        }
+      },
+      "featured-collections": {
+        "type": "featured-collections",
+        "blocks": {
+          "1596818411894": {
+            "type": "collection",
+            "settings": {
+              "collection": "best-sellers",
+              "title": "",
+              "grid_items_count": 46,
+              "button_text": "View all products",
+              "collection_404": "best-sellers",
+              "title_404": "Best-selling products we think you'll enjoy",
+              "button_text_404": "SHOP BEST SELLERS"
+            }
+          }
+        },
+        "block_order": [
+          "1596818411894"
+        ],
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": false,
+          "title": "Featured Collection",
+          "layout_mode": "carousel",
+          "show_product_info": true,
+          "show_vendor": false,
+          "show_color_swatch": false,
+          "grid_mobile_items_per_row": "2",
+          "grid_desktop_items_per_row": 4,
+          "top_padding_number": "",
+          "bottom_padding_number": ""
+        }
+      },
+      "1600791077306": {
+        "type": "slideshow-header",
+        "blocks": {
+          "93814a4b-85a2-45ce-a8a6-713164940cf9": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled_design_66.png",
+              "apply_overlay": false,
+              "content_position": "middleCenter",
+              "subheading": "Save 20% on select brands - savings applied at checkout*",
+              "sub_heading_font_size": "25",
+              "sub_heading_font_size_mobile": "17",
+              "title": "Easter savings on all your favorites!",
+              "heading_font_size": "45",
+              "heading_font_size_mobile": "30",
+              "button_1_text": "SHOP SALE",
+              "button_1_link": "shopify:\/\/collections\/easter-savings",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          },
+          "image_fCzT7j": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled_design_66.png",
+              "apply_overlay": false,
+              "content_position": "middleCenter",
+              "subheading": "Save up to 40% on select cast iron favorites! | Savings applied at checkout.",
+              "sub_heading_font_size": "25",
+              "sub_heading_font_size_mobile": "17",
+              "title": "Save Big on Cast Iron for Father’s Day",
+              "heading_font_size": "45",
+              "heading_font_size_mobile": "30",
+              "button_1_text": "SHOP CAST IRON",
+              "button_1_link": "shopify:\/\/collections\/save-big-on-cast-iron-for-father-s-day",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          },
+          "60a9bbd5-1bcf-4a08-aaa7-7b944f6266b7": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled_design_-_2021-08-18T220424.694.png",
+              "mobile_image": "shopify:\/\/shop_images\/Untitled_design_-_2021-08-18T221106.707.png",
+              "apply_overlay": false,
+              "content_position": "middleCenter",
+              "subheading": "20% OFF BAKEWARE + FREE SHIPPING WITH CODE BAKE",
+              "sub_heading_font_size": "20",
+              "sub_heading_font_size_mobile": "20",
+              "title": "It's Apple & Pumpkin Season!",
+              "heading_font_size": "45",
+              "heading_font_size_mobile": "45",
+              "button_1_text": "SHOP NOW",
+              "button_1_link": "shopify:\/\/collections\/bakeware-and-ovenware",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "93814a4b-85a2-45ce-a8a6-713164940cf9",
+          "image_fCzT7j",
+          "60a9bbd5-1bcf-4a08-aaa7-7b944f6266b7"
+        ],
+        "disabled": true,
+        "settings": {
+          "show_fullscreen": false,
+          "show_arrow": false,
+          "autoplay": false,
+          "cycle_speed": 6,
+          "text_color": "#ffffff",
+          "background_color": "#1e423c",
+          "button_color": "#363636",
+          "button_background": "#ffffff",
+          "type_padding_top": "0",
+          "type_padding_bottom": "5"
+        }
+      },
+      "1601973058397": {
+        "type": "hero-module",
+        "blocks": {
+          "1601973361404": {
+            "type": "Text",
+            "settings": {
+              "text_line_font": "Freight, sans-serif",
+              "text_line_type": "h3",
+              "text_lines": "<p>Your Cooking Headquarters<\/p>",
+              "font_size": "",
+              "font_size_mobile": "",
+              "line_height": "",
+              "line_height_mobile": "",
+              "letter_spacing": "",
+              "letter_spacing_mobile": "1",
+              "text_color": "#000000",
+              "block_text_align_desk": "text-align--desktop--left",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "margin_top": "20",
+              "margin_bottom": "20",
+              "margin_top_mobile": "20",
+              "margin_bottom_mobile": "20"
+            }
+          },
+          "1601973500568": {
+            "type": "Text",
+            "settings": {
+              "text_line_font": "Circe, sans-serif",
+              "text_line_type": "div",
+              "text_lines": "<p>We've curated a collection of innovative cookware, bakeware and more, all from trusted brands at the right price.<\/p>",
+              "font_size": "18px",
+              "font_size_mobile": "18px",
+              "line_height": "",
+              "line_height_mobile": "",
+              "letter_spacing": "",
+              "letter_spacing_mobile": "",
+              "text_color": "#000000",
+              "block_text_align_desk": "text-align--desktop--left",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "margin_top": "20",
+              "margin_bottom": "25",
+              "margin_top_mobile": "10",
+              "margin_bottom_mobile": "10"
+            }
+          },
+          "1601973573659": {
+            "type": "Buttons",
+            "settings": {
+              "button_text": "SHOP BRANDS",
+              "button_address": "shopify:\/\/pages\/shop-by-brand",
+              "button_text_color": "#ffffff",
+              "button_text_hover_color": "#ffffff",
+              "button_background": "#7a99a3",
+              "button_hover_background": "#1d423c",
+              "button_border_color": "#ffffff",
+              "button_border_hover_color": "#ffffff"
+            }
+          },
+          "bdf02aae-1889-4853-9c38-3581a17411d6": {
+            "type": "Buttons",
+            "settings": {
+              "button_text": "SHOP ALL",
+              "button_address": "shopify:\/\/collections\/shop-all-products",
+              "button_text_color": "#ffffff",
+              "button_text_hover_color": "#ffffff",
+              "button_background": "#7a99a3",
+              "button_hover_background": "#1d423c",
+              "button_border_color": "#7a99a3",
+              "button_border_hover_color": "#1d423c"
+            }
+          },
+          "6de38124-cdae-4d44-9e7b-fbafa9bacbee": {
+            "type": "Text",
+            "settings": {
+              "text_line_font": "Circe, sans-serif",
+              "text_line_type": "div",
+              "text_lines": "",
+              "font_size": "",
+              "font_size_mobile": "",
+              "line_height": "",
+              "line_height_mobile": "",
+              "letter_spacing": "",
+              "letter_spacing_mobile": "",
+              "text_color": "",
+              "block_text_align_desk": "text-align--desktop--left",
+              "block_text_align_mobile": "text-align--mobile--left",
+              "margin_top": "",
+              "margin_bottom": "",
+              "margin_top_mobile": "",
+              "margin_bottom_mobile": ""
+            }
+          }
+        },
+        "block_order": [
+          "1601973361404",
+          "1601973500568",
+          "1601973573659",
+          "bdf02aae-1889-4853-9c38-3581a17411d6",
+          "6de38124-cdae-4d44-9e7b-fbafa9bacbee"
+        ],
+        "disabled": true,
+        "settings": {
+          "desktop_hide": false,
+          "mobile_hide": false,
+          "section_top_margin": "",
+          "section_bottom_margin": "",
+          "section_mob_top_margin": "",
+          "section_mob_bottom_margin": "",
+          "container_max_width": "1160",
+          "min_desktop_height": "700",
+          "min_mobile_section_height": "350",
+          "desktop_padding_top": "50",
+          "desktop_padding_bottom": "50",
+          "min_mobile_height": "300",
+          "full_height": false,
+          "section_bg_color": "#1d423c",
+          "image_desktop": "shopify:\/\/shop_images\/1800_x_800.png",
+          "image_mobile": "shopify:\/\/shop_images\/750_x_750.png",
+          "reverse_image_on_mobile": false,
+          "enable_overflow": true,
+          "overflow_color": "#000000",
+          "overflow_opacity": 25,
+          "start_content_date": "",
+          "end_content_date": "",
+          "content_block_size": "700",
+          "content_block_bg": "#ffffff",
+          "content_position": "middle-right",
+          "buttons_position": "space-between",
+          "button_width": "250",
+          "button_width_mobile": "150",
+          "button_font_size": "",
+          "button_font_size_mobile": "",
+          "margin_bottom_button": "30",
+          "margin_bottom_button_mobile": "15"
+        }
+      },
+      "16046785845db688c5": {
+        "type": "image-with-text-overlay",
+        "disabled": true,
+        "settings": {
+          "section_size": "normal",
+          "image": "shopify:\/\/shop_images\/Copy_of_Untitled_1.png",
+          "text_color": "#ffffff",
+          "overlay_color": "#000000",
+          "overlay_opacity": 37,
+          "subheading": "AYESHA CURRY 6 QT. DUTCH OVEN",
+          "title": "Featured on Oprah's Favorite Things List!",
+          "content": "<p>There are so many reasons to love the Ayesha Curry 6 Qt. Cast Iron Dutch Oven... even Oprah thinks so!<\/p><p><a href=\"\/products\/ayesha-curry-cast-iron-dutch-oven\" title=\"Cast Iron Dutch Oven\">SHOP NOW<\/a><\/p>"
+        }
+      },
+      "1604681330792f0935": {
+        "type": "featured-product",
+        "disabled": true,
+        "settings": {
+          "subheading": "",
+          "title": "",
+          "show_headings_on_mobile": true,
+          "product": "ayesha-curry-cast-iron-dutch-oven",
+          "show_vendor": true,
+          "show_sku": false,
+          "show_description": true,
+          "description_below_add_to_cart": false,
+          "selector_mode": "dropdown",
+          "show_color_swatch": false,
+          "show_color_carousel": false,
+          "show_quantity_selector": true,
+          "show_inventory_quantity": false,
+          "inventory_quantity_threshold": 0,
+          "show_price_in_button": false,
+          "show_payment_button": true
+        }
+      },
+      "161120695176701029": {
+        "type": "image-with-text-block",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Desktop_DTC-PNP_Best_Seller_Bundle_Glam.jpg",
+          "background": "#ffffff",
+          "text_color": "#1c1b1b",
+          "block_size": "large",
+          "title": "Best Sellers Bundled!",
+          "content": "<p>Get cooking on best-selling products that we've bundled together so you can save<\/p>",
+          "button_label": "SHOP NOW & SAVE",
+          "button_link": "shopify:\/\/collections\/best-sellers-bundled",
+          "show_parallax": true
+        }
+      },
+      "16129966840e6e6b19": {
+        "type": "background-video",
+        "disabled": true,
+        "settings": {
+          "section_size": "large",
+          "video_url": "https:\/\/youtu.be\/24ef1ODA_TI"
+        }
+      },
+      "16130913348f3910c0": {
+        "type": "text-with-image",
+        "disabled": true,
+        "settings": {
+          "subheading": "Introducing",
+          "title": "<a href=\"https:\/\/potsandpansshop.myshopify.com\/pages\/kitchenaid\">KitchenAid<sup>®<\/sup><\/a>",
+          "heading_logo_url": "",
+          "image_position": "right",
+          "content": "",
+          "link_text": "",
+          "link_url": ""
+        }
+      },
+      "162872709912078d7b": {
+        "type": "background-with-text-slider",
+        "blocks": {
+          "33ba9edc-0055-40f7-b642-b24656baa887": {
+            "type": "hero_slide",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Desktop_DTC-PNP_Fall_Baking_Banner.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Mobile_DTC-PNP_Fall_Baking_Banner.jpg",
+              "block_position": "center-left",
+              "block_text_align_desk": "text-align--desktop--center",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "subtitle": "PUMPKINS, APPLES, FIGS & MORE!",
+              "title": "Baking Season Is Here!",
+              "large_size": false,
+              "content": "",
+              "button_label": "SHOP BAKEWARE",
+              "button_link": "shopify:\/\/collections\/bakeware",
+              "button_label_2": "FIND A RECIPE",
+              "button_link_2": "https:\/\/www.potsandpans.com\/blogs\/recipes"
+            }
+          },
+          "747eea91-e5f2-4da5-bb81-735195d4dd1e": {
+            "type": "hero_slide",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PotsandPans.com_Shopify_Banner_DESKTOP_-_1800x800px_e8177705-b09c-4c0d-9aba-9763d7422a4d.png",
+              "image_mobile": "shopify:\/\/shop_images\/PotsandPans.com_Shopify_Banner_MOBILE_-_750x750px_d49b2155-b819-45f0-964b-3f9e9004634b.png",
+              "block_position": "center-right",
+              "block_text_align_desk": "text-align--desktop--center",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "subtitle": "",
+              "title": "Your Cooking Headquarters",
+              "large_size": false,
+              "content": "<p>We've curated a collection of innovative cookware, bakeware and more, all from trusted brands at the right price.<\/p>",
+              "button_label": "SHOP BRANDS",
+              "button_link": "shopify:\/\/pages\/shop-by-brand",
+              "button_label_2": "SHOP ALL",
+              "button_link_2": "shopify:\/\/collections\/shop-all-products"
+            }
+          },
+          "4d5d59d8-c989-4e23-863c-8dc34c0ddc83": {
+            "type": "hero_slide",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Desktop_DTC-PNP_DTC_Christmas_Sale_Banner_Glam.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Mobile_DTC-PNP_DTC_Christmas_Sale_Banner_Glam_2.jpg",
+              "block_position": "center-right",
+              "block_text_align_desk": "text-align--desktop--center",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "subtitle": "",
+              "title": "Wrap Up Holiday Shopping with the Perfect Gift",
+              "large_size": false,
+              "content": "",
+              "button_label": "GIVE A GIFT CARD",
+              "button_link": "shopify:\/\/products\/potsandpans-com-gift-card",
+              "button_label_2": "",
+              "button_link_2": ""
+            }
+          },
+          "f53f249a-9b85-4a4f-8e18-4b220802c52c": {
+            "type": "hero_slide",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/HOMEPAGE_BANNER.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/AYC_HA_Enhanced_Content_80291_10pc_set_Glam_TIF.png",
+              "block_position": "center-right",
+              "block_text_align_desk": "text-align--desktop--center",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "subtitle": "For a limited time",
+              "title": "20% Off + Free Shipping on the Ayesha Curry Collection",
+              "large_size": false,
+              "content": "",
+              "button_label": "SHOP NOW",
+              "button_link": "shopify:\/\/collections\/ayesha-curry",
+              "button_label_2": "",
+              "button_link_2": ""
+            }
+          },
+          "2ab04239-9f02-4674-bc06-e4c77bb3e7cb": {
+            "type": "hero_slide",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PNP_Summer_Refresh_Banner_Glam_1800x800_e545430b-ab37-4901-8a4b-c0867274c5f2.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/PNP_Summer_Refresh_Banner_Glam_750x750_3d92c26b-6bf8-4726-a577-be8538855c2e.jpg",
+              "block_position": "center-left",
+              "block_text_align_desk": "text-align--desktop--center",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "subtitle": "LIMITED TIME ONLY!",
+              "title": "Labor Day Sale!",
+              "large_size": false,
+              "content": "<p>30% OFF WITH CODE LDAY + FREE SHIPPING OVER $75<\/p>",
+              "button_label": "SHOP NOW",
+              "button_link": "shopify:\/\/collections\/sale-items",
+              "button_label_2": "FIND A RECIPE",
+              "button_link_2": "https:\/\/www.potsandpans.com\/blogs\/recipes\/tagged\/summer"
+            }
+          },
+          "c219d5d9-fe66-4ee8-b0cb-53fdab5234d3": {
+            "type": "hero_slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/KitchenAid_NITRO_Carbon_Steel_12-in_Skillet.jpg",
+              "block_position": "top-right",
+              "block_text_align_desk": "text-align--desktop--center",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "subtitle": "",
+              "logo": "shopify:\/\/shop_images\/ka_refined__C41230_400x_14935a16-b2d5-48d3-a9ce-64fd00117485.png",
+              "title": "",
+              "large_size": false,
+              "content": "<p>Discover the latest cookware innovations from this iconic brand, including new NITRO Carbon Steel collection.<\/p>",
+              "button_label": "LEARN MORE",
+              "button_link": "https:\/\/www.potsandpans.com\/pages\/kitchenaid-nitro-carbon-steel",
+              "button_label_2": "",
+              "button_link_2": ""
+            }
+          }
+        },
+        "block_order": [
+          "33ba9edc-0055-40f7-b642-b24656baa887",
+          "747eea91-e5f2-4da5-bb81-735195d4dd1e",
+          "4d5d59d8-c989-4e23-863c-8dc34c0ddc83",
+          "f53f249a-9b85-4a4f-8e18-4b220802c52c",
+          "2ab04239-9f02-4674-bc06-e4c77bb3e7cb",
+          "c219d5d9-fe66-4ee8-b0cb-53fdab5234d3"
+        ],
+        "custom_css": [
+
+        ],
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": false,
+          "top_padding_number": "",
+          "bottom_padding_number": "50",
+          "enable_arrows": false,
+          "enable_dots": true,
+          "enable_mobile_arrows": false,
+          "enable_mobile_dots": true,
+          "enable_pause_on_mouse_over": false,
+          "slideshow_speed": 8,
+          "full_height": false
+        }
+      },
+      "product-image-text": {
+        "type": "product-image-text",
+        "blocks": {
+          "ba658dd8-cf63-427e-ba0a-fe639fbe6b22": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "twi_layout": "left",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/KitchenAid_Hard-Anodized_Ceramic_Cookware_in_Empire_Red.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Untitled_design_35.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "PERFORMANCE MEETS PRESENTATION",
+              "description": "Achieve fast, even heat with display-ready ceramic cookware."
+            }
+          },
+          "8ef41423-abbe-44ec-849d-9f79f81221e2": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "twi_layout": "right",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Screenshot_2024-02-27_144535.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "CONDUCTS AND SPREADS HEAT EVENLY",
+              "description": "Hard-anodized aluminum cookware is crafted with thick, forged bases and rims to deliver excellent heat conduction and durability, with a high quality and easy to clean ceramic nonstick interior made without PFAs, BPA, lead, or cadium.*"
+            }
+          },
+          "0fbab962-8cd2-4a10-9d6b-eb152a605d14": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "twi_layout": "left",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Untitled_design_78.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "THE ANTI-RUST DIFFERENCE",
+              "description": "Innovative nitro heat technology hardens and seals the surface of the pan, creating lasting\ndurability and locking out moisture for superior resistance to rust, corrosion, and wear."
+            }
+          },
+          "20ca4e68-2c24-42c9-96e0-429b36e926af": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "twi_layout": "right",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Untitled_design_79.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "What To Expect From Your Pan",
+              "description": "Your pan will take on a variety of colors and patterns as you cook with it and build up the seasoning. This is normal. Remember to trust the process - the more you use it, the better it will perform. Think of the constantly changing appearance as a badge of honor, and the sign of a well-loved pan."
+            }
+          },
+          "7d87f649-a624-409e-b022-68b1f2580dee": {
+            "type": "text_image_block",
+            "disabled": true,
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "",
+              "title": "",
+              "twi_layout": "right",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Mod_4_2928x1200_ALL_-_84815_84816_84817_84818_84819_84820_84821_84822_84823_84824.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Stainless steel bases feature a layer of heat-conductive aluminum that spreads heat quickly and evenly to grill, boil, and simmer with ease."
+            }
+          },
+          "text_image_block_rGggUp": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "colored-ka-teakettles",
+              "title": "",
+              "twi_layout": "left",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Full_res_JPG-KA_KK2_2Qt_TeaKettles_Mixed_Environment_H_1_1.jpg",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "BRING CREATIVITY TO A BOIL",
+              "description": "Modern, color-finished stovetop kettles deliver quick boils."
+            }
+          },
+          "text_image_block_cHqKp9": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "stainless-steel-kitchenaid-teakettles",
+              "title": "",
+              "twi_layout": "left",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Full_res_JPG-48562_KA_KK2_1.9Qt_Tea_Kettle_SS_In_Use.jpg",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "BRING CREATIVITY TO A BOIL",
+              "description": "Create delicious brews and steeps from morning to night with the KitchenAid Stainless Steel Whistling Teakettle."
+            }
+          },
+          "text_image_block_WiQMA7": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "colored-ka-teakettles",
+              "title": "",
+              "twi_layout": "right",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/PNG-48748_KA_KK2_2Qt_EOS_Tea_Kettle_Blue_Velvet_color_finish_SWOP.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "ADD A POP OF COLOR",
+              "description": "Rust-resistant porcelain enamel finish inside-and-out"
+            }
+          },
+          "text_image_block_EAK3DN": {
+            "type": "text_image_block",
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#161515",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "stainless-steel-kitchenaid-teakettles",
+              "title": "",
+              "twi_layout": "right",
+              "text_align_center": false,
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Full_res_JPG-48562_KA_KK2_1.9qtkettle_stainless_QuickHeat_Banner_V2_1.jpg",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "A MODERN TOUCH",
+              "description": "Featuring a sleek, stylish design, this brushed stainless steel teakettle can be displayed on the stovetop between uses."
+            }
+          }
+        },
+        "block_order": [
+          "ba658dd8-cf63-427e-ba0a-fe639fbe6b22",
+          "8ef41423-abbe-44ec-849d-9f79f81221e2",
+          "0fbab962-8cd2-4a10-9d6b-eb152a605d14",
+          "20ca4e68-2c24-42c9-96e0-429b36e926af",
+          "7d87f649-a624-409e-b022-68b1f2580dee",
+          "text_image_block_rGggUp",
+          "text_image_block_cHqKp9",
+          "text_image_block_WiQMA7",
+          "text_image_block_EAK3DN"
+        ],
+        "settings": {
+        }
+      },
+      "product-detail-based-on-vendor": {
+        "type": "product-detail-based-on-vendor",
+        "blocks": {
+          "1bc2621f-d08b-436f-abe2-4d1e98754c5a": {
+            "type": "text_block",
+            "disabled": true,
+            "settings": {
+              "product-vendor-title": "KitchenAid® Hard-Anodized",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "kitchenaid-hard-anodized",
+              "title": "",
+              "titleA1": "Durable construction",
+              "subtextA1": "<p>Hard-anodized is 6x harder than aluminum for durability<\/p>",
+              "titleA2": "Easy to clean",
+              "subtextA2": "<p>Coated rivets create a fully nonstick interior<\/p>",
+              "titleA3": "",
+              "subtextA3": "",
+              "titleA4": "Lock in heat",
+              "subtextA4": "<p>Tempered glass lids retain heat and flavor<\/p>",
+              "titleA5": "Stove-to-oven meals",
+              "subtextA5": "<p>Cookware is oven safe up to 400°F, glass lids to 350°F<\/p>",
+              "titleA6": "",
+              "subtextA6": "",
+              "imageA1": "shopify:\/\/shop_images\/Untitled_design_21.png",
+              "imageA2": "shopify:\/\/shop_images\/Untitled_design_23.png",
+              "imageA3": "shopify:\/\/shop_images\/KA_KKA_10in_frypan_with_Lid_Glass_Lids_Glam_ebiz_JPG.png",
+              "imageA4": "shopify:\/\/shop_images\/Untitled_design_22.png"
+            }
+          },
+          "5e806364-92d7-40fd-b352-5874d911c46d": {
+            "type": "text_block",
+            "settings": {
+              "product-vendor-title": "",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "kitchenaid-stainless-steel",
+              "title": "",
+              "titleA1": "Lock in heat",
+              "subtextA1": "<p>Tempered glass lids retain heat and flavor<\/p>",
+              "titleA2": "Measure quickly",
+              "subtextA2": "<p>Volume marks in saucepans and stockpots for easy measuring<\/p>",
+              "titleA3": "Easy food release",
+              "subtextA3": "<p>Select items feature a PFOA-free nonstick interior<\/p>",
+              "titleA4": "Induction Ready",
+              "subtextA4": "<p>Works on all stovetops <\/p>",
+              "titleA5": "Easy to clean",
+              "subtextA5": "<p>Cookware is dishwasher safe for quick, easy cleanup<\/p>",
+              "titleA6": "Stove-to-oven meals",
+              "subtextA6": "<p>Cookware is oven safe to 400°F without lids, 350°F with lids<\/p><p><br\/><br\/><\/p>",
+              "imageA1": "shopify:\/\/shop_images\/71020_KA_KKC_2_Qt_Saucepan_Volume_Markings_Glam_ebiz_JPG.png",
+              "imageA2": "shopify:\/\/shop_images\/71022_KA_KKC_8qt_cov_stockpot_Glass_Lid_Glam_MIL_ebiz_JPG.png",
+              "imageA3": "shopify:\/\/shop_images\/KA_KKC_DWS_Safe_with_Hand_Glam_ebiz_JPG.png",
+              "imageA4": "shopify:\/\/shop_images\/KA_KKC_8in_frypan_Oven_Glam_MIL_ebiz_JPG.png",
+              "imageA5": "shopify:\/\/shop_images\/KA_KKC_8in_Nonstick_Fry_Pan_Nonstick_Glam_ebiz_JPG.png"
+            }
+          },
+          "af03cc67-1502-4e4d-a1ee-9025608aa9f5": {
+            "type": "text_block",
+            "settings": {
+              "product-vendor-title": "",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "titleA1": "Durable construction",
+              "subtextA1": "<h2>Hard-anodized is 8x harder than aluminum for lasting performance.<\/h2>",
+              "titleA2": "",
+              "subtextA2": "",
+              "titleA3": "Lock in heat",
+              "subtextA3": "<h2>Tempered glass lids* retain heat and flavor.<\/h2><h2> *on select items<\/h2>",
+              "titleA4": "Stove-to-oven meals",
+              "subtextA4": "<h2>Cookware is oven safe to 500°F, glass lids to 350°F.<\/h2>",
+              "titleA5": "",
+              "subtextA5": "",
+              "titleA6": "Easy to clean",
+              "subtextA6": "<h2>Ceramic nonstick interior provides an alternative to traditional PTFE nonstick.<\/h2>",
+              "imageA1": "shopify:\/\/shop_images\/Square-KA_KKH_6Qt_Cov_Stockpot_Blue_Velvet_Construction_1.jpg",
+              "imageA2": "shopify:\/\/shop_images\/Square-KA_KKH_3Qt_Cov_Saucepan_Pistachio_Lid_glam_1.jpg",
+              "imageA3": "shopify:\/\/shop_images\/Square-KA_KKH_5qt_Cov_Saute_Pan_with_HH_Pistachio_Oven_Glam_1.jpg",
+              "imageA4": "shopify:\/\/shop_images\/Square-84838_KA_KKH_10in_Frypan_MatteBlack_PTFE_1.jpg"
+            }
+          },
+          "5860aa96-a2c7-453a-b9cf-64d8e004b64d": {
+            "type": "text_block",
+            "settings": {
+              "product-vendor-title": "",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "titleA1": "Ultra Durable",
+              "subtextA1": "<p>22% harder than traditional carbon steel<\/p>",
+              "titleA2": "Easy to Handle",
+              "subtextA2": "<p>Lighter weight than cast iron with comfortable stainless steel handles<\/p>",
+              "titleA3": "",
+              "subtextA3": "",
+              "titleA4": "Induction ready",
+              "subtextA4": "<p>Works on all stovetops, including induction<\/p>",
+              "titleA5": "Bring on the heat",
+              "subtextA5": "<p>Oven, broiler, and grill safe up to 750°F<\/p>",
+              "titleA6": "",
+              "subtextA6": "",
+              "imageA1": "shopify:\/\/shop_images\/Untitled_design_73.png",
+              "imageA2": "shopify:\/\/shop_images\/Untitled_design_72.png",
+              "imageA3": "shopify:\/\/shop_images\/Untitled_design_74.png",
+              "imageA4": "shopify:\/\/shop_images\/Untitled_design_75.png"
+            }
+          },
+          "text_block_r3g64n": {
+            "type": "text_block",
+            "settings": {
+              "product-vendor-title": "",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "colored-ka-teakettles",
+              "title": "",
+              "titleA1": "Snug-fitting lid",
+              "subtextA1": "<p>Stainless steel lid fits snug to lock in heat<\/p>",
+              "titleA2": "",
+              "subtextA2": "",
+              "titleA3": "Induction capable",
+              "subtextA3": "<p>Works on all stovetops<\/p>",
+              "titleA4": "Endless possibilities",
+              "subtextA4": "<p>Versatile to explore creativity<\/p>",
+              "titleA5": "",
+              "subtextA5": "",
+              "titleA6": "Cohesive, modern kitchen",
+              "subtextA6": "<p>Featured in display-worthy color finishes<\/p>",
+              "imageA1": "shopify:\/\/shop_images\/PNG-48748_KA_KK2_2Qt_EOS_Tea_Kettle_Blue_Velvet_snug_lid_SWOP.png",
+              "imageA2": "shopify:\/\/shop_images\/PNG-48749_KA_KK2_2qt_EOS_kettle_red_induction_SWOP_1_6a4c91a8-6493-4bc2-854a-c5223799d21b.png",
+              "imageA3": "shopify:\/\/shop_images\/48748_KA_KK2_2Qt_Tea_Kettle_Blue_Velvet_InUse_crop_1_1.jpg",
+              "imageA4": "shopify:\/\/shop_images\/PNG-48749_KA_KK2_2qt_EOS_Kettle_Empire_Red_Mixed.png"
+            }
+          },
+          "text_block_KFDyig": {
+            "type": "text_block",
+            "settings": {
+              "product-vendor-title": "",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "stainless-steel-kitchenaid-teakettles",
+              "title": "",
+              "titleA1": "Built to boil",
+              "subtextA1": "<p>Features a thick aluminum layer in the base for quicker boils<\/p>",
+              "titleA2": "",
+              "subtextA2": "",
+              "titleA3": "Enhanced durability",
+              "subtextA3": "<p>Brushed finish hides wear for lasting durability<\/p>",
+              "titleA4": "Alerts when ready",
+              "subtextA4": "<p>Stovetop teakettle lid whistles to alert when water has come to a boil and is ready to pour<\/p>",
+              "titleA5": "",
+              "subtextA5": "",
+              "titleA6": "Induction capable",
+              "subtextA6": "<p>Works on all stovetops<\/p>",
+              "imageA1": "shopify:\/\/shop_images\/Full_res_JPG-48562_KA_KK2_1.9qtkettle_stainless_Versatility_V1_1.jpg",
+              "imageA2": "shopify:\/\/shop_images\/Full_res_JPG-48562_KA_KK2_1.9Qt_Tea_Kettle_SS_Durable_1.jpg",
+              "imageA3": "shopify:\/\/shop_images\/48562_KA_KK2_1.9Qt_Tea_Kettle_SS_Lid_Whistle_crop_1.jpg",
+              "imageA4": "shopify:\/\/shop_images\/Full_res_JPG-48562_KA_KK2_1.9qtkettle_stainless_Fast_Heat.jpg"
+            }
+          },
+          "text_block_jD7H9N": {
+            "type": "text_block",
+            "settings": {
+              "product-vendor-title": "",
+              "section_heading_desktop_fs": "",
+              "section_heading_mobile_fs": "",
+              "product_collection": "",
+              "title": "",
+              "titleA1": "",
+              "subtextA1": "",
+              "titleA2": "",
+              "subtextA2": "",
+              "titleA3": "",
+              "subtextA3": "",
+              "titleA4": "",
+              "subtextA4": "",
+              "titleA5": "",
+              "subtextA5": "",
+              "titleA6": "",
+              "subtextA6": ""
+            }
+          }
+        },
+        "block_order": [
+          "1bc2621f-d08b-436f-abe2-4d1e98754c5a",
+          "5e806364-92d7-40fd-b352-5874d911c46d",
+          "af03cc67-1502-4e4d-a1ee-9025608aa9f5",
+          "5860aa96-a2c7-453a-b9cf-64d8e004b64d",
+          "text_block_r3g64n",
+          "text_block_KFDyig",
+          "text_block_jD7H9N"
+        ],
+        "settings": {
+        }
+      },
+      "product-vendor-blocks": {
+        "type": "product-vendor-blocks",
+        "blocks": {
+          "80abe0e1-031a-449c-8c1d-bf2c975da1f9": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-hard-anodized",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_burner.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Match your burner size to your pan size. Don't leave an empty pan on a hot burner or to boil dry."
+            }
+          },
+          "eea8b97a-dad3-4d96-abd9-117d880dfb38": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-hard-anodized",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_temp.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Heat your pans on medium to low heat. Try a little oil or butter to avoid cooking sprays."
+            }
+          },
+          "7b425ac7-0eeb-4c57-9907-1611c6195676": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-hard-anodized",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_potholder.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Use potholders when handling hot cookware. Use silicone or wooden utensils."
+            }
+          },
+          "42f0bb6f-03b6-4b41-9856-cf6990fc3c7c": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-hard-anodized",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_cleaning.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Cool cookware completely before hand-washing with warm soapy water and a soft sponge"
+            }
+          },
+          "ec433975-afe5-4838-9592-a3a033884f0f": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-stainless-steel",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_burner.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Match pan and burner size and center it. Don't leave an empty pan on a hot burner or allow it to boil dry."
+            }
+          },
+          "b7ebd151-becc-45b8-b3cc-11ae1aea4381": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-stainless-steel",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_temp.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Bring food to room temperature before cooking on a medium to low heat. Try oil or butter to avoid cooking sprays."
+            }
+          },
+          "90ce02c7-b2fe-4c61-a3f6-ddc1d634e021": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-stainless-steel",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_potholder.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Use potholders when handling hot cookware. Use silicone, nylon or wood utensils. Allow foods to release before flipping."
+            }
+          },
+          "1fa0d3ca-e938-46dc-a584-a60b2a1baa62": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-stainless-steel",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_cleaning.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Cool cookware completely before washing. Dry immediately with a towel."
+            }
+          },
+          "cfda8df0-be3a-4ae1-9a59-784bd694c756": {
+            "type": "vendor_blocks",
+            "disabled": true,
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/Square-KA_KKH_6Qt_Cov_Stockpot_Blue_Velvet_Construction.jpg",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "Durable construction",
+              "description": "Hard-anodized is 8x harder than aluminum for lasting performance"
+            }
+          },
+          "44146059-eff9-487a-9cd6-cc4256892925": {
+            "type": "vendor_blocks",
+            "disabled": true,
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/Square-KA_KKH_3Qt_Cov_Saucepan_Pistachio_Lid_glam_1.jpg",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "Lock in heat",
+              "description": "Tempered glass lids* retain heat and flavor"
+            }
+          },
+          "e378cad6-1736-4390-af25-e341eeacdca9": {
+            "type": "vendor_blocks",
+            "disabled": true,
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/Square-84823_KA_KKH_3Qt_Cov_Saucepan_Pistachio_Oven_to_Table_Glam_crop.jpg",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "Easy to clean",
+              "description": "Ceramic nonstick interior provides an alternative to traditional PTFE nonstick"
+            }
+          },
+          "20b4798e-3d91-467d-88e8-0f7082e6c4db": {
+            "type": "vendor_blocks",
+            "disabled": true,
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/Square-KA_KKH_5qt_Cov_Saute_Pan_with_HH_Pistachio_Oven_Glam_1.jpg",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "Stove-to-oven meals",
+              "description": "Cookware is oven safe to 500°F, glass lids to 350°F"
+            }
+          },
+          "8d1434c3-de9d-4ee1-a34d-9a5229248057": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_burner_1.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Match pan bottom to burner size and center it. Keep an eye on your cookware - don’t leave an   empty pan on a hot burner or allow it to boil dry."
+            }
+          },
+          "82c5a685-3948-4da6-b969-49413c37ea96": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_potholder_0b2914f5-72aa-45e3-87cb-917b8daed485.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Use pot holders when handling hot cookware. Use silicone or wooden utensils."
+            }
+          },
+          "33a5507e-bc1d-498b-a751-d6143b6458f6": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_temp_1.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Heat your pans on medium to low heat. Try a little oil or butter and avoid cooking sprays."
+            }
+          },
+          "7a3108a2-d654-4443-8d28-3721c10c24b4": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid®-hard-anodized-ceramic",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7171_GoodCookware_Icons_2000x2000_cleaning_1.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Cool cookware completely before hand-washing with warm, soapy water and a soft sponge."
+            }
+          },
+          "4f900bde-bb06-4d78-98dd-ab5c7f6ebe2d": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/Heat.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Start on medium-low heat to avoid overheating. Carbon steel is extremely responsive to heat."
+            }
+          },
+          "4ec25c05-123d-47ec-872a-bcdd3f636590": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/BuildSeasoning.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Building a seasoning: Similar to cast iron, you'll want to season your carbon steel to develop smooth, nonstick-like performance over time."
+            }
+          },
+          "700b540f-6451-4742-840f-7e22425c3f50": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/NotNonstick.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Remember: your pan isn't nonstick (yet). Until well seasoned, cook with butter or oil to avoid sticking."
+            }
+          },
+          "2b989e91-930b-409d-a371-22e75a78e647": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/HandWash_af138445-6580-4dc5-9d08-c1c1dd3f2298.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Hand wash your pan to preserve the seasoning you've worked so hard to build up. Avoid detergents and scouring pads, stiff brushes, or other abrasives."
+            }
+          },
+          "0106aa4f-6032-4916-b6a5-442e3a664b8a": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/AvoidAcids_ba449dd4-4c01-4ef6-a50b-6bd4153889a5.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "",
+              "description": "Avoid allowing acidic foods to sit in your pan for extended periods of time - this includes tomatoes, lemon, vinegar, or wine, which can strip your hard-earned seasoning."
+            }
+          },
+          "vendor_blocks_HqkWkH": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-teakettle",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7904_UseAndCareIcons_1200x1200_FillTheKettle_1.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "PREPPING",
+              "description": "Fill the kettle no higher than the maximum fill level: below the bottom of the spout.\n\nEnsure the lid is securely sealed on the teakettle – you should hear a loud click. Match the kettle to the correct burner size."
+            }
+          },
+          "vendor_blocks_4HUVwQ": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-teakettle",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7904_UseAndCareIcons_1200x1200_HeatToMedHigh_1.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "BOILING",
+              "description": "Heat the teakettle on medium-to-medium high heat.\n\nTurn the burner off once the teakettle whistles and let rest for one minute. If you notice the kettle does not whistle or sounds quieter than normal, your teakettle may be overfilled, or you may not have the lid on securely.\n\nTo avoid damages, don’t leave a teakettle unattended or allow to boil dry."
+            }
+          },
+          "vendor_blocks_znxWf6": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-teakettle",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7904_UseAndCareIcons_1200x1200_UsePotholder_1.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "SERVING",
+              "description": "The teakettle can get very hot during boiling – ALWAYS use a potholder when handling.\n\nAvoid touching lid during and immediately after boiling, as steam can escape from the base of the knob where the whistle is located."
+            }
+          },
+          "vendor_blocks_99MJHR": {
+            "type": "vendor_blocks",
+            "settings": {
+              "product_collection": "kitchenaid-teakettle",
+              "title": "",
+              "block_link": "",
+              "image": "shopify:\/\/shop_images\/KA7904_UseAndCareIcons_1200x1200_Cleaning_1.png",
+              "text_block_bg": "#ffffff",
+              "text_color": "#161515",
+              "heading": "CLEANING",
+              "description": "This teakettle should be washed by hand.\n\nEmpty the teakettle frequently and wash with warm, soapy water, rinse and dry thoroughly. To avoid scratching, do not use harsh abrasives or steel wool."
+            }
+          }
+        },
+        "block_order": [
+          "80abe0e1-031a-449c-8c1d-bf2c975da1f9",
+          "eea8b97a-dad3-4d96-abd9-117d880dfb38",
+          "7b425ac7-0eeb-4c57-9907-1611c6195676",
+          "42f0bb6f-03b6-4b41-9856-cf6990fc3c7c",
+          "ec433975-afe5-4838-9592-a3a033884f0f",
+          "b7ebd151-becc-45b8-b3cc-11ae1aea4381",
+          "90ce02c7-b2fe-4c61-a3f6-ddc1d634e021",
+          "1fa0d3ca-e938-46dc-a584-a60b2a1baa62",
+          "cfda8df0-be3a-4ae1-9a59-784bd694c756",
+          "44146059-eff9-487a-9cd6-cc4256892925",
+          "e378cad6-1736-4390-af25-e341eeacdca9",
+          "20b4798e-3d91-467d-88e8-0f7082e6c4db",
+          "8d1434c3-de9d-4ee1-a34d-9a5229248057",
+          "82c5a685-3948-4da6-b969-49413c37ea96",
+          "33a5507e-bc1d-498b-a751-d6143b6458f6",
+          "7a3108a2-d654-4443-8d28-3721c10c24b4",
+          "4f900bde-bb06-4d78-98dd-ab5c7f6ebe2d",
+          "4ec25c05-123d-47ec-872a-bcdd3f636590",
+          "700b540f-6451-4742-840f-7e22425c3f50",
+          "2b989e91-930b-409d-a371-22e75a78e647",
+          "0106aa4f-6032-4916-b6a5-442e3a664b8a",
+          "vendor_blocks_HqkWkH",
+          "vendor_blocks_4HUVwQ",
+          "vendor_blocks_znxWf6",
+          "vendor_blocks_99MJHR"
+        ],
+        "settings": {
+          "section_heading": "Get the Most Out of Your Cookware",
+          "section_heading_color": "#161515",
+          "section_heading_desktop_fs": "",
+          "section_heading_mobile_fs": "",
+          "type_padding_top": "",
+          "type_padding_bottom": ""
+        }
+      },
+      "1633731749e4b51fc8": {
+        "type": "custom-html",
+        "settings": {
+          "subheading": "",
+          "title": "",
+          "html": "<style>\n  #section-162872709912078d7b > div > div > div > div > div > div.BackgroundHero__Block.text-align--desktop--center.text-align--mobile--center > p {\n    display: none !important;\n  }\n<\/style>"
+        }
+      },
+      "16395274502c51c4f7": {
+        "type": "slideshow-header",
+        "blocks": {
+          "16395274502c51c4f7-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled_design_-_2021-12-14T161159.211.png",
+              "mobile_image": "shopify:\/\/shop_images\/Untitled_design_-_2021-12-14T161220.570.png",
+              "apply_overlay": false,
+              "content_position": "middleCenter",
+              "subheading": "GET COOKING ON BEST-SELLING PRODUCTS WE'VE BUNDLED TOGETHER SO YOU CAN SAVE!",
+              "sub_heading_font_size": "20",
+              "sub_heading_font_size_mobile": "20",
+              "title": "Best Sellers Bundled!",
+              "heading_font_size": "50",
+              "heading_font_size_mobile": "15",
+              "button_1_text": "SHOP BUNDLES & SAVE",
+              "button_1_link": "shopify:\/\/collections\/best-sellers-bundled",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "16395274502c51c4f7-0"
+        ],
+        "disabled": true,
+        "settings": {
+          "show_fullscreen": false,
+          "show_arrow": false,
+          "autoplay": true,
+          "cycle_speed": 5,
+          "text_color": "#ffffff",
+          "background_color": "#1e423c",
+          "button_color": "#363636",
+          "button_background": "#ffffff",
+          "type_padding_top": "50",
+          "type_padding_bottom": ""
+        }
+      },
+      "product-gif-text": {
+        "type": "product-gif-text",
+        "blocks": {
+          "3dac55e9-199b-4401-abe0-08fdff6bafd1": {
+            "type": "text_image_block",
+            "disabled": true,
+            "settings": {
+              "section_heading": "Breville",
+              "section_heading_color": "#0d202f",
+              "heading": "BREVILLE",
+              "twi_layout": "left",
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image": "shopify:\/\/shop_images\/Untitled_design_-_2022-06-01T194734.771.png",
+              "image_mobile": "shopify:\/\/shop_images\/71020_KA_KKC_2_Qt_Saucepan_Volume_Markings_Glam_ebiz_JPG.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#0d202f",
+              "title": "Vivamus suscipit tortor eget felis porttitor volutpat.",
+              "description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Nulla quis lorem ut libero malesuada feugiat."
+            }
+          },
+          "4d374744-f53d-4467-8504-fb9696d7db26": {
+            "type": "text_image_block",
+            "disabled": true,
+            "settings": {
+              "section_heading": "",
+              "section_heading_color": "#0d202f",
+              "heading": "KITCHENAID",
+              "twi_layout": "left",
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#0d202f",
+              "title": "",
+              "description": ""
+            }
+          },
+          "cdf7292c-634e-4b1f-be3a-025ae7567e97": {
+            "type": "text_image_block",
+            "disabled": true,
+            "settings": {
+              "section_heading": "What To",
+              "section_heading_color": "#0d202f",
+              "heading": "",
+              "twi_layout": "left",
+              "type_padding_top": "",
+              "type_padding_bottom": "",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#0d202f",
+              "title": "",
+              "description": ""
+            }
+          }
+        },
+        "block_order": [
+          "3dac55e9-199b-4401-abe0-08fdff6bafd1",
+          "4d374744-f53d-4467-8504-fb9696d7db26",
+          "cdf7292c-634e-4b1f-be3a-025ae7567e97"
+        ],
+        "settings": {
+        }
+      },
+      "product-vendor-cards": {
+        "type": "product-vendor-cards",
+        "blocks": {
+          "644aa9a7-1e9e-474a-936e-feb34f9d899f": {
+            "type": "vendor_cards",
+            "disabled": true,
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "image": "shopify:\/\/shop_images\/Untitled_design_79.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#1c1b1b",
+              "description": "Your pan will take on a variety of colors and patterns as you cook with it and build up the seasoning. This is normal. Remember to trust the process - the more you use it, the better it will perform. Think of the constantly changing appearance as a badge of honor, and the sign of a well-loved pan."
+            }
+          },
+          "2a1a6323-254c-4293-82e0-26fca526d691": {
+            "type": "vendor_cards",
+            "disabled": true,
+            "settings": {
+              "product_collection": "nitro-carbon-steel-cookware",
+              "title": "",
+              "image": "shopify:\/\/shop_images\/Untitled_design_78_2f6ed762-74be-4705-9d80-53ea96a81375.png",
+              "image_link": "",
+              "text_block_bg": "#ffffff",
+              "text_color": "#1c1b1b",
+              "description": ""
+            }
+          }
+        },
+        "block_order": [
+          "644aa9a7-1e9e-474a-936e-feb34f9d899f",
+          "2a1a6323-254c-4293-82e0-26fca526d691"
+        ],
+        "settings": {
+          "section_heading": "What To Expect From Your Pan",
+          "section_heading_color": "#0d202f",
+          "type_padding_top": "",
+          "type_padding_bottom": ""
+        }
+      },
+      "product-video-gallery": {
+        "type": "product-video-gallery",
+        "settings": {
+          "enable_section": true,
+          "grid": "3",
+          "show_play_btn": false
+        }
+      },
+      "1fcc2d18-0bee-4f6b-9724-be3df1614dcc": {
+        "type": "image-with-text-block",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Desktop_DTC-PNP_6295_Gourmet_Gift_Guide_SMC_FB_Cover_Winter.jpg",
+          "background": "#ffffff",
+          "text_color": "#1c1b1b",
+          "block_size": "large",
+          "title": "2022 HOLIDAY GIFT GUIDE",
+          "content": "<p>Let the gifting begin with great gifts for the cook, baker, entertainer, and more!<\/p>",
+          "button_label": "GET GIFTING",
+          "button_link": "shopify:\/\/pages\/gifts",
+          "show_parallax": true
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "blocks": {
+          "39f2e937-8bd7-4cd3-a1ed-f583691afa06": {
+            "type": "threshold",
+            "disabled": true,
+            "settings": {
+              "message": "",
+              "amount": 100,
+              "get_product": "everyday-storage-10pc-storage-container-set"
+            }
+          }
+        },
+        "block_order": [
+          "39f2e937-8bd7-4cd3-a1ed-f583691afa06"
+        ],
+        "settings": {
+          "show_payment_icons": true,
+          "payment_icons_order": "shopify_pay,paypal,visa,master,american_express,discover",
+          "cart_enable_notes": false,
+          "cart_show_free_shipping_threshold": false,
+          "cart_free_shipping_threshold": "75",
+          "cart_message": "",
+          "gwp_enable": false,
+          "gwp_type": "threshold",
+          "gwp_threshold_final_message": "Spend $100 and save 15% + get a free 10pc food storage set!",
+          "get_product_by_collection": "",
+          "buy_of_collection": ""
+        }
+      },
+      "7f58f8d5-f76f-46fc-8911-7a21442e0488": {
+        "type": "image-with-text-overlay",
+        "disabled": true,
+        "settings": {
+          "section_size": "small",
+          "image": "shopify:\/\/shop_images\/Mobile_Module-DTC_7538_DTC_Q4_PNPGiftCards_Banner.jpg",
+          "text_color": "#ffffff",
+          "overlay_color": "#000000",
+          "overlay_opacity": 30,
+          "subheading": "",
+          "title": "Gift Cards For the Whole Family",
+          "content": "<p><a href=\"\/products\/potsandpans-com-gift-card\" title=\"Potsandpans.com Gift Card\">SHOP GIFT CARDS&gt;<\/a><\/p>"
+        }
+      },
+      "59d3ec14-1caa-4a3a-893a-1b08bd9e7e5d": {
+        "type": "text-with-image",
+        "disabled": true,
+        "settings": {
+          "subheading": "",
+          "title": "Buy more, Save more!",
+          "heading_logo_url": "",
+          "image_position": "right",
+          "content": "<h5><strong>Spend $300+, Get 30% Off<\/strong><\/h5><h5><strong>Spend $200+, Get 20% Off<\/strong><\/h5><h5><strong>Spend $100+, Get 15% Off + 10-Piece LocknLock Container Set<\/strong><\/h5>",
+          "link_text": "",
+          "link_url": ""
+        }
+      },
+      "background_with_text_slider_q7PJe3": {
+        "type": "background-with-text-slider",
+        "blocks": {
+          "hero_slide_AfVztd": {
+            "type": "hero_slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Mobile_Module-DTC_7538_DTC_Q4_PNPGiftCards_Banner.jpg",
+              "block_position": "center-right",
+              "block_text_align_desk": "text-align--desktop--center",
+              "block_text_align_mobile": "text-align--mobile--center",
+              "subtitle": "Gifts Cards for the Whole Family!",
+              "title": "",
+              "large_size": false,
+              "content": "",
+              "button_label": "SHOP GIFT CARDS",
+              "button_link": "shopify:\/\/products\/potsandpans-com-gift-card",
+              "button_label_2": "",
+              "button_link_2": ""
+            }
+          }
+        },
+        "block_order": [
+          "hero_slide_AfVztd"
+        ],
+        "disabled": true,
+        "settings": {
+          "mobile_hide": false,
+          "desktop_hide": false,
+          "top_padding_number": "",
+          "bottom_padding_number": "",
+          "enable_arrows": false,
+          "enable_dots": true,
+          "enable_mobile_arrows": false,
+          "enable_mobile_dots": true,
+          "enable_pause_on_mouse_over": false,
+          "slideshow_speed": 4,
+          "full_height": false
+        }
+      }
+    },
+    "content_for_index": [
+      "59d3ec14-1caa-4a3a-893a-1b08bd9e7e5d",
+      "1600791077306",
+      "162872709912078d7b",
+      "7f58f8d5-f76f-46fc-8911-7a21442e0488",
+      "background_with_text_slider_q7PJe3",
+      "1fcc2d18-0bee-4f6b-9724-be3df1614dcc",
+      "1601973058397",
+      "1590405825164",
+      "1596122267496",
+      "1590422142751",
+      "16130913348f3910c0",
+      "16129966840e6e6b19",
+      "16395274502c51c4f7",
+      "161120695176701029",
+      "1590418700083",
+      "16046785845db688c5",
+      "1604681330792f0935",
+      "1591795581671",
+      "1590502846078",
+      "1590505680229",
+      "1590509196931",
+      "1591835989867",
+      "1633731749e4b51fc8"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Allure": {
+      "heading_color": "#1c1b1b",
+      "text_color": "#1c1b1b",
+      "text_light_color": "#6a6a6a",
+      "link_color": "#6a6a6a",
+      "background": "#efefef",
+      "light_background": "#ffffff",
+      "product_on_sale_color": "#f94c43",
+      "button_background": "#1c1b1b",
+      "button_text_color": "#ffffff",
+      "header_background": "#ffffff",
+      "header_heading_color": "#1c1b1b",
+      "header_light_color": "#6a6a6a",
+      "footer_background": "#ffffff",
+      "footer_heading_color": "#1c1b1b",
+      "footer_text_color": "#6a6a6a",
+      "newsletter_popup_background": "#1c1b1b",
+      "newsletter_popup_text_color": "#ffffff",
+      "secondary_elements_background": "#1c1b1b",
+      "secondary_elements_text_color": "#ffffff",
+      "navigation_background": "#1c1b1b",
+      "navigation_text_color": "#ffffff",
+      "heading_font": "montserrat_n5",
+      "heading_size": "small",
+      "uppercase_heading": true,
+      "text_font": "nunito_sans_n4",
+      "base_text_font_size": 14,
+      "show_page_transition": true,
+      "search_mode": "product,article",
+      "product_show_price_on_hover": false,
+      "product_show_secondary_image": false,
+      "product_info_alignment": "center",
+      "product_image_size": "natural",
+      "product_list_horizontal_spacing": "medium",
+      "product_list_vertical_spacing": "small",
+      "cart_type": "drawer",
+      "cart_enable_notes": true,
+      "cart_show_free_shipping_threshold": false,
+      "cart_free_shipping_threshold": "39",
+      "checkout_logo_position": "center",
+      "checkout_logo_size": "small",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#efefef",
+      "checkout_accent_color": "#1c1b1b",
+      "checkout_button_color": "#1c1b1b",
+      "sections": {
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "primary_menu": "main-menu",
+            "show_social_media": true
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "background": "#000000",
+            "text_color": "#ffffff"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "use_sticky_header": true,
+            "logo_max_width": 140,
+            "navigation_menu": "main-menu",
+            "enable_transparent_header": true,
+            "transparent_text_color": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_payment_methods": true
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slide-0": {
+              "type": "image",
+              "settings": {
+                "apply_overlay": true,
+                "content_position": "bottomLeft",
+                "subheading": "Slide title",
+                "title": "Tell your story"
+              }
+            },
+            "slide-1": {
+              "type": "image",
+              "settings": {
+                "apply_overlay": true,
+                "content_position": "bottomLeft",
+                "subheading": "Slide title",
+                "title": "Tell your story"
+              }
+            }
+          },
+          "block_order": [
+            "slide-0",
+            "slide-1"
+          ],
+          "settings": {
+            "show_fullscreen": true,
+            "show_arrow": false,
+            "autoplay": true,
+            "cycle_speed": 5,
+            "text_color": "#ffffff",
+            "button_color": "#363636"
+          }
+        },
+        "featured-collections": {
+          "type": "featured-collections",
+          "blocks": {
+            "featured-collection-0": {
+              "type": "collection",
+              "settings": {
+                "grid_items_count": 8,
+                "button_text": "View all products"
+              }
+            }
+          },
+          "block_order": [
+            "featured-collection-0"
+          ],
+          "settings": {
+            "title": "Featured collection",
+            "layout_mode": "grid",
+            "show_product_info": true,
+            "grid_mobile_items_per_row": "2",
+            "grid_desktop_items_per_row": 4
+          }
+        },
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-0": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            },
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            }
+          },
+          "block_order": [
+            "collection-0",
+            "collection-1",
+            "collection-2"
+          ],
+          "settings": {
+            "add_spacing": true,
+            "expand_collection": false,
+            "text_color": "#ffffff",
+            "button_color": "#363636"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {
+            "title": "Featured product",
+            "show_vendor": true,
+            "show_description": true,
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "show_quantity_selector": true,
+            "show_inventory_quantity": false,
+            "inventory_quantity_threshold": 3
+          }
+        },
+        "timeline": {
+          "type": "timeline",
+          "blocks": {
+            "item-0": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2000",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            },
+            "item-1": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2001",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            },
+            "item-2": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2002",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "item-0",
+            "item-1",
+            "item-2"
+          ],
+          "settings": {
+            "text_color": "#ffffff"
+          }
+        },
+        "blog-posts": {
+          "type": "blog-posts",
+          "blocks": {
+            "blog-0": {
+              "type": "blog",
+              "settings": {
+                "blog": "news"
+              }
+            }
+          },
+          "block_order": [
+            "blog-0"
+          ],
+          "settings": {
+            "title": "Featured article",
+            "show_category": false,
+            "button_text": "View all articles"
+          }
+        },
+        "shop-the-look": {
+          "type": "shop-the-look",
+          "blocks": {
+            "look-0": {
+              "type": "look",
+              "settings": {
+                "dot_style": "light",
+                "product_1_horizontal_position": 30,
+                "product_1_vertical_position": 40,
+                "product_2_horizontal_position": 45,
+                "product_2_vertical_position": 65,
+                "product_3_horizontal_position": 70,
+                "product_3_vertical_position": 50
+              }
+            },
+            "look-1": {
+              "type": "look",
+              "settings": {
+                "dot_style": "light",
+                "product_1_horizontal_position": 25,
+                "product_1_vertical_position": 45,
+                "product_2_horizontal_position": 55,
+                "product_2_vertical_position": 30,
+                "product_3_horizontal_position": 65,
+                "product_3_vertical_position": 60
+              }
+            }
+          },
+          "block_order": [
+            "look-0",
+            "look-1"
+          ],
+          "settings": {
+            "subheading": "Shop",
+            "title": "Our looks"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "show_collection_info": true,
+            "show_collection_image": false,
+            "show_sort_by": true,
+            "show_layout_switch": false,
+            "toolbar_position": "bottom",
+            "filter_position": "sidebar",
+            "filter_mode": "tag",
+            "show_filter_color_swatch": true,
+            "grid_items_per_page": 16,
+            "grid_mobile_items_per_row": "2",
+            "grid_desktop_items_per_row": 4
+          }
+        },
+        "recently-viewed-products": {
+          "type": "recently-viewed-products",
+          "settings": {
+            "show_section": true,
+            "title": "Recently viewed",
+            "show_product_info": true
+          }
+        },
+        "collection-footer": {
+          "type": "collection-footer",
+          "settings": {
+            "show_section": false,
+            "text_color": "#ffffff",
+            "apply_overlay": true,
+            "title": "Our story",
+            "content": "<p>Add your own custom content to explain your processes...<\/p>"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_share_buttons": true,
+            "show_vendor": true,
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "show_quantity_selector": true,
+            "show_inventory_quantity": false,
+            "inventory_quantity_threshold": 3,
+            "image_size": "large",
+            "stack_images": true,
+            "show_thumbnails": false,
+            "enable_image_zoom": true
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+            "show_product_recommendations": true,
+            "show_product_info": true
+          }
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "featured-collections",
+        "collection-list",
+        "featured-product",
+        "timeline",
+        "blog-posts",
+        "shop-the-look"
+      ]
+    },
+    "Couture": {
+      "heading_color": "#5c5c5c",
+      "text_color": "#5c5c5c",
+      "text_light_color": "#939393",
+      "link_color": "#323232",
+      "background": "#ffffff",
+      "light_background": "#ffffff",
+      "product_on_sale_color": "#f94c43",
+      "button_background": "#5c5c5c",
+      "button_text_color": "#ffffff",
+      "header_background": "#ffffff",
+      "header_heading_color": "#5c5c5c",
+      "header_light_color": "#939393",
+      "footer_background": "#ffffff",
+      "footer_heading_color": "#5c5c5c",
+      "footer_text_color": "#939393",
+      "newsletter_popup_background": "#ffffff",
+      "newsletter_popup_text_color": "#1c1b1b",
+      "secondary_elements_background": "#5c5c5c",
+      "secondary_elements_text_color": "#ffffff",
+      "navigation_background": "#ffffff",
+      "navigation_text_color": "#5c5c5c",
+      "heading_font": "futura_n4",
+      "heading_size": "large",
+      "uppercase_heading": false,
+      "text_font": "century_gothic_n4",
+      "base_text_font_size": 15,
+      "show_page_transition": true,
+      "search_mode": "product,article",
+      "product_show_price_on_hover": true,
+      "product_show_secondary_image": false,
+      "product_info_alignment": "left",
+      "product_image_size": "natural",
+      "product_list_horizontal_spacing": "small",
+      "product_list_vertical_spacing": "small",
+      "cart_type": "drawer",
+      "cart_enable_notes": true,
+      "cart_show_free_shipping_threshold": false,
+      "cart_free_shipping_threshold": "39",
+      "checkout_logo_position": "center",
+      "checkout_logo_size": "small",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_accent_color": "#323232",
+      "checkout_button_color": "#5c5c5c",
+      "sections": {
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "primary_menu": "main-menu",
+            "show_social_media": true
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "background": "#f3f3f3",
+            "text_color": "#5c5c5c"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "use_sticky_header": true,
+            "logo_max_width": 140,
+            "navigation_menu": "main-menu",
+            "enable_transparent_header": true,
+            "transparent_text_color": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_payment_methods": true
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slide-0": {
+              "type": "image",
+              "settings": {
+                "apply_overlay": true,
+                "content_position": "bottomLeft",
+                "subheading": "Slide title",
+                "title": "Tell your story"
+              }
+            },
+            "slide-1": {
+              "type": "image",
+              "settings": {
+                "apply_overlay": true,
+                "content_position": "bottomLeft",
+                "subheading": "Slide title",
+                "title": "Tell your story"
+              }
+            }
+          },
+          "block_order": [
+            "slide-0",
+            "slide-1"
+          ],
+          "settings": {
+            "show_fullscreen": true,
+            "show_arrow": false,
+            "autoplay": true,
+            "cycle_speed": 5,
+            "text_color": "#ffffff",
+            "button_color": "#363636"
+          }
+        },
+        "featured-collections": {
+          "type": "featured-collections",
+          "blocks": {
+            "featured-collection-0": {
+              "type": "collection",
+              "settings": {
+                "grid_items_count": 8,
+                "button_text": "View all products"
+              }
+            }
+          },
+          "block_order": [
+            "featured-collection-0"
+          ],
+          "settings": {
+            "title": "Featured collection",
+            "layout_mode": "grid",
+            "show_product_info": true,
+            "grid_mobile_items_per_row": "2",
+            "grid_desktop_items_per_row": 4
+          }
+        },
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-0": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            },
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            }
+          },
+          "block_order": [
+            "collection-0",
+            "collection-1",
+            "collection-2"
+          ],
+          "settings": {
+            "add_spacing": true,
+            "expand_collection": false,
+            "text_color": "#ffffff",
+            "button_color": "#363636"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {
+            "title": "Featured product",
+            "show_vendor": true,
+            "show_description": true,
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "show_quantity_selector": true,
+            "show_inventory_quantity": false,
+            "inventory_quantity_threshold": 3
+          }
+        },
+        "timeline": {
+          "type": "timeline",
+          "blocks": {
+            "item-0": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2000",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            },
+            "item-1": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2001",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            },
+            "item-2": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2002",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "item-0",
+            "item-1",
+            "item-2"
+          ],
+          "settings": {
+            "text_color": "#ffffff"
+          }
+        },
+        "blog-posts": {
+          "type": "blog-posts",
+          "blocks": {
+            "blog-0": {
+              "type": "blog",
+              "settings": {
+                "blog": "news"
+              }
+            }
+          },
+          "block_order": [
+            "blog-0"
+          ],
+          "settings": {
+            "title": "Featured article",
+            "show_category": false,
+            "button_text": "View all articles"
+          }
+        },
+        "shop-the-look": {
+          "type": "shop-the-look",
+          "blocks": {
+            "look-0": {
+              "type": "look",
+              "settings": {
+                "dot_style": "light",
+                "product_1_horizontal_position": 30,
+                "product_1_vertical_position": 40,
+                "product_2_horizontal_position": 45,
+                "product_2_vertical_position": 65,
+                "product_3_horizontal_position": 70,
+                "product_3_vertical_position": 50
+              }
+            },
+            "look-1": {
+              "type": "look",
+              "settings": {
+                "dot_style": "light",
+                "product_1_horizontal_position": 25,
+                "product_1_vertical_position": 45,
+                "product_2_horizontal_position": 55,
+                "product_2_vertical_position": 30,
+                "product_3_horizontal_position": 65,
+                "product_3_vertical_position": 60
+              }
+            }
+          },
+          "block_order": [
+            "look-0",
+            "look-1"
+          ],
+          "settings": {
+            "subheading": "Shop",
+            "title": "Our looks"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "show_collection_info": true,
+            "show_collection_image": false,
+            "show_sort_by": true,
+            "show_layout_switch": false,
+            "toolbar_position": "bottom",
+            "filter_position": "sidebar",
+            "filter_mode": "tag",
+            "show_filter_color_swatch": true,
+            "grid_items_per_page": 16,
+            "grid_mobile_items_per_row": "2",
+            "grid_desktop_items_per_row": 4
+          }
+        },
+        "recently-viewed-products": {
+          "type": "recently-viewed-products",
+          "settings": {
+            "show_section": true,
+            "title": "Recently viewed",
+            "show_product_info": true
+          }
+        },
+        "collection-footer": {
+          "type": "collection-footer",
+          "settings": {
+            "show_section": false,
+            "text_color": "#ffffff",
+            "apply_overlay": true,
+            "title": "Our story",
+            "content": "<p>Add your own custom content to explain your processes...<\/p>"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_share_buttons": true,
+            "show_vendor": true,
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "show_quantity_selector": true,
+            "show_inventory_quantity": false,
+            "inventory_quantity_threshold": 3,
+            "image_size": "large",
+            "stack_images": true,
+            "show_thumbnails": false,
+            "enable_image_zoom": true
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+            "show_product_recommendations": true,
+            "show_product_info": true
+          }
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "featured-collections",
+        "collection-list",
+        "featured-product",
+        "timeline",
+        "blog-posts",
+        "shop-the-look"
+      ]
+    },
+    "Vogue": {
+      "heading_color": "#454545",
+      "text_color": "#454545",
+      "text_light_color": "#9d9d9d",
+      "link_color": "#a17c5e",
+      "background": "#ffffff",
+      "light_background": "#ffffff",
+      "product_on_sale_color": "#f94c43",
+      "button_background": "#c2a284",
+      "button_text_color": "#ffffff",
+      "header_background": "#ffffff",
+      "header_heading_color": "#454545",
+      "header_light_color": "#9d9d9d",
+      "footer_background": "#ffffff",
+      "footer_heading_color": "#454545",
+      "footer_text_color": "#9d9d9d",
+      "newsletter_popup_background": "#454545",
+      "newsletter_popup_text_color": "#ffffff",
+      "secondary_elements_background": "#f1e4d8",
+      "secondary_elements_text_color": "#373737",
+      "navigation_background": "#454545",
+      "navigation_text_color": "#ffffff",
+      "heading_font": "din_neuzeit_grotesk_n3",
+      "heading_size": "small",
+      "uppercase_heading": true,
+      "text_font": "futura_n4",
+      "base_text_font_size": 14,
+      "show_page_transition": true,
+      "show_element_staggering": false,
+      "search_mode": "product,article",
+      "product_show_price_on_hover": true,
+      "product_show_secondary_image": false,
+      "product_info_alignment": "center",
+      "product_image_size": "natural",
+      "product_list_horizontal_spacing": "medium",
+      "product_list_vertical_spacing": "small",
+      "cart_type": "drawer",
+      "cart_enable_notes": true,
+      "cart_show_free_shipping_threshold": false,
+      "cart_free_shipping_threshold": "39",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_accent_color": "#a17c5e",
+      "checkout_button_color": "#454545",
+      "sections": {
+        "sidebar-menu": {
+          "type": "sidebar-menu",
+          "settings": {
+            "primary_menu": "main-menu",
+            "show_social_media": true
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "background": "#f1e4d8",
+            "text_color": "#343434"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "use_sticky_header": true,
+            "logo_max_width": 140,
+            "navigation_menu": "main-menu",
+            "enable_transparent_header": true,
+            "transparent_text_color": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+            "show_payment_methods": true
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slide-0": {
+              "type": "image",
+              "settings": {
+                "apply_overlay": true,
+                "content_position": "bottomLeft",
+                "subheading": "Slide title",
+                "title": "Tell your story"
+              }
+            },
+            "slide-1": {
+              "type": "image",
+              "settings": {
+                "apply_overlay": true,
+                "content_position": "bottomLeft",
+                "subheading": "Slide title",
+                "title": "Tell your story"
+              }
+            }
+          },
+          "block_order": [
+            "slide-0",
+            "slide-1"
+          ],
+          "settings": {
+            "show_fullscreen": true,
+            "show_arrow": false,
+            "autoplay": true,
+            "cycle_speed": 5,
+            "text_color": "#ffffff",
+            "button_color": "#363636"
+          }
+        },
+        "featured-collections": {
+          "type": "featured-collections",
+          "blocks": {
+            "featured-collection-0": {
+              "type": "collection",
+              "settings": {
+                "grid_items_count": 8,
+                "button_text": "View all products"
+              }
+            }
+          },
+          "block_order": [
+            "featured-collection-0"
+          ],
+          "settings": {
+            "title": "Featured collection",
+            "layout_mode": "grid",
+            "show_product_info": true,
+            "grid_mobile_items_per_row": "2",
+            "grid_desktop_items_per_row": 4
+          }
+        },
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-0": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            },
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "image_alignment": "center center",
+                "subheading": "Sub-heading",
+                "button_text": "View products",
+                "apply_overlay": true
+              }
+            }
+          },
+          "block_order": [
+            "collection-0",
+            "collection-1",
+            "collection-2"
+          ],
+          "settings": {
+            "add_spacing": true,
+            "expand_collection": false,
+            "text_color": "#ffffff",
+            "button_color": "#363636"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {
+            "title": "Featured product",
+            "show_vendor": true,
+            "show_description": true,
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "show_quantity_selector": true,
+            "show_inventory_quantity": false,
+            "inventory_quantity_threshold": 3
+          }
+        },
+        "timeline": {
+          "type": "timeline",
+          "blocks": {
+            "item-0": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2000",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            },
+            "item-1": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2001",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            },
+            "item-2": {
+              "type": "item",
+              "settings": {
+                "apply_overlay": true,
+                "title": "2002",
+                "subheading": "Sub-heading",
+                "heading": "Heading",
+                "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "item-0",
+            "item-1",
+            "item-2"
+          ],
+          "settings": {
+            "text_color": "#ffffff"
+          }
+        },
+        "blog-posts": {
+          "type": "blog-posts",
+          "blocks": {
+            "blog-0": {
+              "type": "blog",
+              "settings": {
+                "blog": "news"
+              }
+            }
+          },
+          "block_order": [
+            "blog-0"
+          ],
+          "settings": {
+            "title": "Featured article",
+            "show_category": false,
+            "button_text": "View all articles"
+          }
+        },
+        "shop-the-look": {
+          "type": "shop-the-look",
+          "blocks": {
+            "look-0": {
+              "type": "look",
+              "settings": {
+                "dot_style": "light",
+                "product_1_horizontal_position": 30,
+                "product_1_vertical_position": 40,
+                "product_2_horizontal_position": 45,
+                "product_2_vertical_position": 65,
+                "product_3_horizontal_position": 70,
+                "product_3_vertical_position": 50
+              }
+            },
+            "look-1": {
+              "type": "look",
+              "settings": {
+                "dot_style": "light",
+                "product_1_horizontal_position": 25,
+                "product_1_vertical_position": 45,
+                "product_2_horizontal_position": 55,
+                "product_2_vertical_position": 30,
+                "product_3_horizontal_position": 65,
+                "product_3_vertical_position": 60
+              }
+            }
+          },
+          "block_order": [
+            "look-0",
+            "look-1"
+          ],
+          "settings": {
+            "subheading": "Shop",
+            "title": "Our looks"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "show_collection_info": true,
+            "show_collection_image": false,
+            "show_sort_by": true,
+            "show_layout_switch": false,
+            "toolbar_position": "bottom",
+            "filter_position": "sidebar",
+            "filter_mode": "tag",
+            "show_filter_color_swatch": true,
+            "grid_items_per_page": 16,
+            "grid_mobile_items_per_row": "2",
+            "grid_desktop_items_per_row": 4
+          }
+        },
+        "recently-viewed-products": {
+          "type": "recently-viewed-products",
+          "settings": {
+            "show_section": true,
+            "title": "Recently viewed",
+            "show_product_info": true
+          }
+        },
+        "collection-footer": {
+          "type": "collection-footer",
+          "settings": {
+            "show_section": false,
+            "text_color": "#ffffff",
+            "apply_overlay": true,
+            "title": "Our story",
+            "content": "<p>Add your own custom content to explain your processes...<\/p>"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_share_buttons": true,
+            "show_vendor": true,
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "show_quantity_selector": true,
+            "show_inventory_quantity": false,
+            "inventory_quantity_threshold": 3,
+            "image_size": "large",
+            "stack_images": true,
+            "show_thumbnails": false,
+            "enable_image_zoom": true
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+            "show_product_recommendations": true,
+            "show_product_info": true
+          }
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "featured-collections",
+        "collection-list",
+        "featured-product",
+        "timeline",
+        "blog-posts",
+        "shop-the-look"
+      ]
+    }
+  }
+}

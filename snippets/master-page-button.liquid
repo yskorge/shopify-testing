@@ -1,0 +1,15 @@
+{%- assign button_labels = page.metafields.master-brand-button.button_label -%}
+
+{%- if button_labels != blank -%}
+  {%- for button_label in button_labels -%}
+    {%- assign order = page.metafields.master-brand-button.order[forloop.index0] -%}
+    {%- assign button_link = page.metafields.master-brand-button.button_link[forloop.index0] -%}
+
+    {%- if button_label != blank and button_link != blank -%}
+      <a href="{{ button_link }}" class="master-page-button Button Button--primary" style="order: {{ order }}">
+        {{ button_label }}
+      </a>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+

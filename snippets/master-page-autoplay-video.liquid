@@ -1,0 +1,10 @@
+{%- assign show_section = page.metafields.master-brand-6.show_section -%}
+{%- assign order = page.metafields.master-brand-6.order -%}
+{%- assign video_url = page.metafields.master-brand-6.video_url -%}
+{%- assign image_url = page.metafields.master-brand-6.image[0].src -%}
+{%- assign autoplay_false = page.metafields.master-brand-6.autoplay_off -%}
+
+{%- if show_section -%}
+  {% render 'autoplay-video-metafields',
+    video_url: video_url, image_url: image_url, autoplay_false: autoplay_false, order: order  %}
+{%- endif -%}

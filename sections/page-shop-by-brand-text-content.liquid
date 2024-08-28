@@ -1,0 +1,43 @@
+{%- assign show_section = section.settings.show_section -%}
+{%- assign title = section.settings.title -%}
+{%- assign text = section.settings.text -%}
+
+{%- if show_section -%}
+  <section class="Section page-shop-by-brand section-container" id="section-{{ section.id }}" data-section-id="{{ section.id }}">
+
+    {%- if title != blank -%}
+      <h1 class="page-shop-by-brand__heading page-shop-by-brand__heading">
+        {{ title }}
+      </h1>
+    {%- endif -%}
+
+    {%- if text != blank -%}
+      <p class="page-shop-by-brand__text">
+        {{ text }}
+      </p>
+    {%- endif -%}
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Text content",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+}
+{% endschema %}

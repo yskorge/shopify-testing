@@ -1,0 +1,110 @@
+{%- comment -%}
+{% render 'product-gif-text-metafield',
+  enable_section: ,
+  section_heading: ,
+  heading_color: ,
+  section_heading_desktop_fs: ,
+  section_heading_mobile_fs: ,
+  twi_revers: ,
+  text_align_center: ,
+  type_padding_top: ,
+  type_padding_bottom: ,
+  image: ,
+  image_mobile: ,
+  image_link: ,
+  text_block_bg: ,
+  text_color: ,
+  heading: ,
+  description:  %}
+{%- endcomment -%}
+
+{%- if enable_section == 'true' -%}
+<div class="Container section-container {{ section.id }}" style="color: {{ text_color }}">
+  {%- if section_heading != blank -%}
+    <h2 class="product-iwt__heading Heading u-h2" style="color: {{ heading_color }}">{{ section_heading }}</h2>
+  {%- endif -%}
+  {%- if image != blank or heading != blank or description != blank -%}
+  <div class="product-iwt {% if twi_revers %} product-iwt-right{% endif %}">
+    {%- if heading != blank or description != blank -%}
+      <div class="product-iwt__content-wrapper" style="background-color: {{ text_block_bg }}; {% if image == blank %}margin: 0 auto; {% endif %}">
+        <div class="product-iwt__content-text-block" {% if text_align_center == 'true' %}style="text-align: center"{% endif %}>
+          {%- if heading != blank -%}
+            <h3 class="product-iwt__content-heading Heading u-h3">{{ heading }}</h3>
+          {%- endif -%}
+          {%- if description != blank -%}
+            <div class="product-iwt__content-text">{{ description }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if image != blank -%}
+      {%- if image_link != blank -%}
+        <a href="{{ image_link }}" class="product-iwt__image-wrapper {% if image_mobile != blank %}product-iwt__image-wrapper--desktop{% endif %}">
+      {%- else -%}
+        <div class="product-iwt__image-wrapper {% if image_mobile != blank %}product-iwt__image-wrapper--desktop{% endif %}">
+      {%- endif -%}
+      {% render 'image-metafields', image: image %}
+      <noscript>
+        <img src="{{ image | img_url: 'master' }}" alt="{{ heading | escape }}">
+      </noscript>
+
+      {%- if image_link != blank -%}
+        </a>
+      {%- else -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if image_mobile != blank -%}
+      {%- if image_link != blank -%}
+        <a href="{{ image_link }}" class="product-iwt__image-wrapper product-iwt__image-wrapper--mobile">
+      {%- else -%}
+        <div class="product-iwt__image-wrapper product-iwt__image-wrapper--mobile">
+      {%- endif -%}
+
+      {% render 'image-metafields', image: image_mobile %}
+      <noscript>
+        <img src="{{ image_mobile | img_url: 'master' }}" alt="{{ heading | escape }}">
+      </noscript>
+
+      {%- if image_link != blank -%}
+        </a>
+      {%- else -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+
+    </div>
+  {%- endif -%}
+  </div>
+{%- endif -%}
+
+<style type="text/css">
+  {% if type_padding_top != blank or type_padding_bottom != blank %}
+  .product-image-with-text{
+  {% if type_padding_top != blank %}
+    padding-top: {{ type_padding_top }}px !important;
+  {% endif %}
+  {% if type_padding_bottom != blank %}
+    padding-bottom: {{ type_padding_bottom }}px !important;
+  {% endif %}
+  }
+  {% endif %}
+  {% if section_heading_desktop_fs != blank or section_heading_mobile_fs != blank %}
+  {% if section_heading_desktop_fs != blank %}
+  @media screen and (min-width: 641px) {
+    .{{ section.id }} .product-iwt__heading {
+      font-size: {{ section_heading_desktop_fs }}px;
+    }
+  }
+  {% endif %}
+  {% if section_heading_mobile_fs != blank %}
+  @media screen and (max-width: 640px) {
+    .{{ section.id }} .product-iwt__heading {
+      font-size: {{ section_heading_mobile_fs }}px;
+    }
+  }
+  {% endif %}
+  {% endif %}
+</style>

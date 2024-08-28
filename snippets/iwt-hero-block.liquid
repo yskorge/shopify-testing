@@ -1,0 +1,55 @@
+<div class="BackgroundHero
+  {% if top_margin %} section-mt {% endif %}
+  {% if bottom_margin %} section-mb {% endif %}
+  {% if full_height %} BackgroundHero--full-height {% endif %}
+  BackgroundHero__Block--{{- block_position -}}">
+
+  {%- if image != blank -%}
+    <div class="BackgroundHero__ImageWrapper">
+      <div class="BackgroundHero__Image {% if image_mobile != blank %}BackgroundHero__Image--desktop{% endif %} Image--lazyLoad Image--zoomOut {% if show_parallax %}BackgroundHero__Image--parallax{% endif %}"
+           data-optimumx="1.4"
+           data-expand="-150"
+           data-bgset="{{ image | img_url: '750x' }} 750w, {{ image | img_url: '1000x' }} 1000w, {{ image | img_url: '1500x' }} 1500w">
+      </div>
+
+      {%- if image_mobile != blank -%}
+        <div class="BackgroundHero__Image BackgroundHero__Image--mobile Image--lazyLoad Image--zoomOut"
+             data-optimumx="1.4"
+             data-expand="-150"
+             data-bgset="{{ image_mobile | img_url: '750x' }} 750w, {{ image_mobile | img_url: '1000x' }} 1000w">
+        </div>
+      {%- endif -%}
+
+      <noscript>
+        <div class="BackgroundHero__ImageWrapper" style="background-image: url({{ image | img_url: '1000x' }})"></div>
+      </noscript>
+    </div>
+  {%- endif -%}
+
+  {%- if title != blank or content != blank or button_label != blank -%}
+    <div class="BackgroundHero__Block {{ block_text_align_desk }} {{ block_text_align_mobile }}">
+
+      {%- if subtitle != blank -%}
+        <span class="BackgroundHero__BlockSubHeading">{{ subtitle | escape }}</span>
+      {%- endif -%}
+
+      {%- if title != blank -%}
+        <h3 class="BackgroundHero__BlockHeading {% if large_size %} large-size {% else %} normal-size {% endif %}">{{ title | escape }}</h3>
+      {%- endif -%}
+
+      {%- if content != blank -%}
+        <div class="BackgroundHero__BlockContent Rte">
+          {{ content }}
+        </div>
+      {%- endif -%}
+
+      {%- if button_label != blank and button_link != blank -%}
+        <a href="{{ button_link }}" class="BackgroundHero__BlockLink Button Button--primary">{{ button_label | escape }}</a>
+      {%- endif -%}
+
+      {%- if button_label_2 != blank and button_link_2 != blank -%}
+        <a href="{{ button_link_2 }}" class="BackgroundHero__BlockLink Button Button--primary">{{ button_label_2 | escape }}</a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>

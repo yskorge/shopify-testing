@@ -1,0 +1,253 @@
+{%- if section.settings.enable_bar -%}
+  {%- unless section.settings.home_page_only and template != 'index' -%}
+  {%- assign today_date = 'now' | date: '%Y-%m-%d' -%}
+  {%- assign first_block = section.blocks | first -%}
+  {%- assign end_content_date_first = first_block.settings.end_content_date | default: '2050-01-01' -%}
+  {%- assign close_x = 'x.svg' | asset_url -%}
+  {%- assign enable_sticky_bar = section.settings.enable_sticky_bar -%}
+
+    {%- if today_date < end_content_date_first -%}
+      <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar"
+               {% if enable_sticky_bar %}data-sticky="true"{% endif %}
+      style="--background-color: {{ section.settings.background }};
+        --color: {{ section.settings.text_color }};">
+
+        <a class="PageSkipLink u-visually-hidden" href="#main">{{ 'header.navigation.skip_to_content' | t }}</a>
+
+        {%- for block in section.blocks -%}
+          {%- assign link_text_pop_up = block.settings.link_text_pop_up -%}
+          {%- assign link_pop_up = block.settings.link_pop_up -%}
+          {%- assign page_link = link_pop_up | split: '/' -%}
+          {%- assign page_handle = page_link | last -%}
+
+          {%- if link_pop_up != blank or link_text_pop_up != blank -%}
+            <div class="AnnouncementBar__Overlay" data-modal="{{ page_handle | append: forloop.index }}">
+              <div class="AnnouncementBar__Pop-up">
+              <span class="AnnouncementBar__Pop-up--close">
+                <img src="{{ close_x }}" alt="Close x">
+              </span>
+                {% unless template contains 'shogun' %}
+                  {{ pages[page_handle].content }}
+                {% endunless %}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="AnnouncementBar">
+          <div class="AnnouncementBar__Wrapper" data-announcement-bar-slideshow
+               data-slideshow-vertical-mode="{{ section.settings.vertical_mode }}"
+               data-enable-autoplay="{{ section.settings.enable_autoplay }}"
+               data-slideshow-speed="{{ section.settings.slideshow_speed | times: 1000 }}">
+            {%- for block in section.blocks -%}
+              {%- assign end_event = block.settings.end_date -%}
+              {%- assign enable_pop-up = block.settings.enable_pop-up -%}
+              {%- assign start_content_date = block.settings.start_content_date | date: '%Y-%m-%d' | default: today_date -%}
+              {%- assign end_content_date = block.settings.end_content_date | date: '%Y-%m-%d' | default: '2050-01-01' -%}
+              {%- assign content = block.settings.content -%}
+              {%- assign link_text = block.settings.link_text -%}
+              {%- assign link_new_window = block.settings.link_new_window -%}
+              {%- assign link_text_pop_up = block.settings.link_text_pop_up -%}
+              {%- assign link_pop_up = block.settings.link_pop_up -%}
+              {%- assign pop_up_icon = block.settings.pop_up_icon -%}
+
+              {%- if today_date >= start_content_date and today_date < end_content_date -%}
+              <div class="AnnouncementBar__Inner" id="AnnouncementBar__Inner-{{ forloop.index }}"
+                   role="presentation"
+                   focusable="{%- if forloop.first -%}true{%- else -%}false{%- endif -%}">
+                <p class="AnnouncementBar__Content">
+
+                  {%- if content != blank -%}
+                    {{- content -}}
+                  {%- endif -%}
+
+                  {%- if link_pop_up != blank or link_text_pop_up != blank -%}
+                    {%- assign page_link = link_pop_up | split: '/' -%}
+                    {%- assign page_handle = page_link | last -%}
+                    <a class="announcement"
+                       href="{{ link_pop_up }}">
+                      {{- link_text_pop_up | lstrip -}}
+                      {% if pop_up_icon != blank %}
+                        <sup>{{ pop_up_icon }}</sup>
+                      {% endif %}
+
+                      <span class="u-visually-hidden">{{ page_handle }} {{ content | truncatewords: 5 }}</span>
+                    </a>
+                  {%- endif -%}
+
+                  {%- if link_new_window != blank or link_text != blank -%}
+                    <a class="announcement-link" tabindex="{%- if forloop.first -%}0{%- else -%}-1{%- endif -%}" href="{{ link_new_window }}">
+                      {{ link_text }}
+
+                      <span class="u-visually-hidden">{{ content | truncatewords: 5 }}</span>
+                    </a>
+                  {%- endif -%}
+
+                </p>
+                {% if end_event != blank %}
+                  <div class="AnnouncementBar__Timer" data-end-date="{{ end_event }}">
+                    <div class="AnnouncementBar__TimerItems">
+                      <div class="timer__item">
+                        <span class="timer__itemTitle"> ENDS IN </span>
+                        <span class="timer__days">
+                           </span>
+                        <span class="Days_Title"> DAYS | </span>
+                      </div>
+
+                      <div class="timer__item">
+                            <span class="timer__hours">
+                           </span>
+                        <span class="HRS_Title"> HRS : </span>
+                      </div>
+
+                      <div class="timer__item">
+                            <span class="timer__minutes">
+                           </span>
+                        MIN :
+                      </div>
+
+                      <div class="timer__item">
+                            <span class="timer__seconds">
+                           </span>
+                        SEC
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        </div>
+      </section>
+    {%- endif -%}
+
+    <style>
+        {%- if enable_sticky_bar -%}
+        #shopify-section-announcement {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        {%- endif -%}
+    </style>
+  {%- endunless -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_bar",
+      "label": "Enable sticky bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Home page only",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "slideshow_speed",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "unit": "s",
+      "label": "Autoplay speed",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "vertical_mode",
+      "label": "Vertical mode",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "start_content_date",
+          "label": "Start display content date",
+          "info": "Date format yyyy-mm-dd, example - 2020-03-22"
+        },
+        {
+          "type": "text",
+          "id": "end_content_date",
+          "label": "End display content date",
+          "info": "Date format yyyy-mm-dd, example - 2020-03-22"
+        },
+        {
+          "type": "text",
+          "id": "end_date",
+          "label": "End date",
+          "info": "Date format yyyy-mm-dd, example - 2022/03/22"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Text",
+          "default": "Announce something here"
+        },
+        {
+          "type": "text",
+          "id": "link_text_pop_up",
+          "label": "Text for pop-up link"
+        },
+        {
+          "type": "html",
+          "id": "pop_up_icon",
+          "label": "Add icon"
+        },
+        {
+          "type": "url",
+          "id": "link_pop_up",
+          "label": "Link 1"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text"
+        },
+        {
+          "type": "url",
+          "id": "link_new_window",
+          "label": "Link 2"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

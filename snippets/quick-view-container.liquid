@@ -1,0 +1,9 @@
+<quick-view class="QuickViewModal" aria-hidden="true">
+  <div role="dialog" aria-modal="true" class="QuickViewModal__Content hide-scrollbar" tabindex="-1">
+    <button id="modal-close-popup-quick-view" type="button" class="QuickViewModal__Close" aria-label="close quick view modal">
+      {% render 'icon' with 'close' %}
+    </button>
+    <div class="QuickViewModal__Inner" id="product__quick-view"></div>
+    {%- render 'quick-view-skeleton' -%}
+  </div>
+</quick-view>

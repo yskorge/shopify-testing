@@ -1,0 +1,80 @@
+{% comment %}
+  need delete this snippet after launch, metafields clean
+{% endcomment %}
+
+{%- assign show_section = page.metafields.master-brand-4-1.show_section -%}
+{%- assign order = page.metafields.master-brand-4-1.order -%}
+{%- assign heading = page.metafields.master-brand-4-1.section_heading -%}
+{%- assign collection = collections[page.metafields.master-brand-4-1.collection] -%}
+{%- assign products = page.metafields.master-brand-4-1.product -%}
+{%- assign for_products = page.metafields.master-brand-4-1.product | default: collection.products -%}
+
+{%- assign show_product_info = true -%}
+{%- if page.metafields.master-brand-4-1.hide_product_information == 'true' -%}
+  {%- assign show_product_info = false -%}
+{%- endif -%}
+
+{%- assign show_vendor = true -%}
+{%- if page.metafields.master-brand-4-1.hide_vendor == 'true' -%}
+  {%- assign show_vendor = false -%}
+{%- endif -%}
+
+{%- assign show_color_swatch = true -%}
+{%- if page.metafields.master-brand-4-1.hide_color_swatch == 'true' -%}
+  {%- assign show_color_swatch = false -%}
+{%- endif -%}
+
+{%- assign show_labels = true -%}
+{%- if page.metafields.master-brand-4-1.hide_labels == 'true' -%}
+  {%- assign show_labels = false -%}
+{%- endif -%}
+
+{%- if show_section-%}
+
+  {%- capture flickity_options -%}
+    {
+    "prevNextButtons": true,
+    "pageDots": false,
+    "wrapAround": true,
+    "contain": true,
+    "cellAlign": "center",
+    "watchCSS": true,
+    "dragThreshold": 8,
+    "groupCells": true,
+    "arrowShape": "M 55.5 61 L 28 33.5 L 55.5 6"
+    }
+  {%- endcapture -%}
+
+  {%- capture layout_carousel -%}
+    {
+      "layout": "carousel"
+    }
+  {%- endcapture -%}
+
+
+  <section class="Section Section--spacingNormal"
+           id="section-{{ section.id }}"
+           data-section-id="{{ section.id }}"
+           data-section-type="featured-collections"
+           data-settings='{{ layout_carousel }}'
+           style="order: {{ order }}">
+    {%- if heading != blank -%}
+      <h2 class="master-brand-template__heading">{{ heading }}</h2>
+    {%- endif -%}
+
+    <div class="ProductList ProductList--carousel Carousel section-container" role="presentation" data-flickity-config='{{ flickity_options }}'>
+      {%- for product in for_products -%}
+
+        {%- if products != blank -%}
+          {%- assign this_product = all_products[product] -%}
+        {% else %}
+          {%- assign this_product = product -%}
+        {%- endif -%}
+
+        <div class="Carousel__Cell">
+          {%- render 'product-item', product: this_product, show_product_info: show_product_info, show_vendor: show_vendor, show_color_swatch: show_color_swatch, show_labels: show_labels -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}

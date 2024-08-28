@@ -1,0 +1,208 @@
+{%- if section.settings.enable_section -%}
+  {%- assign product_has_videos = false -%}
+  {%- assign grid = section.settings.grid -%}
+  {%- assign heading = section.settings.heading -%}
+  {%- assign show_play_btn = section.settings.show_play_btn -%}
+  {%- assign productVendor = product.vendor | downcase -%}
+
+  {% for block in section.blocks %}
+    {%- if block.type == 'video_block' -%}
+      {% assign vendorFromSection = block.settings.title | downcase %}
+      {% assign video = block.settings.video %}
+
+      {% if productVendor contains vendorFromSection and video != blank %}
+        {%- assign product_has_videos = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <div class="Container">
+    {% for block in section.blocks %}
+      {%- if block.type == 'gallery_heading' -%}
+        {%- assign gallery_vendor = block.settings.gallery_vendor | downcase -%}
+        {%- assign gallery_heading = block.settings.title -%}
+
+        {%- if productVendor contains gallery_vendor and product_has_videos -%}
+          <h2 class="video-gallery__heading u-h2">{{ gallery_heading }}</h2>
+          {%- break -%}
+        {%- endif -%}
+
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="video-gallery__wrapper">
+      {% for block in section.blocks %}
+        {%- if block.type == 'video_block' -%}
+        {% assign vendorFromSection = block.settings.title | downcase %}
+        {% assign video = block.settings.video %}
+        {% assign image = block.settings.image %}
+        {% assign video_heading = block.settings.video_heading %}
+        {% assign video_description = block.settings.video_description %}
+        {%- assign youtube_poster_url = blank -%}
+
+        {% if productVendor contains vendorFromSection and video != blank %}
+        {%- if video.type == 'youtube' -%}
+          {%- if image ==  blank -%}
+            {%- assign youtube_poster_url = 'http://img.youtube.com/vi/' | append: video.id | append: '/maxresdefault.jpg' -%}
+          {%- endif -%}
+        {%- else -%}
+        {%- if image ==  blank -%}
+          <script type="text/javascript">
+            function setThumbnail() {
+              $.getJSON('https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/' + {{ video.id }}, {
+                    format: "json",
+                    width: "640"
+                  },
+                  function (data) {
+                    $('#video-block-{{ forloop.index }} .video-gallery__image-wrapper').append('<img src="' + data.thumbnail_url + '" class="video-gallery__image" alt="Vimeo video poster"/>');
+                  });
+            }
+            setThumbnail()
+            if (Shopify.designMode) {
+              setInterval(setThumbnail, 3000)
+            }
+          </script>
+        {%- endif -%}
+        {%- endif -%}
+
+          <div class="video-gallery__block video-gallery__grid-{{ grid }}" id="video-block-{{ forloop.index }}">
+            <a href="{{ video.url }}" class="video-gallery__image-wrapper" target="_blank">
+              {%- if image != blank or youtube_poster_url != blank -%}
+                <img class="video-gallery__image Image--lazyLoad Image--fadeIn"
+                        {%- if youtube_poster_url == blank -%}
+                          src="{{ image | img_url: '1x1' }}"
+                          data-src="{{ image | img_url: 'x800' }}"
+                        {%- else -%}
+                          src="{{ youtube_poster_url }}"
+                          data-src="{{ youtube_poster_url }}"
+                        {%- endif -%}
+                     alt="Video poster">
+
+                <noscript>
+                  <img class="video-gallery__image"
+                       src="{%- if youtube_poster_url == blank -%}
+                          {{ youtube_poster_url }}
+                        {%- else -%}
+                          {{ image | img_url: 'x800' }}
+                        {%- endif -%}"
+                       alt="Video poster">
+                </noscript>
+              {%- endif -%}
+              {%- if show_play_btn -%}
+                <svg class="video-gallery__play-btn" height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+                  <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path>
+                  <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                </svg>
+              {%- endif -%}
+            </a>
+            {%- if video_heading != blank -%}
+              <h4 class="video-gallery__block-heading u-h5">
+                <a href="{{ video.url }}" target="_blank">{{ video_heading }}</a>
+              </h4>
+            {%- endif -%}
+            {%- if video_description != blank -%}
+              <p class="video-gallery__block-description Rte">{{ video_description }}</p>
+            {%- endif -%}
+          </div>
+        {% endif %}
+        {%- endif -%}
+      {% endfor %}
+    </div>
+  </div>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product video gallery",
+  "class": "product-video-gallery",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Show video gallery section",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "grid",
+      "label": "Video grid",
+      "options": [
+        {
+          "value": "2",
+          "label": "1/2"
+        },
+        {
+          "value": "3",
+          "label": "1/3"
+        },
+        {
+          "value": "4",
+          "label": "1/4"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_play_btn",
+      "label": "Show play button"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_block",
+      "name": "video block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product vendor"
+        },
+        {
+          "type": "video_url",
+          "id": "video",
+          "label": "Video",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Video poster",
+          "info": "Video thumbnail by default"
+        },
+        {
+          "type": "text",
+          "id": "video_heading",
+          "label": "Video heading"
+        },
+        {
+          "type": "text",
+          "id": "video_description",
+          "label": "Video description"
+        }
+      ]
+    },
+    {
+      "type": "gallery_heading",
+      "name": "video heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "gallery_vendor",
+          "label": "Product vendor"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Gallery heading"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

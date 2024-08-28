@@ -1,0 +1,541 @@
+{%- capture section_settings -%}
+{
+  "type": "drawer",
+  "itemCount": {{ cart.item_count }},
+  "drawer": true,
+  "hasShippingEstimator": false
+}
+{%- endcapture -%}
+
+{%- assign cart_message = section.settings.cart_message -%}
+{%- assign cart_enable_notes = section.settings.cart_enable_notes -%}
+{%- assign show_payment_icons = section.settings.show_payment_icons -%}
+{%- assign cart_show_free_shipping_threshold = section.settings.cart_show_free_shipping_threshold -%}
+{%- assign cart_free_shipping_threshold = section.settings.cart_free_shipping_threshold -%}
+{%- assign shipping_threshold = section.settings.shipping_threshold -%}
+
+{%- liquid
+  assign gwp_enable = section.settings.gwp_enable
+  assign get_product_by_collection = section.settings.get_product_by_collection
+  assign get_product_by_collection_variant_id = section.settings.get_product_by_collection_variant_id
+  assign gwp_type = section.settings.gwp_type
+  assign buy_of_collection = section.settings.buy_of_collection
+-%}
+
+<div id="sidebar-cart" class="Drawer Drawer--fromRight" aria-hidden="true" data-section-id="cart" data-section-type="cart" data-section-settings='{{ section_settings }}'>
+  <div class="Drawer__Header Drawer__Header--bordered Drawer__Container">
+      <span class="Drawer__Title Heading u-h4">{{ 'cart.general.title' | t }}</span>
+
+      <button class="Drawer__Close Icon-Wrapper--clickable" data-action="close-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'header.navigation.close_cart' | t }}">
+        {%- render 'icon' with 'close' -%}
+      </button>
+  </div>
+  
+  {%- assign gwp_in_cart = false -%}
+  {%- assign collection_has_gwp = false -%}
+  {%- assign total_price = cart.total_price-%}
+  {%- assign gift_cards_total_price = 0 -%}
+  
+  {%- for line_item in cart.items -%}
+    {%- assign this_item_gwp = false -%}
+    
+    {%- for property in line_item.properties -%}
+      {%- if property.first == '_GWP product' -%}
+        {%- assign gwp_line_item_key = line_item.key  -%}
+        {%- assign line_item_property_gwp = true -%}
+        {%- assign this_item_gwp = true -%}
+        
+        {%- assign gwp_products_ids_in_cart = gwp_products_ids_in_cart | append: '|||' | append: line_item.id -%}
+        {%- assign gwp_products_keys_in_cart = gwp_products_keys_in_cart | append: '|||' | append: line_item.key -%}
+        
+        {%- if line_item.quantity > 1 -%}
+          {%- assign gwp_items_in_cart_for_update_qty_keys = gwp_items_in_cart_for_update_qty_keys | append: '|||' | append: line_item.key -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    
+    {%- if this_item_gwp == false -%}
+      {%- assign variants_ids_in_cart = variants_ids_in_cart | append: '|||' | append: line_item.id -%}
+      
+      {%- for line_item_collection in line_item.product.collections -%}
+        {% if line_item_collection.handle == buy_of_collection.handle %}
+          {%- assign collection_has_gwp = true -%}
+        {% endif %}
+      {%- endfor -%}
+    {%- endif -%}
+    
+    {%- if line_item.product.type == 'Gift Card' -%}
+      {%- assign line_item_total_price = line_item.final_price | times: line_item.quantity -%}
+      {%- assign gift_cards_total_price = gift_cards_total_price | plus: line_item_total_price -%}
+    {%- endif -%}
+  {%- endfor -%}
+  
+  {%- assign gwp_products_ids_in_cart = gwp_products_ids_in_cart | remove_first: '|||' | split: '|||' -%}
+  {%- assign gwp_products_keys_in_cart = gwp_products_keys_in_cart | remove_first: '|||' | split: '|||' -%}
+  {%- assign gwp_items_in_cart_for_update_qty_keys = gwp_items_in_cart_for_update_qty_keys | remove_first: '|||' | split: '|||' -%}
+  {%- assign variants_ids_in_cart = variants_ids_in_cart | remove_first: '|||' | split: '|||' -%}
+  
+  {%- assign total_price = total_price | minus: gift_cards_total_price -%}
+  
+  {%- assign gwp_data = false -%}
+  
+  {%- if gwp_enable -%}
+    {% case gwp_type %}
+    {% when "threshold" %}
+    {%- assign section_blocks_threshold = section.blocks | where: 'type', 'threshold' -%}
+      
+      {%- for block in section_blocks_threshold -%}
+        {%- assign amount = block.settings.amount | times: 100 -%}
+        {%- assign get_product = block.settings.get_product -%}
+        {%- assign get_product_variant_id = block.settings.get_product_variant_id -%}
+        {%- assign get_product_by_variant = get_product.variants | where: 'id', get_product_variant_id | first | default: get_product.variants[0] -%}
+        {%- assign this_gwp_product_in_cart = false -%}
+        {%- assign this_id_index_in_cart = false -%}
+        
+        {%- if amount != blank and get_product != blank -%}
+          {%- for gwp_products_id_in_cart in gwp_products_ids_in_cart -%}
+            {%- assign gwp_products_id_in_cart_number = gwp_products_id_in_cart | plus: 0 -%}
+            
+            {%- if gwp_products_id_in_cart_number == get_product_by_variant.id -%}
+              {%- assign this_gwp_product_in_cart = true -%}
+              {%- assign this_id_index_in_cart = forloop.index0 -%}
+            {%- endif -%}
+          {%- endfor -%}
+          
+          {%- if get_product_by_variant.available -%}
+            {%- assign all_amount_values = all_amount_values | append: '***' | append: amount -%}
+          {%- endif -%}
+          
+          {%- if total_price >= amount -%}
+            {%- assign gwp_potential_variants_ids_in_cart = gwp_potential_variants_ids_in_cart | append: '***' | append: get_product_by_variant.id  -%}
+          {%- endif -%}
+          
+          {%- if total_price >= amount and amount > 0 and this_gwp_product_in_cart == false and get_product_by_variant.available -%}
+            {%- assign gwp_data_for_add = gwp_data_for_add | append: '***' | append: get_product_by_variant.id -%}
+            
+            {%- elsif total_price < amount and this_gwp_product_in_cart -%}
+            {%- assign gwp_data_for_remove = gwp_data_for_remove | append: '***' | append: gwp_products_keys_in_cart[this_id_index_in_cart] -%}
+          
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    
+    {% when "collection" %}
+    {%- assign this_gwp_product_in_cart = false -%}
+    {%- assign this_id_index_in_cart = false -%}
+    {%- assign get_product_by_collection_variant = get_product_by_collection.variants | where: 'id', get_product_by_collection_variant_id | first | default: get_product_by_collection.variants[0] -%}
+      
+      {%- for gwp_products_id_in_cart in gwp_products_ids_in_cart -%}
+        {%- assign gwp_products_id_in_cart_number = gwp_products_id_in_cart | plus: 0 -%}
+        
+        {%- if gwp_products_id_in_cart_number == get_product_by_collection_variant.id -%}
+          {%- assign this_gwp_product_in_cart = true -%}
+          {%- assign this_id_index_in_cart = forloop.index0 -%}
+        {%- endif -%}
+      {%- endfor -%}
+      
+      {%- if collection_has_gwp == true -%}
+        {%- assign gwp_potential_variants_ids_in_cart = gwp_potential_variants_ids_in_cart | append: '***' | append: get_product_by_collection_variant.id  -%}
+      {%- endif -%}
+      
+      {%- if collection_has_gwp == true and this_gwp_product_in_cart == false and get_product_by_collection_variant.available -%}
+        {%- assign gwp_data_for_add = gwp_data_for_add | append: '***' | append: get_product_by_collection_variant.id -%}
+        {%- elsif collection_has_gwp == false and this_gwp_product_in_cart -%}
+        {%- assign gwp_data_for_remove = gwp_data_for_remove | append: '***' | append: get_product_by_collection[this_id_index_in_cart] -%}
+      {%- endif -%}
+    
+    {% when "buy_x_get_y" %}
+    {%- assign section_blocks_threshold = section.blocks | where: 'type', 'buy_x_get_y' -%}
+      
+      {%- for block in section_blocks_threshold -%}
+        {%- assign buy_product = block.settings.buy_product -%}
+        {%- assign buy_product_variant_id = block.settings.buy_product_variant_id -%}
+        {%- assign buy_product_by_variant = buy_product.variants | where: 'id', buy_product_variant_id | first | default: buy_product.variants[0] -%}
+        {%- assign get_product = block.settings.get_product -%}
+        {%- assign get_product_variant_id = block.settings.get_product_variant_id -%}
+        {%- assign get_product_by_variant = get_product.variants | where: 'id', get_product_variant_id | first | default: get_product.variants[0] -%}
+        {%- assign this_gwp_product_in_cart = false -%}
+        {%- assign this_buy_product_in_cart = false -%}
+        {%- assign this_id_index_in_cart = false -%}
+        
+        {%- if buy_product != blank and get_product != blank -%}
+          {%- for variant_id_in_cart in variants_ids_in_cart -%}
+            {%- assign variant_id_in_cart_number = variant_id_in_cart | plus: 0 -%}
+            
+            {%- if variant_id_in_cart_number == buy_product_by_variant.id -%}
+              {%- assign this_buy_product_in_cart = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+          
+          {%- for gwp_products_id_in_cart in gwp_products_ids_in_cart -%}
+            {%- assign gwp_products_id_in_cart_number = gwp_products_id_in_cart | plus: 0 -%}
+            
+            {%- if gwp_products_id_in_cart_number == get_product_by_variant.id -%}
+              {%- assign this_gwp_product_in_cart = true -%}
+              {%- assign this_id_index_in_cart = forloop.index0 -%}
+            {%- endif -%}
+          {%- endfor -%}
+          
+          {%- if this_buy_product_in_cart -%}
+            {%- assign gwp_potential_variants_ids_in_cart = gwp_potential_variants_ids_in_cart | append: '***' | append: get_product_by_variant.id  -%}
+          {%- endif -%}
+          
+          {%- if this_buy_product_in_cart and this_gwp_product_in_cart == false and get_product_by_variant.available -%}
+            {%- assign gwp_data_for_add = gwp_data_for_add | append: '***' | append: get_product_by_variant.id -%}
+            
+          {%- elsif this_buy_product_in_cart == false and this_gwp_product_in_cart -%}
+            {%- assign gwp_data_for_remove = gwp_data_for_remove | append: '***' | append: gwp_products_keys_in_cart[this_id_index_in_cart] -%}
+          
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {% endcase %}
+  {%- endif -%}
+  
+  {%- assign gwp_data_for_add = gwp_data_for_add | remove_first: '***' | split: '***' -%}
+  {%- assign gwp_data_for_remove = gwp_data_for_remove | remove_first: '***' | split: '***' -%}
+  {%- assign gwp_potential_variants_ids_in_cart = gwp_potential_variants_ids_in_cart | remove_first: '***' | split: '***' -%}
+  {%- assign all_amount_values = all_amount_values | remove_first: '***' | split: '***' | sort -%}
+  
+  <script id="giftProductData" type="application/ld+json" data-gift-product>
+    {
+      "gwp_enabled": {{ gwp_enable | json }},
+      "gwp_items_in_cart_keys": {{ gwp_products_keys_in_cart | json }},
+      "gwp_items_in_cart_ids": {{ gwp_products_ids_in_cart | json }},
+      "gwp_items_for_remove": {{ gwp_data_for_remove | json }},
+      "gwp_items_for_add": {{ gwp_data_for_add | json }},
+      "gwp_items_in_cart_for_update_qty_keys": {{ gwp_items_in_cart_for_update_qty_keys | json }},
+      "gwp_potential_variants_ids_in_cart": {{ gwp_potential_variants_ids_in_cart | json }}
+    }
+  </script>
+  
+  {% if gwp_type == 'threshold' and gwp_enable %}
+    {%- assign prev_amount_value = 0 -%}
+    {%- assign next_amount_value = 0 -%}
+  
+    {%- for amount_value in all_amount_values -%}
+      {%- assign amount_value_number = amount_value | plus: 0 -%}
+      {%- assign current_index = forloop.index0 -%}
+      {%- assign next_index = forloop.index -%}
+    
+      {%- if all_amount_values[current_index] != blank -%}
+        {%- assign prev_amount_value = all_amount_values[current_index] | plus: 0 -%}
+      {%- endif -%}
+    
+      {%- if all_amount_values[next_index] != blank -%}
+        {%- assign next_amount_value = all_amount_values[next_index] | plus: 0 -%}
+      {% endif %}
+    
+      {%- if total_price >= prev_amount_value and total_price < next_amount_value -%}
+        {% break %}
+      {%- endif -%}
+    {%- endfor -%}
+  
+    {%- for block in section_blocks_threshold -%}
+      {%- assign amount = block.settings.amount | times: 100 -%}
+      {%- assign get_product = block.settings.get_product -%}
+      {%- assign get_product_variant_id = block.settings.get_product_variant_id -%}
+      {%- assign get_product_by_variant = get_product.variants | where: 'id', get_product_variant_id | first | default: get_product.variants[0] -%}
+      {%- assign min_amount_value = all_amount_values[0] | plus: 0 -%}
+    
+      {%- if get_product != blank and get_product_by_variant.available and amount > 0 -%}
+        {%- if amount == next_amount_value and gwp_products_ids_in_cart.size > 0 -%}
+          {%- assign gwp_tiered_message = block.settings.message -%}
+          {%- assign gwp_tiered_amount = amount -%}
+          {% break %}
+          {% elsif amount == min_amount_value and gwp_products_ids_in_cart.size == 0 %}
+          {%- assign gwp_tiered_message = block.settings.message -%}
+          {%- assign gwp_tiered_amount = amount -%}
+          {% break %}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    
+    {%- assign cart_items_count_without_gwp = cart.item_count | minus: gwp_products_keys_in_cart.size -%}
+    <div class="Drawer__GiftWithProductMessage">
+      {%- if cart_items_count_without_gwp > 0 -%}
+        {%- if prev_amount_value == next_amount_value and total_price >= next_amount_value -%}
+          <p>{{- section.settings.gwp_threshold_final_message -}}</p>
+        {%- else -%}
+          {%- capture remaining_amount -%}<span>{{ gwp_tiered_amount | minus: total_price | money_without_trailing_zeros }}</span>{%- endcapture -%}
+          <p>{{ gwp_tiered_message | replace: "[difference]", remaining_amount }}</p>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  {% endif %}
+
+  <form class="Cart Drawer__Content" action="{{ routes.cart_url }}" method="POST" novalidate>
+    <div class="Drawer__Main" data-scrollable>
+      {%- if cart_show_free_shipping_threshold -%}
+        {%- assign threshold_in_cents = cart_free_shipping_threshold | times: 100 -%}
+
+        <div class="Cart__ShippingNotice Text--subdued">
+          <div class="Drawer__Container">
+            {%- if cart.total_price >= threshold_in_cents -%}
+              <p>{{- 'cart.general.free_shipping' | t -}}</p>
+            {%- else -%}
+              {%- capture remaining_amount -%}<span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}</span>{%- endcapture -%}
+              <p>{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount -}}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if cart.item_count == 0 -%}
+        <p class="Cart__Empty Heading u-h5">{{ 'cart.general.empty' | t }}</p>
+      {%- else -%}
+        <div class="Drawer__Container">
+          <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
+          <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+
+          {% render 'cart-items' %}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- unless cart.item_count == 0 -%}
+      <div class="Drawer__ContentMessage">{{ cart_message }}</div>
+
+      <div class="Drawer__Footer" data-drawer-animated-bottom>
+        {%- capture shipping_and_taxes_notice -%}{{ 'cart.general.shipping_and_taxes_notice' | t }}{%- endcapture -%}
+
+        {%- if cart_enable_notes or shipping_and_taxes_notices != blank -%}
+          {%- if cart_enable_notes -%}
+            {%- if cart.note == blank -%}
+              <button type="button" class="Cart__NoteButton" data-action="toggle-cart-note">{{ 'cart.general.add_note' | t }}</button>
+            {%- else -%}
+              <button type="button" class="Cart__NoteButton" data-action="toggle-cart-note">{{ 'cart.general.edit_note' | t }}</button>
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if shipping_and_taxes_notice != blank -%}
+            <p class="Cart__Taxes Text--subdued">{{ shipping_and_taxes_notice }}</p>
+          {%- endif -%}
+
+          {%- if cart.cart_level_discount_applications != blank -%}
+            {%- for discount_application in cart.cart_level_discount_applications -%}
+              <p class="Cart__Discount">{%- render 'icon' with 'sale' -%} {{ 'cart.general.discount' | t }} ({{ discount_application.title }}): -<span>{{ discount_application.total_allocated_amount | money_without_trailing_zeros }}</span></p>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary Button--full">
+          <span>{{- 'cart.general.checkout' | t -}}</span>
+          <span class="Button__SeparatorDot"></span>
+          <span>{{ cart.total_price | money_without_trailing_zeros }}</span>
+        </button>
+
+        {%- if show_payment_icons -%}
+          {%- assign payment_icons_order = payment_icons_order -%}
+          {%- if payment_icons_order != blank -%}
+            {% assign enabled_payment_types = payment_icons_order | remove: ' ' | split: ',' %}
+            <div class="payment-icons-wrapper">
+              {% for type in enabled_payment_types %}
+                {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+              {% endfor %}
+            </div>
+          {%- else -%}
+            <div class="payment-icons-wrapper">
+              {% for type in shop.enabled_payment_types %}
+                {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+              {% endfor %}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if cart_enable_notes -%}
+          <div class="Cart__OffscreenNoteContainer" aria-hidden="true">
+            {%- if cart.note == blank -%}
+              <span class="Cart__NoteButton">{{ 'cart.general.add_note' | t }}</span>
+            {%- else -%}
+              <span class="Cart__NoteButton">{{ 'cart.general.edit_note' | t }}</span>
+            {%- endif -%}
+
+            <div class="Form__Item">
+              <textarea class="Cart__Note Form__Textarea" name="note" id="cart-note" rows="3" placeholder="{{ 'cart.general.note_placeholder' | t }}" data-scrollable>{{ cart.note }}</textarea>
+            </div>
+
+            <button type="button" class="Button Button--primary Button--full" data-action="toggle-cart-note">{{ 'cart.general.save_note' | t }}</button>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+    {%- if cart.total_price >= 5000 -%}
+    <p class="affirm-drawer-message">
+      <span style="font-size: 18px;">Monthly payments available with </span>
+      <span>
+        <img src="https://cdn-assets.affirm.com/images/all_black_logo-white_bg.jpg" style="height: 1.236em; line-height: 1;">
+      </span>
+    </p>
+  {%- endif -%}
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "payment_icons_order",
+      "label": "Payment icons list"
+    },
+    {
+      "type": "checkbox",
+      "id": "cart_enable_notes",
+      "label": "Enable order notes",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cart_show_free_shipping_threshold",
+      "label": "Show free shipping minimum amount",
+      "info": "Make sure that you have properly configured your [shipping rates](\/admin\/settings\/shipping).",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cart_free_shipping_threshold",
+      "label": "Free shipping minimum amount",
+      "info": "Only write a number, no letters",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "cart_message",
+      "label": "Message"
+    },
+    {
+      "type": "header",
+      "content": "GWP functionality"
+    },
+    {
+      "type": "paragraph",
+      "content": "Important: use different products for each GWP level or use different product variants for each level. Don't use one and the same products for different GWP levels. Once you add all GWP settings, make sure that it works correctly."
+    },
+    {
+      "type": "checkbox",
+      "id": "gwp_enable",
+      "label": "Enable GWP functionality",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "gwp_type",
+      "label": "GWP type",
+      "default": "threshold",
+      "options": [
+        {
+          "value": "threshold",
+          "label": "Threshold"
+        },
+        {
+          "value": "collection",
+          "label": "Collection"
+        },
+        {
+          "value": "buy_x_get_y",
+          "label": "Buy X get Y"
+        }
+      ]
+    },
+    {
+      "id": "gwp_threshold_final_message",
+      "type": "text",
+      "label": "GWP threshold: final message"
+    },
+    {
+      "type": "header",
+      "content": "GWP by collection"
+    },
+    {
+      "type": "product",
+      "id": "get_product_by_collection",
+      "label": "Get product"
+    },
+    {
+      "type": "number",
+      "id": "get_product_by_collection_variant_id",
+      "label": "Get product variant ID",
+      "info": "If the variant ID field is empty, unavailable, or added incorrectly, the first variant ID of the product is applied."
+    },
+    {
+      "type": "collection",
+      "id": "buy_of_collection",
+      "label": "Buy one product of the collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "threshold",
+      "name": "Tiered: threshold",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Important: use different products for each GWP level or use different product variants for each level. Don't use one and the same products for different GWP levels. Once you add all GWP settings, make sure that it works correctly."
+        },
+        {
+          "id": "message",
+          "type": "text",
+          "label": "Message",
+          "info": "Use [difference] to denote the remaining amount needed."
+        },
+        {
+          "id": "amount",
+          "type": "number",
+          "label": "Amount"
+        },
+        {
+          "id": "get_product",
+          "type": "product",
+          "label": "Get product"
+        },
+        {
+          "id": "get_product_variant_id",
+          "type": "number",
+          "label": "Get product variant ID",
+          "info": "If the variant ID field is empty, unavailable, or added incorrectly, the first variant ID of the product is applied."
+        }
+      ]
+    },
+    {
+      "type": "buy_x_get_y",
+      "name": "Tiered: buy X get Y",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Important: use different products for each GWP level or use different product variants for each level. Don't use one and the same products for different GWP levels. Once you add all GWP settings, make sure that it works correctly."
+        },
+        {
+          "id": "buy_product",
+          "type": "product",
+          "label": "Buy product"
+        },
+        {
+          "id": "buy_product_variant_id",
+          "type": "number",
+          "label": "Buy product variant ID",
+          "info": "If the variant ID field is empty, unavailable, or added incorrectly, the first variant ID of the product is applied."
+        },
+        {
+          "id": "get_product",
+          "type": "product",
+          "label": "Get product"
+        },
+        {
+          "id": "get_product_variant_id",
+          "type": "number",
+          "label": "Get product variant ID",
+          "info": "If the variant ID field is empty, unavailable, or added incorrectly, the first variant ID of the product is applied."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

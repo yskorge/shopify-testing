@@ -1,0 +1,78 @@
+{%- assign show_sections = page.metafields.master-brand-7.show_section -%}
+
+{%- for show_section in show_sections -%}
+  {%- assign order = page.metafields.master-brand-7.order[forloop.index0] -%}
+  {%- assign subheading = page.metafields.master-brand-7.subheading[forloop.index0] -%}
+  {%- assign title = page.metafields.master-brand-7.heading[forloop.index0] -%}
+  {%- assign content = page.metafields.master-brand-7.text[forloop.index0] -%}
+  {%- assign image = page.metafields.master-brand-7.image[forloop.index0][0] -%}
+  {%- assign image_position = page.metafields.master-brand-7.image_position[forloop.index0] -%}
+  {%- assign button_label = page.metafields.master-brand-7.button_label[forloop.index0] -%}
+  {%- assign button_link = page.metafields.master-brand-7.button_link[forloop.index0] -%}
+  {%- assign top_margin = page.metafields.master-brand-7.top_padding[forloop.index0] -%}
+  {%- assign bottom_margin = page.metafields.master-brand-7.bottom_padding[forloop.index0] -%}
+
+  {%- if show_section != blank -%}
+    <section class="Section section-container iwt-metafields
+     {% if top_margin != blank %} section-mt {% endif %}
+     {% if bottom_margin != blank %} section-mb {% endif %}"
+     style="order: {{ order }}">
+
+      {%- capture section_content -%}
+        <div class="FeatureText__ContentWrapper">
+          <div class="FeatureText__Content">
+            {%- if subheading != blank or title != blank -%}
+              <header class="SectionHeader">
+                {%- if subheading != blank -%}
+                  <h3 class="BackgroundHero__BlockSubHeading">{{ subheading | escape }}</h3>
+                {%- endif -%}
+
+                {%- if title != blank -%}
+                  <h2 class="BackgroundHero__BlockHeading normal-size">{{ title | escape }}</h2>
+                {%- endif -%}
+
+                {%- if content != blank -%}
+                  <div class="SectionHeader__Description Rte">
+                    {{ content }}
+                  </div>
+                {%- endif -%}
+
+                {%- if button_label != blank and button_link != blank -%}
+                  <a href="{{ button_link }}" class="Button Button--primary">{{ button_label | escape }}</a>
+                {%- endif -%}
+              </header>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endcapture -%}
+
+      {%- capture section_image -%}
+        {%- if image != blank -%}
+          <div class="FeatureText__ImageWrapper">
+            {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: image -%}{%- endcapture -%}
+
+            <div class="AspectRatio" style=" --aspect-ratio: {{ image.aspect_ratio }}">
+              {%- assign image_url = image.src -%}
+
+              <img class="Image--lazyLoad Image--slide{{ image_position | capitalize }}" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ image.alt | escape }}">
+
+              <noscript>
+                <img src="{{ image | img_url: '800x' }}" alt="{{ image.alt | escape }}">
+              </noscript>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      <div class="FeatureText {% if image != blank %}FeatureText--withImage FeatureText--image{{ image_position | capitalize }}{% endif %}">
+        {%- if image_position == 'left' -%}
+          {{- section_image -}}
+          {{- section_content -}}
+        {%- else -%}
+          {{- section_content -}}
+          {{- section_image -}}
+        {%- endif -%}
+      </div>
+    </section>
+  {%- endif -%}
+{%- endfor -%}

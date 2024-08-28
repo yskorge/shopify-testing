@@ -1,0 +1,56 @@
+<article class="ArticleItem" {% if block %}{{ block.shopify_attributes }}{% endif %}>
+  {%- if article.image != blank -%}
+    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: article.image -%}{%- endcapture -%}
+    {%- assign image_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+    <a class="ArticleItem__ImageWrapper AspectRatio AspectRatio--withFallback" style="background: url({{ article.image | img_url: '1x1', format: 'jpg' }}); padding-bottom: 58%; --aspect-ratio: 1.7" href="{{ article.url }}">
+      <img class="ArticleItem__Image Image--lazyLoad Image--fadeIn"
+           data-src="{{ image_url }}"
+           data-widths="[{{ supported_sizes }}]"
+           data-sizes="auto"
+           alt="{{ article.image.alt | escape }}">
+
+      {%- comment -%}
+        <noscript>
+          <img class="ArticleItem__Image" src="{{ article.image | img_url: '600x' }}" alt="{{ article.image.alt | escape }}">
+        </noscript>
+      {%- endcomment -%}
+    </a>
+  {%- endif -%}
+
+  <div class="ArticleItem__Content">
+    <h2 class="ArticleItem__Title" aria-level="1">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h2>
+
+    {%- if section.settings.show_category or show_tags_on -%}
+      <div>
+        {%- assign index = 0 -%}
+        {%- for tag in article.tags limit: 4 -%}
+          {%- assign tag_downcase = tag | downcase -%}
+
+          {%- if tag_downcase contains 'author_name' -%}
+            {% continue %}
+          {% elsif index < 3 %}
+            {%- assign index = index | plus: 1 -%}
+            <a class="ArticleItem__Category" href="/blogs/{{ blog.handle }}/tagged/{{ tag | handle }}">
+             <span class="u-visually-hidden">The {{ article.title }} includes a</span> {{ tag }} <span class="u-visually-hidden"> tag.</span>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+    {%- endif -%}
+
+    {%- assign description = article.metafields.accentuate.description -%}
+    {%- unless template.name == 'article' -%}
+      <p class="ArticleItem__Excerpt">{{ description | strip_html | truncate: 150 }}</p>
+      <a href="{{ article.url }}" class="ArticleItem__Link Link">
+        {{ 'blog.article.read_more' | t }}
+
+        <span class="u-visually-hidden">{{ 'blog.article.read_more' | t }} {{ article.title }}</span>
+        {% render 'icon' with 'arrow-long-right' %}
+      </a>
+    {%- endunless -%}
+  </div>
+</article>

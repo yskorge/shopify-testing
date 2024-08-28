@@ -1,0 +1,58 @@
+{%- assign show_section = page.metafields.master-brand-2.show_section -%}
+{%- assign heading = page.metafields.master-brand-2.section_heading -%}
+{%- assign order = page.metafields.master-brand-2.order -%}
+{%- assign images_arr = page.metafields.master-brand-2.image -%}
+
+{%- if show_section -%}
+  <section class="slideshow-with-block section-container" style="order: {{ order }}">
+    {%- if heading != blank -%}
+      <h2 class="slideshow-with-block__heading">
+        {{ heading }}
+      </h2>
+    {%- endif -%}
+
+    {%- if images_arr != blank -%}
+      <div class="slideshow-with-block__slideshow">
+        {%- for image_arr in images_arr -%}
+          {%- assign image = image_arr[0] -%}
+          {%- assign title = page.metafields.master-brand-2.heading[forloop.index0] -%}
+          {%- assign url = page.metafields.master-brand-2.url[forloop.index0] -%}
+          {%- assign image_stretch = page.metafields.master-brand-2.stretch_image[forloop.index0] -%}
+
+          {%- if url != blank -%}
+            <a href="{{ url }}" class="slideshow-with-block__block">
+          {% else %}
+              <div class="slideshow-with-block__block">
+          {%- endif -%}
+            <div class="slideshow-with-block__image-wrapper AspectRatio"
+                 style="padding-bottom: 108%;">
+              {% assign image_url = image.src %}
+
+              <img class="slideshow-with-block__image Image--lazyLoad"
+                   data-src="{{ image_url }}"
+                   data-optimumx="1.2"
+                   data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                   data-sizes="auto"
+                   alt="{{ title | default: page_title }}"
+                   style="object-fit: {% if image_stretch != blank %} cover {% else %} contain {% endif %}">
+
+              <noscript>
+                <img class="slideshow-iwt__image" src="{{ image.src }}" alt="{{ title | default: page_title }}">
+              </noscript>
+            </div>
+
+            {%- if title != blank -%}
+              <h3 class="slideshow-with-block__title">
+                {{ title }}
+              </h3>
+            {%- endif -%}
+
+        {%- if url != blank -%}
+          </a>
+        {% else %}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </section>
+{%- endif -%}

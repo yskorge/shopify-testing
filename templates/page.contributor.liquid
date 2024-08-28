@@ -1,0 +1,30 @@
+{%- assign page_title_downcase = page.title | downcase | handleize -%}
+
+<section class="section-container page-contributor">
+  <h1>
+    {{ page.title }}
+  </h1>
+
+  {%- if page.content -%}
+    <div>
+      {{ page.content }}
+    </div>
+  {%- endif -%}
+</section>
+
+<section class="section-container page-contributor">
+  <h2>View All Recipes by {{ page.title }}</h2>
+</section>    
+
+<section class="section-container blog-posts-mf" style="order: {{ order }}; max-width: 78%" data-section-type="article-list">
+  <div class="blog-posts-mf__slideshow">
+      {%- for article in blogs['recipes'].articles -%}
+        {%- for tag in article.tags -%}
+          {%- assign tag_downcase = tag | downcase | handleize -%}
+          {%- if tag_downcase contains 'author_name' and tag_downcase contains page_title_downcase -%}
+            {% render 'article-item', article: article, show_tags_on: true %}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+</section>

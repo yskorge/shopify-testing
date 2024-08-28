@@ -1,0 +1,843 @@
+{%- assign mobile_hide = section.settings.mobile_hide -%}
+{%- assign desktop_hide = section.settings.desktop_hide -%}
+{%- assign section_top_margin = section.settings.section_top_margin | default: 0 -%}
+{%- assign section_bottom_margin = section.settings.section_bottom_margin | default: 0 -%}
+{%- assign section_mob_top_margin = section.settings.section_mob_top_margin | default: 0 -%}
+{%- assign section_mob_bottom_margin = section.settings.section_mob_bottom_margin | default: 0 -%}
+{%- assign container_max_width = section.settings.container_max_width -%}
+{%- assign content_position = section.settings.content_position -%}
+{%- assign min_desktop_height = section.settings.min_desktop_height -%}
+{%- assign min_mobile_height = section.settings.min_mobile_height -%}
+{%- assign min_mobile_section_height = section.settings.min_mobile_section_height -%}
+{%- assign full_height = section.settings.full_height -%}
+{%- assign section_bg_color = section.settings.section_bg_color -%}
+{%- assign image_desktop = section.settings.image_desktop -%}
+{%- assign image_mobile = section.settings.image_mobile -%}
+{%- assign reverse_image_on_mobile = section.settings.reverse_image_on_mobile -%}
+{%- assign today_date = 'now' | date: '%Y-%m-%d' -%}
+{%- assign start_content_date = section.settings.start_content_date | date: '%Y-%m-%d' | default: today_date -%}
+{%- assign end_content_date = section.settings.end_content_date | date: '%Y-%m-%d' | default: '2050-01-01' -%}
+{%- assign content_block_size = section.settings.content_block_size -%}
+{%- assign content_block_bg = section.settings.content_block_bg -%}
+{%- assign buttons_position = section.settings.buttons_position -%}
+{%- assign button_font_size = section.settings.button_font_size | default: 'inherit' -%}
+{%- assign button_font_size_mobile = section.settings.button_font_size_mobile | default: 'inherit' -%}
+{%- assign margin_bottom_button = section.settings.margin_bottom_button -%}
+{%- assign margin_bottom_button_mobile = section.settings.margin_bottom_button_mobile -%}
+{%- assign button_width = section.settings.button_width -%}
+{%- assign button_width_mobile = section.settings.button_width_mobile -%}
+{%- assign enable_overflow = section.settings.enable_overflow -%}
+{%- assign overflow_color = section.settings.overflow_color -%}
+{%- assign overflow_opacity = section.settings.overflow_opacity -%}
+{%- assign desktop_padding_top = section.settings.desktop_padding_top -%}
+{%- assign desktop_padding_bottom = section.settings.desktop_padding_bottom -%}
+
+<style>
+  .hero {
+      margin: {{ section_top_margin | append: 'px' }} 0 {{ section_bottom_margin | append: 'px' }};
+  }
+  @media screen and (max-width: 640px) {
+      .hero {
+          margin: {{ section_mob_top_margin | append: 'px' }} 0 {{ section_mob_bottom_margin | append: 'px' }};
+      }
+  }
+</style>
+
+<section class="hero
+         {% if mobile_hide %}hero--mobile-hide{% endif %}
+         {% if desktop_hide %}hero--desktop-hide{% endif %}"
+         id="section-{{ section.id }}" style="background-color: {{ section_bg_color }}">
+  {%- if today_date >= start_content_date and today_date < end_content_date -%}
+
+  {%- unless full_height -%}
+    {%- if min_desktop_height != blank -%}
+      <style>
+          @media screen and (min-width: 641px) {
+              .hero__bg {
+                  min-height: {{ min_desktop_height | append: 'px' }};
+              }
+          }
+      </style>
+    {%- endif -%}
+    {%- if min_mobile_section_height != blank -%}
+      <style>
+          @media screen and (max-width: 640px) {
+              .hero__bg {
+                  min-height: {{ min_mobile_section_height | append: 'px' }};
+              }
+          }
+      </style>
+    {%- endif -%}
+  {%- endunless -%}
+
+  <div class="hero__bg {% if full_height %}hero__bg--full-height{% endif %} {% if reverse_image_on_mobile %}hero--reverse{% endif %}">
+
+    {%- if desktop_padding_top != blank or desktop_padding_bottom != blank -%}
+      <style>
+          @media screen and (min-width: 641px) {
+              .hero__bg {
+                  padding-top: {{ desktop_padding_top | append: 'px' }};
+                  padding-bottom: {{ desktop_padding_bottom | append: 'px'}};
+              }
+          }
+      </style>
+    {%- endif -%}
+
+    {%- if image_desktop != blank or image_mobile != blank -%}
+
+      <div class="hero__bg-wrapper">
+
+        {%- if min_mobile_height != blank -%}
+          <style>
+              @media screen and (max-width: 640px) {
+                  .hero__bg-image {
+                      min-height: {{ min_mobile_height | append: 'px'}};
+                  }
+              }
+          </style>
+        {%- endif -%}
+
+        {%- if enable_overflow -%}
+          <style>
+              .hero__bg-image--overflow:before {
+                  background-color: {{ overflow_color }};
+                  opacity: {{ overflow_opacity | times: 0.01 }};
+              }
+          </style>
+        {%- endif -%}
+
+        {%- if image_desktop != blank -%}
+          <div class="hero__bg-image {% if image_mobile != blank %}hero__bg-image--desktop{% endif %}
+                      {% if enable_overflow %} hero__bg-image--overflow{% endif %} Image--lazyLoad Image--zoomOut"
+               data-optimumx="1.4"
+               data-expand="-150"
+               data-bgset="{{ image_desktop | img_url: '750x' }} 750w,
+                           {{ image_desktop | img_url: '1000x' }} 1000w,
+                           {{ image_desktop | img_url: '1500x' }} 1500w">
+          </div>
+        {%- endif -%}
+
+        {%- if image_mobile != blank -%}
+          <div class="hero__bg-image hero__bg-image--mobile
+                      {% if enable_overflow %} hero__bg-image--overflow{% endif %} Image--lazyLoad Image--zoomOut"
+               data-optimumx="1.4"
+               data-expand="-150"
+               data-bgset="{{ image_mobile | img_url: '750x' }} 750w,
+                           {{ image_mobile | img_url: '1000x' }} 1000w">
+          </div>
+        {%- endif -%}
+
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+
+    <div class="hero__content hero__content--{{ content_position }}" {% if container_max_width != blank %}
+    style="max-width: {{ container_max_width | append: 'px' }}"{% endif %}>
+
+      {%- if content_block_size != blank -%}
+        <style>
+            @media screen and (min-width: 641px) {
+                .hero__content-block {
+                    max-width: {{ content_block_size | append: 'px'}};
+                }
+            }
+        </style>
+      {%- endif -%}
+
+      <div class="hero__content-block"
+           style="background-color:{{ content_block_bg }};">
+
+        {%- for block in section.blocks -%}
+
+        {%- if block.type == 'Text' -%}
+
+        {%- assign text_line_type = block.settings.text_line_type -%}
+        {%- assign text_lines = block.settings.text_lines -%}
+        {%- assign text_line_font = block.settings.text_line_font -%}
+        {%- assign font_size = block.settings.font_size -%}
+        {%- assign font_size_mobile = block.settings.font_size_mobile -%}
+        {%- assign line_height = block.settings.line_height -%}
+        {%- assign line_height_mobile = block.settings.line_height_mobile -%}
+        {%- assign letter_spacing = block.settings.letter_spacing -%}
+        {%- assign letter_spacing_mobile = block.settings.letter_spacing_mobile -%}
+        {%- assign text_color = block.settings.text_color -%}
+        {%- assign block_text_align_desk = block.settings.block_text_align_desk -%}
+        {%- assign block_text_align_mobile = block.settings.block_text_align_mobile -%}
+        {%- assign margin_top = block.settings.margin_top -%}
+        {%- assign margin_bottom = block.settings.margin_bottom -%}
+        {%- assign margin_top_mobile = block.settings.margin_top_mobile -%}
+        {%- assign margin_bottom_mobile = block.settings.margin_bottom_mobile -%}
+
+        {% capture open_tag %}
+          {% if text_line_type == 'h1' %}
+            <h1
+            {% elsif text_line_type == 'h2' %}
+            <h2
+            {% elsif text_line_type == 'h3' %}
+            <h3
+            {% elsif text_line_type == 'h4' %}
+            <h4
+          {% else %}
+            <div
+          {% endif %}
+        {% endcapture %}
+
+        {% capture close_tag %}
+        {% if text_line_type == 'h1' %}
+        </h1>
+        {% elsif text_line_type == 'h2' %}
+        </h2>
+        {% elsif text_line_type == 'h3' %}
+        </h3>
+        {% elsif text_line_type == 'h4' %}
+        </h4>
+        {% else %}
+      </div>
+      {% endif %}
+      {% endcapture %}
+
+      {%- capture heading -%}
+      {%- if text_line_type == 'h1' -%}
+        u-h1
+      {%- elsif text_line_type == 'h2' -%}
+        u-h2
+      {%- elsif text_line_type == 'h3' -%}
+        u-h3
+      {%- elsif text_line_type == 'h4' -%}
+        u-h4
+      {%- else -%}
+        custom-text
+      {%- endif -%}
+      {%- endcapture -%}
+
+      {%- if text_lines != blank -%}
+        {{ open_tag }}
+
+        class="hero__content-text {{ block_text_align_desk }} hero__content-text--desktop {{ heading }}"
+        style="{% if font_size != blank %}font-size: {{ font_size }};{% endif %}
+        font-family: {{ text_line_font }} !important;
+        {% if line_height != blank %}line-height: {{ line_height | append: 'px' }};{% endif %}
+        {% if letter_spacing != blank %} letter-spacing: {{ letter_spacing | append: 'px' }};{% endif %}
+        {% if text_color != blank %} color: {{ text_color }};{% endif %}
+        {% if margin_top != blank %} margin-top: {{ margin_top | append: 'px' }};{% endif %}
+        {% if margin_bottom != blank %} margin-bottom: {{ margin_bottom | append: 'px' }};{% endif %}">
+
+        {{ text_lines | newline_to_br }}
+        {{ close_tag }}
+
+        {{ open_tag }}
+
+        class="hero__content-text {{ block_text_align_mobile }} hero__content-text--mobile {{ heading }}"
+        style="{% if font_size_mobile != blank %}font-size: {{ font_size_mobile }};{% endif %}
+        font-family: {{ text_line_font }} !important;
+        {% if line_height_mobile != blank %}line-height: {{ line_height_mobile | append: 'px' }};{% endif %}
+        {% if letter_spacing_mobile != blank %} letter-spacing: {{ letter_spacing_mobile | append: 'px' }};{% endif %}
+        {% if text_color != blank %} color: {{ text_color }};{% endif %}
+        {% if margin_top_mobile != blank %} margin-top: {{ margin_top_mobile | append: 'px' }};{% endif %}
+        {% if margin_bottom_mobile != blank %} margin-bottom: {{ margin_bottom_mobile | append: 'px' }};{% endif %}">
+
+        {{ text_lines | newline_to_br }}
+        {{ close_tag }}
+
+      {%- endif -%}
+      {%- endif -%}
+      {%- endfor -%}
+
+      {%- if margin_bottom_button_mobile != blank -%}
+        <style>
+            @media screen and (max-width: 640px) {
+                .hero__content-buttons {
+                    margin-bottom: {{ margin_bottom_button_mobile | append: 'px'}};
+                }
+            }
+        </style>
+      {%- endif -%}
+
+      {%- if margin_bottom_button != blank -%}
+        <style>
+            @media screen and (min-width: 641px) {
+                .hero__content-buttons {
+                    margin-bottom: {{ margin_bottom_button | append: 'px'}};
+                }
+            }
+        </style>
+      {%- endif -%}
+
+      <style>
+          @media screen and (max-width: 640px) {
+              .hero__content-buttons {
+                  width: calc(({{ button_width_mobile | append: 'px' }}* 2) + 20px);
+              }
+          }
+
+          @media screen and (min-width: 641px) {
+              .hero__content-buttons {
+                  width: calc(({{ button_width | append: 'px' }}* 2) + 40px);
+              }
+          }
+      </style>
+
+      <div class="hero__content-buttons hero__content-buttons--{{ buttons_position }}"
+           {% if buttons_position == 'space-between' %}style="width: 100%"{% endif %}>
+
+        {%- for block in section.blocks -%}
+
+          {% if block.type == 'Buttons' %}
+
+            {%- assign button_text = block.settings.button_text -%}
+            {%- assign button_address = block.settings.button_address -%}
+            {%- assign button_text_color = block.settings.button_text_color -%}
+            {%- assign button_text_hover_color = block.settings.button_text_hover_color -%}
+            {%- assign button_background = block.settings.button_background -%}
+            {%- assign button_hover_background = block.settings.button_hover_background -%}
+            {%- assign button_border_color = block.settings.button_border_color -%}
+            {%- assign button_border_hover_color = block.settings.button_border_hover_color -%}
+
+            {%- if button_text != blank and button_address != blank -%}
+              <div class="hero__btn">
+
+                {%- if button_text_color != blank or button_border_color != blank
+                  or button_background != blank or button_text_hover_color != blank
+                  or button_hover_background != blank or button_border_hover_color != blank -%}
+                  <style>
+                      .hero__btn-block--{{ block.id }} {
+                          color: {{ button_text_color }};
+                          border-color: {{ button_border_color }};
+                      }
+
+                      .hero__btn-block--{{ block.id }}:before {
+                          background-color: {{ button_background }};
+                      }
+
+                      .hero__btn-block--{{ block.id }}:hover {
+                          color: {{ button_text_hover_color }};
+                          background-color: {{ button_hover_background }};
+                          border-color: {{ button_border_hover_color }};
+                      }
+                  </style>
+                {%- endif -%}
+
+                <a href="{{ button_address }}"
+                   class="hero__btn-block hero__btn-block--{{ block.id }} hero__btn-block--desktop"
+                   style="width: {{ button_width | append: 'px' }};
+                   {% if button_font_size != blank %} font-size: {{ button_font_size }};{% endif %}">
+                  {{ button_text }}
+                </a>
+
+                <a href="{{ button_address }}"
+                   class="hero__btn-block hero__btn-block--{{ block.id }} hero__btn-block--mobile"
+                   style="width: {{ button_width_mobile | append: 'px' }};
+                           {% if button_font_size_mobile != blank %}font-size: {{ button_font_size_mobile }};{% endif %}">
+                  {{ button_text }}
+                </a>
+
+              </div>
+            {%- endif -%}
+
+          {%- endif -%}
+
+        {%- endfor -%}
+      </div>
+
+    </div>
+  </div>
+  {%- endif -%}
+  {%- endif -%}
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Hero module",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "desktop_hide",
+      "label": "Hide on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_hide",
+      "label": "Hide on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Section margin controls",
+      "info": "Unit defined in 'px'. Put only number value."
+    },
+    {
+      "type": "text",
+      "id": "section_top_margin",
+      "label": "Desktop top margin"
+    },
+    {
+      "type": "text",
+      "id": "section_bottom_margin",
+      "label": "Desktop bottom margin"
+    },
+    {
+      "type": "text",
+      "id": "section_mob_top_margin",
+      "label": "Mobile top margin"
+    },
+    {
+      "type": "text",
+      "id": "section_mob_bottom_margin",
+      "label": "Mobile bottom margin"
+    },
+    {
+      "type": "header",
+      "content": "Height and width controls",
+      "info": "Unit defined in 'px'. Put only number value."
+    },
+    {
+      "type": "text",
+      "id": "container_max_width",
+      "label": "Container width"
+    },
+    {
+      "type": "text",
+      "id": "min_desktop_height",
+      "label": "Desktop section height",
+      "default": "700"
+    },
+    {
+      "type": "text",
+      "id": "min_mobile_section_height",
+      "label": "Mobile section height",
+      "default": "350"
+    },
+    {
+      "type": "text",
+      "id": "desktop_padding_top",
+      "label": "Desktop padding top",
+      "default": "50"
+    },
+    {
+      "type": "text",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop padding bottom",
+      "default": "50"
+    },
+    {
+      "type": "text",
+      "id": "min_mobile_height",
+      "label": "Mobile image height",
+      "default": "300"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_height",
+      "label": "Full screen height",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image desktop",
+      "info": "Required"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile",
+      "info": "Optional"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_image_on_mobile",
+      "label": "Reverse image and content on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overflow",
+      "label": "Enable background overlay",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "overflow_color",
+      "label": "Overlay background color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overflow_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Content block settings",
+      "info": "Unit defined in 'px'. Put only number value."
+    },
+    {
+      "type": "text",
+      "id": "start_content_date",
+      "label": "Start display content date",
+      "info": "Date format yyyy-mm-dd, example - 2020-03-22"
+    },
+    {
+      "type": "text",
+      "id": "end_content_date",
+      "label": "End display content date",
+      "info": "Date format yyyy-mm-dd, example - 2020-03-22"
+    },
+    {
+      "type": "text",
+      "id": "content_block_size",
+      "label": "Content block size"
+    },
+    {
+      "type": "color",
+      "id": "content_block_bg",
+      "label": "Content block background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top Center"
+        },
+        {
+          "value": "top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "middle-left",
+          "label": "Middle Left"
+        },
+        {
+          "value": "middle-center",
+          "label": "Middle Center"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "middle-center"
+    },
+    {
+      "type": "header",
+      "content": "Buttons controls",
+      "info": "Unit defined in 'px'. Put only number value."
+    },
+    {
+      "type": "select",
+      "id": "buttons_position",
+      "label": "Buttons position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "space-between",
+          "label": "Space-between"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "button_width",
+      "label": "Button width",
+      "default": "250"
+    },
+    {
+      "type": "text",
+      "id": "button_width_mobile",
+      "label": "Button width mobile",
+      "default": "150"
+    },
+    {
+      "type": "text",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "info": "You can use 'rem', 'em', 'px'. For example: '16px' or '2em'."
+    },
+    {
+      "type": "text",
+      "id": "button_font_size_mobile",
+      "label": "Button font size mobile",
+      "info": "You can use 'rem', 'em', 'px'. For example: '16px' or '2em'."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom_button",
+      "label": "Button block margin bottom"
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom_button_mobile",
+      "label": "Button block margin bottom mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Text",
+      "name": "Text block",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Text block settings",
+          "info": "Unit defined in 'px'. Put only number value."
+        },
+        {
+          "type": "select",
+          "id": "text_line_font",
+          "label": "Text line font",
+          "options": [
+            {
+              "value": "Circe, sans-serif",
+              "label": "Circe"
+            },
+            {
+              "value": "Freight, sans-serif",
+              "label": "Freight"
+            }
+          ],
+          "default": "Circe, sans-serif"
+        },
+        {
+          "type": "select",
+          "id": "text_line_type",
+          "label": "Text line type",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "div",
+              "label": "Text"
+            }
+          ],
+          "default": "div"
+        },
+        {
+          "type": "richtext",
+          "id": "text_lines",
+          "label": "Text line"
+        },
+        {
+          "type": "text",
+          "id": "font_size",
+          "label": "Font size",
+          "info": "You can use 'rem', 'em', 'px'. For example: '16px' or '2em'."
+        },
+        {
+          "type": "text",
+          "id": "font_size_mobile",
+          "label": "Font size mobile",
+          "info": "You can use 'rem', 'em', 'px'. For example: '16px' or '2em'."
+        },
+        {
+          "type": "text",
+          "id": "line_height",
+          "label": "Line height"
+        },
+        {
+          "type": "text",
+          "id": "line_height_mobile",
+          "label": "Line height mobile"
+        },
+        {
+          "type": "text",
+          "id": "letter_spacing",
+          "label": "Letter spacing"
+        },
+        {
+          "type": "text",
+          "id": "letter_spacing_mobile",
+          "label": "Letter spacing mobile"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color"
+        },
+        {
+          "type": "select",
+          "id": "block_text_align_desk",
+          "label": "Block text align desktop",
+          "options": [
+            {
+              "value": "text-align--desktop--left",
+              "label": "Left"
+            },
+            {
+              "value": "text-align--desktop--center",
+              "label": "Middle"
+            },
+            {
+              "value": "text-align--desktop--right",
+              "label": "Right"
+            }
+          ],
+          "default": "text-align--desktop--left"
+        },
+        {
+          "type": "select",
+          "id": "block_text_align_mobile",
+          "label": "Block text align mobile",
+          "options": [
+            {
+              "value": "text-align--mobile--left",
+              "label": "Left"
+            },
+            {
+              "value": "text-align--mobile--center",
+              "label": "Middle"
+            },
+            {
+              "value": "text-align--mobile--right",
+              "label": "Right"
+            }
+          ],
+          "default": "text-align--mobile--left"
+        },
+        {
+          "type": "text",
+          "id": "margin_top",
+          "label": "Margin top"
+        },
+        {
+          "type": "text",
+          "id": "margin_bottom",
+          "label": "Margin bottom"
+        },
+        {
+          "type": "text",
+          "id": "margin_top_mobile",
+          "label": "Margin top mobile"
+        },
+        {
+          "type": "text",
+          "id": "margin_bottom_mobile",
+          "label": "Margin bottom mobile"
+        }
+      ]
+    },
+    {
+      "type": "Buttons",
+      "name": "Buttons block",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_address",
+          "label": "Button link"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "button_text_hover_color",
+          "label": "Button hover text color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_background",
+          "label": "Button background",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_background",
+          "label": "Button hover background",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "button_border_color",
+          "label": "Button border color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_border_hover_color",
+          "label": "Button border hover color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Hero module",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

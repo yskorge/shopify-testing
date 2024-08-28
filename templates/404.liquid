@@ -1,0 +1,49 @@
+<style>
+  h1{
+    font-size: 40px !important;
+  }
+  h3{
+    font-size: 32px !important;
+  }
+  
+  h6{
+    font-size: 40px !important;
+    font-weight: bold;
+  }
+
+  .search input{
+    height: 50px;
+    width: 50%;
+  }
+
+  input[type="text"]{
+    font-size: 24px;
+  }
+  
+  #shopify-section-featured-collections{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+</style>
+
+<div class="EmptyState">
+  <div class="Container">
+    <h1 class="EmptyState__Title Heading u-h5"><strong>{{ '404.general.title' | t }}</strong></h1>
+  </div>
+  <br>
+  <div class="form">
+    <form class="search" action="/search">
+      <label for="404_search"><h3>But we did find a few items you might like instead. Search for what you're looking for below or <a href="/" class="Link Link--underlineNative">return home</a>.</h3></label>
+  		<br>
+      <input id="404_search" type="text" placeholder="  Search . . ." name="q" value="{{ search.terms | escape }}"  size="50"/>
+    </form>
+  </div>
+  {%- section 'featured-collections' -%}
+</div>
+
+{%- comment -%}
+  <script id="esc-redirects-404-script" src="https://redirects.eastsideco.io/js/app.js"></script>
+{%- endcomment -%}
+
+<script id="esc-redirects-404-script" src="https://easyredirects.esc-apps-cdn.com/app.js"></script>

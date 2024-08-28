@@ -1,0 +1,16 @@
+{
+  "name": "potsandpansshop",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "watch": "shopify theme dev -e dev",
+    "watch-prod": "shopify theme dev -e prod",
+    "sync-dev": "shopify theme pull --only /.json/ -e dev",
+    "sync-prod": "shopify theme pull --only /.json/ -e prod"
+  },
+  "author": "DEPT",
+  "devDependencies": {
+    "@shopify/cli": "^3.65.1",
+    "@shopify/theme": "^3.58.2"
+  }
+}

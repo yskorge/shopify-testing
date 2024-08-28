@@ -1,0 +1,55 @@
+{%- if paginate.pages > 1 -%}
+
+  {%- assign index_prev_page = paginate.current_page | minus: 3 -%}
+  {%- assign index_prev_prev_page = paginate.current_page | minus: 2 -%}
+  {%- assign index_next_page = paginate.current_page | plus: 1 -%}
+  {%- assign index_next_next_page = paginate.current_page | plus: 2 -%}
+
+  {%- assign first_number = paginate.current_offset | plus: 1  -%}
+  {%- assign last_number = paginate.current_offset | plus: paginate.page_size -%}
+
+  {%- if last_number > paginate.items -%}
+    {%- assign last_number = paginate.items -%}
+  {%- endif -%}
+
+  <div class="Pagination Text--subdued">
+
+    <div class="Pagination__results">
+      {{ first_number }} - {{ last_number }} of {{ paginate.items }} Results
+    </div>
+
+    <div class="Pagination__Nav">
+      {%- unless paginate.next -%}
+        {%- if index_prev_page > 0 -%}
+          <a class="Pagination__NavItem Link Link--primary" rel="next" title="{{ 'general.pagination.previous_page' | t }}" href="{{ paginate.parts[index_prev_page].url | remove: 'view=ajax' }}{{ hash }}">
+            {{ index_prev_prev_page  }}
+          </a>
+        {%- endif -%}
+      {%- endunless -%}
+      {%- if paginate.previous -%}
+        <a class="Pagination__NavItem Link Link--primary" rel="prev" title="{{ 'general.pagination.previous_page' | t }}" href="{{ paginate.previous.url | remove: 'view=ajax' }}{{ hash }}">
+          {{ paginate.current_page | minus: 1 }}
+        </a>
+      {%- endif -%}
+
+      {%- if paginate.current_page -%}
+        <span class="Pagination__NavItem is-active">{{ paginate.current_page }}</span>
+      {%- endif -%}
+
+      {%- if paginate.next -%}
+        <a class="Pagination__NavItem Link Link--primary" rel="next" title="{{ 'general.pagination.next_page' | t }}" href="{{ paginate.next.url | remove: 'view=ajax' }}{{ hash }}">
+          {{ paginate.current_page | plus: 1 }}
+        </a>
+      {%- endif -%}
+
+      {%- unless paginate.previous -%}
+        {%- if paginate.parts[index_next_page].is_link -%}
+          <a class="Pagination__NavItem Link Link--primary" rel="next" title="{{ 'general.pagination.previous_page' | t }}" href="{{ paginate.parts[index_next_page].url | remove: 'view=ajax' }}{{ hash }}">
+            {{ index_next_next_page  }}
+          </a>
+        {%- endif -%}
+      {%- endunless -%}
+
+    </div>
+  </div>
+{%- endif -%}

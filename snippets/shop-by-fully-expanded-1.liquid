@@ -1,0 +1,65 @@
+{%- assign show_section = page.metafields.master-brand-3-1.show_section -%}
+{%- assign order = page.metafields.master-brand-3-1.order -%}
+{%- assign heading = page.metafields.master-brand-3-1.section_heading -%}
+{%- assign images_arr = page.metafields.master-brand-3-1.image -%}
+
+{%- if show_section -%}
+  <section class="shop-expanded section-container" style="order: {{ order }}">
+    {%- if heading != blank -%}
+      <h2 class="shop-expanded__heading">
+        {{ heading }}
+      </h2>
+    {%- endif -%}
+
+    {%- if images != blank -%}
+      <div class="shop-expanded__slideshow">
+
+        {%- for image_arr in images_arr -%}
+          {%- assign image = image_arr[0] -%}
+          {%- assign title = page.metafields.master-brand-3-1.heading[forloop.index0] -%}
+          {%- assign url = page.metafields.master-brand-3-1.url[forloop.index0] -%}
+
+          {%- if url != blank -%}
+            <a href="{{ url }}" class="shop-expanded__slide">
+          {% else %}
+              <div class="shop-expanded__slide">
+          {%- endif -%}
+            <div class="shop-expanded__image-wrapper">
+              <div class="AspectRatio AspectRatio--withFallback"
+                   style="padding-bottom: {{ 100.0 | divided_by: image.aspect_ratio }}%;
+                     --aspect-ratio: {{ image.aspect_ratio }};">
+
+                <img class="shop-expanded__image Image--lazyLoad"
+                     data-src="{{ image.src }}"
+                     data-optimumx="1.2"
+                     data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                     data-sizes="auto"
+                     alt="{{ title | default: page_title }}">
+
+                {%- comment -%}
+                <noscript>
+                  <img class="shop-expanded__image" src="{{ image.src }}" alt="{{ title | default: page_title }}">
+                </noscript>
+                {%- endcomment -%}
+              </div>
+            </div>
+
+            {%- if title != blank -%}
+              <h3 class="shop-expanded__title">
+                {{ title }}
+              </h3>
+            {%- endif -%}
+
+          {%- if url != blank -%}
+            </a>
+          {% else %}
+            </div>
+          {%- endif -%}
+
+        {%- endfor -%}
+
+      </div>
+    {%- endif -%}
+
+  </section>
+{%- endif -%}

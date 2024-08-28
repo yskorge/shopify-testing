@@ -1,0 +1,33 @@
+{%- assign show_section = page.metafields.master-brand-5.show_section -%}
+{%- assign order = page.metafields.master-brand-5.order -%}
+{%- assign heading = page.metafields.master-brand-5.section_heading -%}
+{%- assign blog = page.metafields.master-brand-5.blog -%}
+{%- assign articless = page.metafields.master-brand-5.article | split: '|' -%}
+{%- assign for_article = blogs[blog].articles | default: articless -%}
+
+{%- if show_section -%}
+  <section class="section-container blog-posts-mf" style="order: {{ order }};" data-section-type="article-list">
+
+    {%- if heading != blank -%}
+      <h2 class="blog-posts-mf__heading">
+        {{ heading }}
+      </h2>
+    {%- endif -%}
+
+    {%- if blog != blank or articless != blank -%}
+      <div class="blog-posts-mf__slideshow">
+        {%- for article in for_article -%}
+
+          {%- if blog != blank -%}
+            {%- assign this_article = article -%}
+          {% else %}
+            {%- assign this_article = articles[article] -%}
+          {%- endif -%}
+
+          {% render 'article-item', article: this_article %}
+
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </section>
+{%- endif -%}

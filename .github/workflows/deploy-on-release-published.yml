@@ -1,0 +1,39 @@
+name: Deploy Theme on Release Published
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler: 'latest'
+
+      - name: Install Shopify CLI
+        run: |
+          npm install -g @shopify/cli @shopify/theme
+
+      - name: Set Theme Tag
+        run: |
+          echo "tag=version-${GITHUB_REF_NAME}" >> $GITHUB_ENV
+
+      - name: Deploy to Shopify
+        env:
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE_URL }}
+          SHOPIFY_API_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
+        run: |
+          shopify theme push --unpublished --password=$SHOPIFY_API_TOKEN --store=$SHOPIFY_STORE --theme="${{ env.tag }}"

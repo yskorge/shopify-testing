@@ -1,9 +1,9 @@
-name: Deploy Theme to Shopify
+name: Deploy Theme to Shopify on merge to develop branch
 
 on:
   push:
     branches:
-      - '**'  # Runs on every branch
+      - 'dont-run'  # Runs on every branch
 jobs:
   deploy:
     runs-on: ubuntu-latest

@@ -33,7 +33,7 @@ jobs:
 
       - name: Deploy to Shopify
         env:
-          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE_URL }}
+          SHOPIFY_STORE: https://671345-8e.myshopify.com
           SHOPIFY_API_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
         run: |
           shopify theme push --unpublished --password=$SHOPIFY_API_TOKEN --store=$SHOPIFY_STORE --theme="${{ env.tag }}"

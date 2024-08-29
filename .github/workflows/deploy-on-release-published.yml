@@ -1,9 +1,9 @@
 name: Deploy Theme on Release Published
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - '**'  # Runs on every branch
   workflow_dispatch:
 
 jobs:
@@ -36,4 +36,4 @@ jobs:
           SHOPIFY_FLAG_STORE: https://671345-8e.myshopify.com
           SHOPIFY_API_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
         run: |
-          shopify theme push --unpublished --password=$SHOPIFY_API_TOKEN --store=$SHOPIFY_STORE --theme="${{ env.tag }}"
+          shopify theme push --unpublished --store=$SHOPIFY_STORE --theme="${{ env.tag }}"

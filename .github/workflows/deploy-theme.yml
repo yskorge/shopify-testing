@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - '**'  # Runs on every branch
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,9 +25,14 @@ jobs:
         run: |
           npm install -g @shopify/cli @shopify/theme
 
+      - name: Set theme tag
+        id: theme_tag
+        run: |
+          echo "tag=${{ github.ref_name }}-${{ github.sha }}" >> $GITHUB_ENV
+
       - name: Deploy to Shopify
         env:
           SHOPIFY_FLAG_STORE: https://671345-8e.myshopify.com
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_API_TOKEN }}
         run: |
-          shopify theme push --unpublished --theme="First CI theme 3"
+          shopify theme push --unpublished --theme="${{ env.tag }}"
